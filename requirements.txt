@@ -1,0 +1,4 @@
+ninja
+easydict
+pyyaml
+google-generativeai
