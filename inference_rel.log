@@ -1,0 +1,3012 @@
+[0;32m[INFO][0m 正在激活虚拟环境: trix
+[0;32m[INFO][0m 虚拟环境 trix 已激活
+[0;32m[INFO][0m 当前工作目录: /T20030104/ynj/TRIX
+[0;32m[INFO][0m 开始读取命令文件: command_rel.md
+[0;32m[INFO][0m 日志将保存到: run_commands_20251218_204135.log
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 1: python ./src/run_relation.py -c ./config/run_relation_transductive.yaml --dataset CoDExSmall --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-18 20:41:36
+20:41:38   Random seed: 1024
+20:41:38   Config file: ./config/run_relation_transductive.yaml
+20:41:38   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'CoDExSmall',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/tsafavi/codex/master/data/triples/codex-s/train.txt
+Downloading https://raw.githubusercontent.com/tsafavi/codex/master/data/triples/codex-s/valid.txt
+Downloading https://raw.githubusercontent.com/tsafavi/codex/master/data/triples/codex-s/test.txt
+Processing...
+Done!
+20:41:45   CoDExSmall dataset
+20:41:45   #train: 32888, #valid: 1827, #test: 1828
+20:41:45   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+20:41:45   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+20:41:51   mr: 1.26258
+20:41:51   mrr: 0.96024
+20:41:51   hits@1: 0.933807
+20:41:52   hits@3: 0.986871
+20:41:52   hits@10: 0.992888
+[0;32m[INFO][0m ✓ 命令 1 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-18 20:41:52
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 2: python ./src/run_relation.py -c ./config/run_relation_transductive.yaml --dataset CoDExLarge --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-18 20:41:52
+20:41:55   Random seed: 1024
+20:41:55   Config file: ./config/run_relation_transductive.yaml
+20:41:55   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'CoDExLarge',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/tsafavi/codex/master/data/triples/codex-l/train.txt
+Downloading https://raw.githubusercontent.com/tsafavi/codex/master/data/triples/codex-l/valid.txt
+Downloading https://raw.githubusercontent.com/tsafavi/codex/master/data/triples/codex-l/test.txt
+Processing...
+Done!
+20:43:05   CoDExLarge dataset
+20:43:05   #train: 551193, #valid: 30622, #test: 30622
+20:43:06   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+20:43:06   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+21:27:00   mr: 1.64927
+21:27:00   mrr: 0.900061
+21:27:00   hits@1: 0.833126
+21:27:00   hits@3: 0.964111
+21:27:00   hits@10: 0.983117
+[0;32m[INFO][0m ✓ 命令 2 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-18 21:27:01
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 3: python ./src/run_relation.py -c ./config/run_relation_transductive.yaml --dataset NELL995 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-18 21:27:01
+21:27:04   Random seed: 1024
+21:27:04   Config file: ./config/run_relation_transductive.yaml
+21:27:04   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'NELL995',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/LARS-research/RED-GNN/main/transductive/data/nell/facts.txt
+Downloading https://raw.githubusercontent.com/LARS-research/RED-GNN/main/transductive/data/nell/train.txt
+Downloading https://raw.githubusercontent.com/LARS-research/RED-GNN/main/transductive/data/nell/valid.txt
+Downloading https://raw.githubusercontent.com/LARS-research/RED-GNN/main/transductive/data/nell/test.txt
+Processing...
+Done!
+21:27:29   NELL995 dataset
+21:27:29   #train: 149678, #valid: 543, #test: 2818
+21:27:30   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+21:27:30   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+21:28:00   mr: 14.6789
+21:28:00   mrr: 0.544189
+21:28:00   hits@1: 0.407381
+21:28:00   hits@3: 0.644429
+21:28:00   hits@10: 0.775373
+[0;32m[INFO][0m ✓ 命令 3 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-18 21:28:01
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 4: python ./src/run_relation.py -c ./config/run_relation_transductive.yaml --dataset DBpedia100k --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-18 21:28:01
+21:28:04   Random seed: 1024
+21:28:04   Config file: ./config/run_relation_transductive.yaml
+21:28:04   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'DBpedia100k',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/iieir-km/ComplEx-NNE_AER/master/datasets/DB100K/_train.txt
+Downloading https://raw.githubusercontent.com/iieir-km/ComplEx-NNE_AER/master/datasets/DB100K/_valid.txt
+Downloading https://raw.githubusercontent.com/iieir-km/ComplEx-NNE_AER/master/datasets/DB100K/_test.txt
+Processing...
+Done!
+21:29:26   DBpedia100k dataset
+21:29:26   #train: 597572, #valid: 50000, #test: 50000
+21:29:26   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+21:29:26   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+22:11:34   mr: 8.14002
+22:11:34   mrr: 0.690589
+22:11:34   hits@1: 0.54382
+22:11:34   hits@3: 0.82304
+22:11:34   hits@10: 0.91668
+[0;32m[INFO][0m ✓ 命令 4 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-18 22:11:35
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 5: python ./src/run_relation.py -c ./config/run_relation_transductive.yaml --dataset ConceptNet100k --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-18 22:11:36
+22:11:39   Random seed: 1024
+22:11:39   Config file: ./config/run_relation_transductive.yaml
+22:11:39   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'ConceptNet100k',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/guojiapub/BiQUE/master/src_data/conceptnet-100k/train
+Downloading https://raw.githubusercontent.com/guojiapub/BiQUE/master/src_data/conceptnet-100k/valid
+Downloading https://raw.githubusercontent.com/guojiapub/BiQUE/master/src_data/conceptnet-100k/test
+Processing...
+Done!
+22:11:59   ConceptNet100k dataset
+22:11:59   #train: 100000, #valid: 1200, #test: 1200
+22:11:59   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+22:11:59   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+22:12:15   mr: 2.56583
+22:12:15   mrr: 0.634936
+22:12:15   hits@1: 0.441667
+22:12:15   hits@3: 0.7875
+22:12:15   hits@10: 0.986667
+[0;32m[INFO][0m ✓ 命令 5 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-18 22:12:16
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 6: python ./src/run_relation.py -c ./config/run_relation_transductive.yaml --dataset NELL23k --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-18 22:12:16
+22:12:19   Random seed: 1024
+22:12:19   Config file: ./config/run_relation_transductive.yaml
+22:12:19   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'NELL23k',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/THU-KEG/DacKGR/master/data.zip
+Extracting /T20030104/ynj/TRIX/kg-datasets_rel/SparseKG/data.zip
+Processing...
+Done!
+22:12:29   NELL23k dataset
+22:12:29   #train: 25445, #valid: 4961, #test: 4952
+22:12:29   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+22:12:29   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+22:12:47   mr: 6.80917
+22:12:47   mrr: 0.73692
+22:12:47   hits@1: 0.640549
+22:12:47   hits@3: 0.806745
+22:12:47   hits@10: 0.903877
+[0;32m[INFO][0m ✓ 命令 6 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-18 22:12:48
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 7: python ./src/run_relation.py -c ./config/run_relation_transductive.yaml --dataset YAGO310 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-18 22:12:48
+22:12:51   Random seed: 1024
+22:12:51   Config file: ./config/run_relation_transductive.yaml
+22:12:51   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'YAGO310',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/DeepGraphLearning/KnowledgeGraphEmbedding/master/data/YAGO3-10/train.txt
+Downloading https://raw.githubusercontent.com/DeepGraphLearning/KnowledgeGraphEmbedding/master/data/YAGO3-10/valid.txt
+Downloading https://raw.githubusercontent.com/DeepGraphLearning/KnowledgeGraphEmbedding/master/data/YAGO3-10/test.txt
+Processing...
+Done!
+22:14:54   YAGO310 dataset
+22:14:54   #train: 1079040, #valid: 5000, #test: 5000
+22:14:55   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+22:14:55   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+22:21:52   mr: 2.0856
+22:21:52   mrr: 0.745378
+22:21:52   hits@1: 0.592
+22:21:52   hits@3: 0.9236
+22:21:52   hits@10: 0.9728
+[0;32m[INFO][0m ✓ 命令 7 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-18 22:21:53
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 8: python ./src/run_relation.py -c ./config/run_relation_transductive.yaml --dataset Hetionet --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-18 22:21:53
+22:21:56   Random seed: 1024
+22:21:56   Config file: ./config/run_relation_transductive.yaml
+22:21:56   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'Hetionet',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://www.dropbox.com/s/y47bt9oq57h6l5k/train.txt?dl=1
+Downloading https://www.dropbox.com/s/a0pbrx9tz3dgsff/valid.txt?dl=1
+Downloading https://www.dropbox.com/s/4dhrvg3fyq5tnu4/test.txt?dl=1
+Processing...
+Done!
+22:26:05   Hetionet dataset
+22:26:05   #train: 2025177, #valid: 112510, #test: 112510
+22:26:06   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+22:26:06   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+23:52:24   mr: 1.73097
+23:52:24   mrr: 0.825236
+23:52:24   hits@1: 0.739357
+23:52:24   hits@3: 0.89241
+23:52:24   hits@10: 0.99736
+[0;32m[INFO][0m ✓ 命令 8 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-18 23:52:25
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 9: python ./src/run_relation.py -c ./config/run_relation_transductive.yaml --dataset WDsinger --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-18 23:52:25
+23:52:27   Random seed: 1024
+23:52:27   Config file: ./config/run_relation_transductive.yaml
+23:52:27   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WDsinger',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Processing...
+Done!
+23:52:30   WDsinger dataset
+23:52:30   #train: 16142, #valid: 2163, #test: 2203
+23:52:30   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+23:52:30   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+23:52:36   mr: 5.48706
+23:52:36   mrr: 0.682156
+23:52:36   hits@1: 0.581934
+23:52:36   hits@3: 0.753064
+23:52:36   hits@10: 0.833863
+[0;32m[INFO][0m ✓ 命令 9 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-18 23:52:37
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 10: python ./src/run_relation.py -c ./config/run_relation_transductive.yaml --dataset AristoV4 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-19 04:42:27
+04:42:30   Random seed: 1024
+04:42:30   Config file: ./config/run_relation_transductive.yaml
+04:42:30   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'AristoV4',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://zenodo.org/record/5942560/files/aristo-v4.zip
+Extracting /T20030104/ynj/TRIX/kg-datasets_rel/aristov4/raw/aristo-v4.zip
+Processing...
+Done!
+04:44:03   AristoV4 dataset
+04:44:03   #train: 242567, #valid: 20000, #test: 20000
+04:44:04   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+04:44:04   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+04:59:26   mr: 26.0525
+04:59:26   mrr: 0.385327
+04:59:26   hits@1: 0.2572
+04:59:26   hits@3: 0.4347
+04:59:26   hits@10: 0.6531
+
+[0;32m[INFO][0m 执行命令 1: python ./src/run_relation.py -c ./config/run_relation_transductive.yaml --dataset FB15k237_10 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:07:23
+05:07:26   Random seed: 1024
+05:07:26   Config file: ./config/run_relation_transductive.yaml
+05:07:26   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'FB15k237_10',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+05:07:26   FB15k237_10 dataset
+05:07:26   #train: 27211, #valid: 15624, #test: 18150
+05:07:26   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:07:26   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:08:22   mr: 6.14705
+05:08:22   mrr: 0.777841
+05:08:22   hits@1: 0.692837
+05:08:22   hits@3: 0.849422
+05:08:22   hits@10: 0.909366
+[0;32m[INFO][0m ✓ 命令 1 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:08:22
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 2: python ./src/run_relation.py -c ./config/run_relation_transductive.yaml --dataset FB15k237_20 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:08:22
+05:08:25   Random seed: 1024
+05:08:25   Config file: ./config/run_relation_transductive.yaml
+05:08:25   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'FB15k237_20',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Processing...
+Done!
+05:08:38   FB15k237_20 dataset
+05:08:38   #train: 54423, #valid: 16963, #test: 19776
+05:08:38   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:08:38   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:10:10   mr: 4.52316
+05:10:10   mrr: 0.815878
+05:10:10   hits@1: 0.735386
+05:10:10   hits@3: 0.884759
+05:10:10   hits@10: 0.945894
+[0;32m[INFO][0m ✓ 命令 2 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:10:11
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 3: python ./src/run_relation.py -c ./config/run_relation_transductive.yaml --dataset FB15k237_50 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:10:11
+05:10:14   Random seed: 1024
+05:10:14   Config file: ./config/run_relation_transductive.yaml
+05:10:14   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'FB15k237_50',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Processing...
+Done!
+05:10:38   FB15k237_50 dataset
+05:10:38   #train: 136057, #valid: 17449, #test: 20324
+05:10:39   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:10:39   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:14:14   mr: 2.65292
+05:14:14   mrr: 0.866877
+05:14:14   hits@1: 0.805944
+05:14:14   hits@3: 0.914535
+05:14:14   hits@10: 0.973627
+[0;32m[INFO][0m ✓ 命令 3 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:14:15
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 4: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset FB15k237Inductive --version v1 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:14:15
+05:14:17   Random seed: 1024
+05:14:17   Config file: ./config/run_relation_inductive.yaml
+05:14:17   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'FB15k237Inductive',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'v1'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v1_ind/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v1_ind/valid.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v1_ind/test.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v1/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v1/valid.txt
+Processing...
+Done!
+05:14:24   FB15k237Inductive(v1) dataset
+05:14:24   #train: 4245, #valid: 489, #test: 411
+05:14:24   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:14:24   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:14:26   mr: 9.46472
+05:14:26   mrr: 0.689465
+05:14:26   hits@1: 0.581509
+05:14:26   hits@3: 0.761557
+05:14:26   hits@10: 0.890511
+[0;32m[INFO][0m ✓ 命令 4 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:14:26
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 5: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset FB15k237Inductive --version v2 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:14:26
+05:14:29   Random seed: 1024
+05:14:29   Config file: ./config/run_relation_inductive.yaml
+05:14:29   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'FB15k237Inductive',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'v2'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v2_ind/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v2_ind/valid.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v2_ind/test.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v2/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v2/valid.txt
+Processing...
+Done!
+05:14:37   FB15k237Inductive(v2) dataset
+05:14:37   #train: 9739, #valid: 1166, #test: 947
+05:14:37   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:14:37   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:14:40   mr: 7.27983
+05:14:40   mrr: 0.694087
+05:14:40   hits@1: 0.56283
+05:14:40   hits@3: 0.797255
+05:14:40   hits@10: 0.915523
+[0;32m[INFO][0m ✓ 命令 5 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:14:40
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 6: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset FB15k237Inductive --version v3 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:14:40
+05:14:43   Random seed: 1024
+05:14:43   Config file: ./config/run_relation_inductive.yaml
+05:14:43   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'FB15k237Inductive',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'v3'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v3_ind/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v3_ind/valid.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v3_ind/test.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v3/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v3/valid.txt
+Processing...
+Done!
+05:14:52   FB15k237Inductive(v3) dataset
+05:14:52   #train: 17986, #valid: 2194, #test: 1731
+05:14:52   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:14:52   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:14:57   mr: 7.55344
+05:14:57   mrr: 0.726639
+05:14:57   hits@1: 0.621606
+05:14:57   hits@3: 0.809359
+05:14:57   hits@10: 0.893125
+[0;32m[INFO][0m ✓ 命令 6 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:14:57
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 7: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset FB15k237Inductive --version v4 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:14:57
+05:15:00   Random seed: 1024
+05:15:00   Config file: ./config/run_relation_inductive.yaml
+05:15:00   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'FB15k237Inductive',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'v4'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v4_ind/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v4_ind/valid.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v4_ind/test.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v4/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/fb237_v4/valid.txt
+Processing...
+Done!
+05:15:11   FB15k237Inductive(v4) dataset
+05:15:11   #train: 27203, #valid: 3352, #test: 2840
+05:15:11   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:15:11   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:15:17   mr: 6.57676
+05:15:17   mrr: 0.745078
+05:15:17   hits@1: 0.635211
+05:15:17   hits@3: 0.836972
+05:15:17   hits@10: 0.910563
+[0;32m[INFO][0m ✓ 命令 7 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:15:18
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 8: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WN18RRInductive --version v1 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:15:18
+05:15:21   Random seed: 1024
+05:15:21   Config file: ./config/run_relation_inductive.yaml
+05:15:21   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WN18RRInductive',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'v1'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v1_ind/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v1_ind/valid.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v1_ind/test.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v1/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v1/valid.txt
+Processing...
+Done!
+05:15:26   WN18RRInductive(v1) dataset
+05:15:26   #train: 5410, #valid: 630, #test: 373
+05:15:26   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:15:26   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:15:27   mr: 1.46649
+05:15:27   mrr: 0.80846
+05:15:27   hits@1: 0.643432
+05:15:27   hits@3: 0.983914
+05:15:27   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 8 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:15:28
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 9: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WN18RRInductive --version v2 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:15:28
+05:15:31   Random seed: 1024
+05:15:31   Config file: ./config/run_relation_inductive.yaml
+05:15:31   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WN18RRInductive',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'v2'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v2_ind/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v2_ind/valid.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v2_ind/test.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v2/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v2/valid.txt
+Processing...
+Done!
+05:15:37   WN18RRInductive(v2) dataset
+05:15:37   #train: 15262, #valid: 1838, #test: 852
+05:15:37   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:15:37   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:15:39   mr: 1.63028
+05:15:39   mrr: 0.763266
+05:15:39   hits@1: 0.575117
+05:15:39   hits@3: 0.95892
+05:15:39   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 9 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:15:40
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 10: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WN18RRInductive --version v3 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:15:40
+05:15:43   Random seed: 1024
+05:15:43   Config file: ./config/run_relation_inductive.yaml
+05:15:43   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WN18RRInductive',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'v3'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v3_ind/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v3_ind/valid.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v3_ind/test.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v3/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v3/valid.txt
+Processing...
+Done!
+05:15:50   WN18RRInductive(v3) dataset
+05:15:50   #train: 25901, #valid: 3097, #test: 1143
+05:15:50   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:15:50   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:15:53   mr: 1.87227
+05:15:53   mrr: 0.717883
+05:15:53   hits@1: 0.545057
+05:15:53   hits@3: 0.920385
+05:15:53   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 10 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:15:54
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 11: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WN18RRInductive --version v4 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:15:54
+05:15:56   Random seed: 1024
+05:15:56   Config file: ./config/run_relation_inductive.yaml
+05:15:56   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WN18RRInductive',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'v4'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v4_ind/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v4_ind/valid.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v4_ind/test.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v4/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/WN18RR_v4/valid.txt
+Processing...
+Done!
+05:16:04   WN18RRInductive(v4) dataset
+05:16:04   #train: 7940, #valid: 934, #test: 2823
+05:16:04   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:16:04   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:16:16   mr: 1.60184
+05:16:16   mrr: 0.76423
+05:16:16   hits@1: 0.569607
+05:16:16   hits@3: 0.961034
+05:16:16   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 11 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:16:17
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 12: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset NELLInductive --version v1 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:16:17
+05:16:20   Random seed: 1024
+05:16:20   Config file: ./config/run_relation_inductive.yaml
+05:16:20   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'NELLInductive',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'v1'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v1_ind/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v1_ind/valid.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v1_ind/test.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v1/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v1/valid.txt
+Processing...
+Done!
+05:16:24   NELLInductive(v1) dataset
+05:16:24   #train: 4687, #valid: 414, #test: 201
+05:16:25   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:16:25   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:16:26   mr: 2.18408
+05:16:26   mrr: 0.555348
+05:16:26   hits@1: 0.248756
+05:16:26   hits@3: 0.995025
+05:16:26   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 12 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:16:26
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 13: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset NELLInductive --version v2 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:16:27
+05:16:29   Random seed: 1024
+05:16:29   Config file: ./config/run_relation_inductive.yaml
+05:16:29   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'NELLInductive',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'v2'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v2_ind/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v2_ind/valid.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v2_ind/test.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v2/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v2/valid.txt
+Processing...
+Done!
+05:16:35   NELLInductive(v2) dataset
+05:16:35   #train: 8219, #valid: 922, #test: 935
+05:16:36   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:16:36   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:16:38   mr: 4.07273
+05:16:38   mrr: 0.796653
+05:16:38   hits@1: 0.727273
+05:16:38   hits@3: 0.841711
+05:16:38   hits@10: 0.919786
+[0;32m[INFO][0m ✓ 命令 13 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:16:39
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 14: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset NELLInductive --version v3 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:16:39
+05:16:41   Random seed: 1024
+05:16:41   Config file: ./config/run_relation_inductive.yaml
+05:16:41   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'NELLInductive',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'v3'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v3_ind/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v3_ind/valid.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v3_ind/test.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v3/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v3/valid.txt
+Processing...
+Done!
+05:16:49   NELLInductive(v3) dataset
+05:16:49   #train: 16393, #valid: 1851, #test: 1620
+05:16:49   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:16:49   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:16:53   mr: 3.84012
+05:16:53   mrr: 0.74742
+05:16:53   hits@1: 0.637037
+05:16:53   hits@3: 0.832716
+05:16:53   hits@10: 0.933951
+[0;32m[INFO][0m ✓ 命令 14 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:16:54
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 15: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset NELLInductive --version v4 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:16:54
+05:16:56   Random seed: 1024
+05:16:56   Config file: ./config/run_relation_inductive.yaml
+05:16:56   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'NELLInductive',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'v4'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v4_ind/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v4_ind/valid.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v4_ind/test.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v4/train.txt
+Downloading https://raw.githubusercontent.com/kkteru/grail/master/data/nell_v4/valid.txt
+Processing...
+Done!
+05:17:03   NELLInductive(v4) dataset
+05:17:03   #train: 7546, #valid: 876, #test: 1447
+05:17:04   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:17:04   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:17:07   mr: 2.41327
+05:17:07   mrr: 0.806643
+05:17:07   hits@1: 0.720111
+05:17:07   hits@3: 0.863856
+05:17:07   hits@10: 0.963372
+[0;32m[INFO][0m ✓ 命令 15 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:17:08
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 16: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset ILPC2022 --version small --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:17:08
+05:17:10   Random seed: 1024
+05:17:10   Config file: ./config/run_relation_inductive.yaml
+05:17:10   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'ILPC2022',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'small'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/pykeen/ilpc2022/master/data/small/train.txt
+Downloading https://raw.githubusercontent.com/pykeen/ilpc2022/master/data/small/inference.txt
+Downloading https://raw.githubusercontent.com/pykeen/ilpc2022/master/data/small/inference_validation.txt
+Downloading https://raw.githubusercontent.com/pykeen/ilpc2022/master/data/small/inference_test.txt
+Processing...
+Done!
+05:17:22   ILPC2022(small) dataset
+05:17:22   #train: 78616, #valid: 2908, #test: 2902
+05:17:22   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:17:22   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:17:34   mr: 1.62922
+05:17:34   mrr: 0.91463
+05:17:34   hits@1: 0.867677
+05:17:34   hits@3: 0.955203
+05:17:34   hits@10: 0.976568
+[0;32m[INFO][0m ✓ 命令 16 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:17:35
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 17: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset ILPC2022 --version large --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:17:35
+05:17:37   Random seed: 1024
+05:17:37   Config file: ./config/run_relation_inductive.yaml
+05:17:37   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'ILPC2022',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'large'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/pykeen/ilpc2022/master/data/large/train.txt
+Downloading https://raw.githubusercontent.com/pykeen/ilpc2022/master/data/large/inference.txt
+Downloading https://raw.githubusercontent.com/pykeen/ilpc2022/master/data/large/inference_validation.txt
+Downloading https://raw.githubusercontent.com/pykeen/ilpc2022/master/data/large/inference_test.txt
+Processing...
+Done!
+05:18:00   ILPC2022(large) dataset
+05:18:00   #train: 202446, #valid: 10179, #test: 10184
+05:18:01   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:18:01   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:20:13   mr: 1.80077
+05:20:13   mrr: 0.893691
+05:20:13   hits@1: 0.832875
+05:20:13   hits@3: 0.952082
+05:20:13   hits@10: 0.973488
+[0;32m[INFO][0m ✓ 命令 17 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:20:14
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 18: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset HM --version 1k --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:20:14
+05:20:17   Random seed: 1024
+05:20:17   Config file: ./config/run_relation_inductive.yaml
+05:20:17   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'HM',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': '1k'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/Hamaguchi-BM_both-1000/train/train.txt
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/Hamaguchi-BM_both-1000/test/test-graph.txt
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/Hamaguchi-BM_both-1000/train/valid.txt
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/Hamaguchi-BM_both-1000/test/test-fact.txt
+Processing...
+Done!
+05:20:30   HM(1k) dataset
+05:20:30   #train: 93364, #valid: 1771, #test: 476
+05:20:30   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:20:30   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:20:33   mr: 2.06303
+05:20:33   mrr: 0.613307
+05:20:33   hits@1: 0.32563
+05:20:33   hits@3: 0.92437
+05:20:33   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 18 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:20:34
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 19: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset HM --version 3k --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:20:34
+05:20:36   Random seed: 1024
+05:20:36   Config file: ./config/run_relation_inductive.yaml
+05:20:36   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'HM',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': '3k'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/Hamaguchi-BM_both-3000/train/train.txt
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/Hamaguchi-BM_both-3000/test/test-graph.txt
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/Hamaguchi-BM_both-3000/train/valid.txt
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/Hamaguchi-BM_both-3000/test/test-fact.txt
+Processing...
+Done!
+05:20:51   HM(3k) dataset
+05:20:51   #train: 71097, #valid: 1201, #test: 1349
+05:20:52   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:20:52   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:21:05   mr: 2.08154
+05:21:05   mrr: 0.632347
+05:21:05   hits@1: 0.375093
+05:21:05   hits@3: 0.8851
+05:21:05   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 19 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:21:05
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 20: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset HM --version 5k --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:21:05
+05:21:08   Random seed: 1024
+05:21:08   Config file: ./config/run_relation_inductive.yaml
+05:21:08   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'HM',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': '5k'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/Hamaguchi-BM_both-5000/train/train.txt
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/Hamaguchi-BM_both-5000/test/test-graph.txt
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/Hamaguchi-BM_both-5000/train/valid.txt
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/Hamaguchi-BM_both-5000/test/test-fact.txt
+Processing...
+Done!
+05:21:20   HM(5k) dataset
+05:21:20   #train: 57601, #valid: 900, #test: 2124
+05:21:21   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:21:21   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:21:47   mr: 2.01507
+05:21:47   mrr: 0.653094
+05:21:47   hits@1: 0.40678
+05:21:47   hits@3: 0.88983
+05:21:47   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 20 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:21:47
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 21: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset HM --version indigo --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:21:47
+05:21:50   Random seed: 1024
+05:21:50   Config file: ./config/run_relation_inductive.yaml
+05:21:50   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'HM',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'indigo'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/INDIGO-BM/train/train.txt
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/INDIGO-BM/test/test-graph.txt
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/INDIGO-BM/train/valid.txt
+Downloading https://raw.githubusercontent.com/shuwen-liu-ox/INDIGO/master/data/INDIGO-BM/test/test-fact.txt
+Processing...
+Done!
+05:23:07   HM(indigo) dataset
+05:23:07   #train: 121601, #valid: 14121, #test: 14904
+05:23:08   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:23:08   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:27:25   mr: 2.22296
+05:27:25   mrr: 0.841611
+05:27:25   hits@1: 0.751879
+05:27:25   hits@3: 0.918277
+05:27:25   hits@10: 0.981414
+[0;32m[INFO][0m ✓ 命令 21 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:27:26
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 22: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset FBIngram --version 25 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:27:26
+05:27:29   Random seed: 1024
+05:27:29   Config file: ./config/run_relation_inductive.yaml
+05:27:29   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'FBIngram',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 25},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-25/train.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-25/msg.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-25/valid.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-25/test.txt
+Processing...
+Done!
+05:27:42   FBIngram(25) dataset
+05:27:42   #train: 91571, #valid: 5716, #test: 5716
+05:27:42   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:27:42   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:27:59   mr: 5.79584
+05:27:59   mrr: 0.792424
+05:27:59   hits@1: 0.709412
+05:27:59   hits@3: 0.859867
+05:27:59   hits@10: 0.917425
+[0;32m[INFO][0m ✓ 命令 22 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:27:59
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 23: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset FBIngram --version 50 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:27:59
+05:28:02   Random seed: 1024
+05:28:02   Config file: ./config/run_relation_inductive.yaml
+05:28:02   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'FBIngram',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 50},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-50/train.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-50/msg.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-50/valid.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-50/test.txt
+Processing...
+Done!
+05:28:12   FBIngram(50) dataset
+05:28:12   #train: 85375, #valid: 3879, #test: 3879
+05:28:13   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:28:13   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:28:23   mr: 6.45914
+05:28:23   mrr: 0.764817
+05:28:23   hits@1: 0.682392
+05:28:23   hits@3: 0.838618
+05:28:23   hits@10: 0.888373
+[0;32m[INFO][0m ✓ 命令 23 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:28:24
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 24: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset FBIngram --version 75 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:28:24
+05:28:26   Random seed: 1024
+05:28:26   Config file: ./config/run_relation_inductive.yaml
+05:28:26   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'FBIngram',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 75},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-75/train.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-75/msg.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-75/valid.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-75/test.txt
+Processing...
+Done!
+05:28:37   FBIngram(75) dataset
+05:28:37   #train: 62809, #valid: 3106, #test: 3106
+05:28:37   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:28:37   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:28:44   mr: 5.30747
+05:28:44   mrr: 0.819248
+05:28:44   hits@1: 0.746619
+05:28:44   hits@3: 0.874437
+05:28:44   hits@10: 0.92434
+[0;32m[INFO][0m ✓ 命令 24 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:28:45
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 25: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset FBIngram --version 100 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:28:45
+05:28:47   Random seed: 1024
+05:28:47   Config file: ./config/run_relation_inductive.yaml
+05:28:47   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'FBIngram',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 100},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-100/train.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-100/msg.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-100/valid.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/FB-100/test.txt
+Processing...
+Done!
+05:28:59   FBIngram(100) dataset
+05:28:59   #train: 62809, #valid: 2329, #test: 2329
+05:29:00   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:29:00   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:29:05   mr: 2.27823
+05:29:05   mrr: 0.924078
+05:29:05   hits@1: 0.888794
+05:29:05   hits@3: 0.954916
+05:29:05   hits@10: 0.969515
+[0;32m[INFO][0m ✓ 命令 25 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:29:06
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 26: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WKIngram --version 25 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:29:06
+05:29:08   Random seed: 1024
+05:29:08   Config file: ./config/run_relation_inductive.yaml
+05:29:08   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WKIngram',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 25},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-25/train.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-25/msg.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-25/valid.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-25/test.txt
+Processing...
+Done!
+05:29:15   WKIngram(25) dataset
+05:29:15   #train: 41873, #valid: 1130, #test: 1131
+05:29:15   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:29:15   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:29:18   mr: 2.30592
+05:29:18   mrr: 0.905748
+05:29:18   hits@1: 0.868258
+05:29:18   hits@3: 0.934571
+05:29:18   hits@10: 0.961096
+[0;32m[INFO][0m ✓ 命令 26 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:29:18
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 27: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WKIngram --version 50 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:29:18
+05:29:21   Random seed: 1024
+05:29:21   Config file: ./config/run_relation_inductive.yaml
+05:29:21   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WKIngram',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 50},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-50/train.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-50/msg.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-50/valid.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-50/test.txt
+Processing...
+Done!
+05:29:31   WKIngram(50) dataset
+05:29:31   #train: 82481, #valid: 3224, #test: 3225
+05:29:31   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:29:31   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:29:38   mr: 3.0369
+05:29:38   mrr: 0.867746
+05:29:38   hits@1: 0.827287
+05:29:38   hits@3: 0.884651
+05:29:38   hits@10: 0.950698
+[0;32m[INFO][0m ✓ 命令 27 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:29:39
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 28: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WKIngram --version 75 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:29:39
+05:29:42   Random seed: 1024
+05:29:42   Config file: ./config/run_relation_inductive.yaml
+05:29:42   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WKIngram',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 75},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-75/train.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-75/msg.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-75/valid.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-75/test.txt
+Processing...
+Done!
+05:29:48   WKIngram(75) dataset
+05:29:48   #train: 28741, #valid: 1143, #test: 1144
+05:29:48   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:29:48   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:29:51   mr: 2.31469
+05:29:51   mrr: 0.930859
+05:29:51   hits@1: 0.908217
+05:29:51   hits@3: 0.946678
+05:29:51   hits@10: 0.963287
+[0;32m[INFO][0m ✓ 命令 28 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:29:52
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 29: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WKIngram --version 100 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:29:52
+05:29:55   Random seed: 1024
+05:29:55   Config file: ./config/run_relation_inductive.yaml
+05:29:55   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WKIngram',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 100},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-100/train.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-100/msg.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-100/valid.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/WK-100/test.txt
+Processing...
+Done!
+05:30:03   WKIngram(100) dataset
+05:30:03   #train: 49875, #valid: 4496, #test: 4496
+05:30:03   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:30:03   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:30:15   mr: 2.18461
+05:30:15   mrr: 0.892151
+05:30:15   hits@1: 0.856539
+05:30:15   hits@3: 0.912589
+05:30:15   hits@10: 0.963968
+[0;32m[INFO][0m ✓ 命令 29 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:30:16
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 30: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset NLIngram --version 0 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:30:16
+05:30:18   Random seed: 1024
+05:30:18   Config file: ./config/run_relation_inductive.yaml
+05:30:18   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'NLIngram',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 0},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-0/train.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-0/msg.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-0/valid.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-0/test.txt
+Processing...
+Done!
+05:30:24   NLIngram(0) dataset
+05:30:24   #train: 7796, #valid: 763, #test: 763
+05:30:24   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:30:24   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:30:26   mr: 7.44168
+05:30:26   mrr: 0.660444
+05:30:26   hits@1: 0.519004
+05:30:26   hits@3: 0.770642
+05:30:26   hits@10: 0.885976
+[0;32m[INFO][0m ✓ 命令 30 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:30:26
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 31: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset NLIngram --version 25 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:30:27
+05:30:29   Random seed: 1024
+05:30:29   Config file: ./config/run_relation_inductive.yaml
+05:30:29   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'NLIngram',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 25},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-25/train.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-25/msg.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-25/valid.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-25/test.txt
+Processing...
+Done!
+05:30:35   NLIngram(25) dataset
+05:30:35   #train: 17578, #valid: 743, #test: 744
+05:30:35   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:30:35   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:30:37   mr: 5.26613
+05:30:37   mrr: 0.757062
+05:30:37   hits@1: 0.639785
+05:30:37   hits@3: 0.877688
+05:30:37   hits@10: 0.930108
+[0;32m[INFO][0m ✓ 命令 31 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:30:38
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 32: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset NLIngram --version 50 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:30:38
+05:30:41   Random seed: 1024
+05:30:41   Config file: ./config/run_relation_inductive.yaml
+05:30:41   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'NLIngram',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 50},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-50/train.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-50/msg.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-50/valid.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-50/test.txt
+Processing...
+Done!
+05:30:45   NLIngram(50) dataset
+05:30:45   #train: 17578, #valid: 859, #test: 859
+05:30:46   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:30:46   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:30:48   mr: 5.03376
+05:30:48   mrr: 0.79018
+05:30:48   hits@1: 0.699651
+05:30:48   hits@3: 0.861467
+05:30:48   hits@10: 0.935972
+[0;32m[INFO][0m ✓ 命令 32 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:30:49
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 33: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset NLIngram --version 75 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:30:49
+05:30:51   Random seed: 1024
+05:30:51   Config file: ./config/run_relation_inductive.yaml
+05:30:51   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'NLIngram',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 75},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-75/train.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-75/msg.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-75/valid.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-75/test.txt
+Processing...
+Done!
+05:30:56   NLIngram(75) dataset
+05:30:56   #train: 11058, #valid: 606, #test: 607
+05:30:57   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:30:57   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:30:58   mr: 5.14827
+05:30:58   mrr: 0.783584
+05:30:58   hits@1: 0.693575
+05:30:58   hits@3: 0.853377
+05:30:58   hits@10: 0.927512
+[0;32m[INFO][0m ✓ 命令 33 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:30:59
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 34: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset NLIngram --version 100 --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:30:59
+05:31:02   Random seed: 1024
+05:31:02   Config file: ./config/run_relation_inductive.yaml
+05:31:02   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'NLIngram',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 100},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-100/train.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-100/msg.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-100/valid.txt
+Downloading https://raw.githubusercontent.com/bdi-lab/InGram/master/data/NL-100/test.txt
+Processing...
+Done!
+05:31:07   NLIngram(100) dataset
+05:31:07   #train: 7832, #valid: 793, #test: 793
+05:31:07   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:31:07   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:31:09   mr: 1.49685
+05:31:09   mrr: 0.898756
+05:31:09   hits@1: 0.828499
+05:31:09   hits@3: 0.965952
+05:31:09   hits@10: 0.993695
+[0;32m[INFO][0m ✓ 命令 34 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:31:10
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 35: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WikiTopicsMT1 --version tax --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:31:10
+05:31:13   Random seed: 1024
+05:31:13   Config file: ./config/run_relation_inductive.yaml
+05:31:13   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WikiTopicsMT1',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'tax'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Downloading https://reltrans.s3.us-east-2.amazonaws.com/MTDEA_data.zip
+Extracting /T20030104/ynj/TRIX/kg-datasets_rel/mtdea/MTDEA_data.zip
+Processing...
+Done!
+05:31:31   WikiTopicsMT1(tax) dataset
+05:31:31   #train: 17178, #valid: 1908, #test: 1834
+05:31:31   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:31:31   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:31:40   mr: 1.07852
+05:31:40   mrr: 0.972746
+05:31:40   hits@1: 0.953653
+05:31:40   hits@3: 0.992366
+05:31:40   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 35 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:31:41
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 36: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WikiTopicsMT1 --version health --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:31:41
+05:31:43   Random seed: 1024
+05:31:43   Config file: ./config/run_relation_inductive.yaml
+05:31:43   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WikiTopicsMT1',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'health'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Processing...
+Done!
+05:31:45   WikiTopicsMT1(health) dataset
+05:31:45   #train: 14371, #valid: 1596, #test: 1566
+05:31:45   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:31:45   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:31:51   mr: 1.16475
+05:31:51   mrr: 0.930735
+05:31:51   hits@1: 0.867816
+05:31:51   hits@3: 0.993614
+05:31:51   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 36 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:31:52
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 37: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WikiTopicsMT2 --version org --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:31:52
+05:31:54   Random seed: 1024
+05:31:54   Config file: ./config/run_relation_inductive.yaml
+05:31:54   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WikiTopicsMT2',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'org'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Processing...
+Done!
+05:31:57   WikiTopicsMT2(org) dataset
+05:31:57   #train: 23233, #valid: 2581, #test: 2441
+05:31:58   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:31:58   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:32:05   mr: 1.03892
+05:32:05   mrr: 0.983688
+05:32:05   hits@1: 0.969275
+05:32:05   hits@3: 0.997952
+05:32:05   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 37 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:32:06
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 38: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WikiTopicsMT2 --version sci --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:32:06
+05:32:09   Random seed: 1024
+05:32:09   Config file: ./config/run_relation_inductive.yaml
+05:32:09   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WikiTopicsMT2',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'sci'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Processing...
+Done!
+05:32:11   WikiTopicsMT2(sci) dataset
+05:32:11   #train: 16471, #valid: 1830, #test: 1650
+05:32:11   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:32:11   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:32:17   mr: 1.17394
+05:32:17   mrr: 0.949479
+05:32:17   hits@1: 0.92
+05:32:17   hits@3: 0.984848
+05:32:17   hits@10: 0.998182
+[0;32m[INFO][0m ✓ 命令 38 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:32:18
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 39: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WikiTopicsMT3 --version art --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:32:18
+05:32:21   Random seed: 1024
+05:32:21   Config file: ./config/run_relation_inductive.yaml
+05:32:21   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WikiTopicsMT3',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'art'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Processing...
+Done!
+05:32:26   WikiTopicsMT3(art) dataset
+05:32:26   #train: 27262, #valid: 3026, #test: 3113
+05:32:26   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:32:26   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:32:45   mr: 1.75907
+05:32:45   mrr: 0.895718
+05:32:45   hits@1: 0.846772
+05:32:45   hits@3: 0.931577
+05:32:45   hits@10: 0.96884
+[0;32m[INFO][0m ✓ 命令 39 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:32:45
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 40: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WikiTopicsMT3 --version infra --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:32:45
+05:32:48   Random seed: 1024
+05:32:48   Config file: ./config/run_relation_inductive.yaml
+05:32:48   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WikiTopicsMT3',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'infra'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Processing...
+Done!
+05:32:53   WikiTopicsMT3(infra) dataset
+05:32:53   #train: 21990, #valid: 2443, #test: 2405
+05:32:54   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:32:54   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:33:04   mr: 1.32308
+05:33:04   mrr: 0.922102
+05:33:04   hits@1: 0.886071
+05:33:04   hits@3: 0.941372
+05:33:04   hits@10: 0.996674
+[0;32m[INFO][0m ✓ 命令 40 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:33:05
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 41: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WikiTopicsMT4 --version sci --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:33:05
+05:33:07   Random seed: 1024
+05:33:07   Config file: ./config/run_relation_inductive.yaml
+05:33:07   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WikiTopicsMT4',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'sci'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Processing...
+Done!
+05:33:09   WikiTopicsMT4(sci) dataset
+05:33:09   #train: 12576, #valid: 1397, #test: 1388
+05:33:09   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:33:09   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:33:13   mr: 1.25793
+05:33:13   mrr: 0.942291
+05:33:13   hits@1: 0.909942
+05:33:13   hits@3: 0.964697
+05:33:13   hits@10: 0.994957
+[0;32m[INFO][0m ✓ 命令 41 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:33:14
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 42: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset WikiTopicsMT4 --version health --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:33:14
+05:33:17   Random seed: 1024
+05:33:17   Config file: ./config/run_relation_inductive.yaml
+05:33:17   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'WikiTopicsMT4',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': 'health'},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Processing...
+Done!
+05:33:18   WikiTopicsMT4(health) dataset
+05:33:19   #train: 15539, #valid: 1725, #test: 1703
+05:33:19   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:33:19   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:33:24   mr: 1.34234
+05:33:24   mrr: 0.918818
+05:33:24   hits@1: 0.880799
+05:33:25   hits@3: 0.952437
+05:33:25   hits@10: 0.997651
+[0;32m[INFO][0m ✓ 命令 42 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:33:25
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 43: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset Metafam --version null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:33:25
+05:33:28   Random seed: 1024
+05:33:28   Config file: ./config/run_relation_inductive.yaml
+05:33:28   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'Metafam',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': None},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Processing...
+Done!
+05:33:32   Metafam(None) dataset
+05:33:32   #train: 13821, #valid: 590, #test: 184
+05:33:32   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:33:32   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:33:33   mr: 4.00543
+05:33:33   mrr: 0.302728
+05:33:33   hits@1: 0.0163043
+05:33:33   hits@3: 0.527174
+05:33:33   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 43 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-19 05:33:34
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 44: python ./src/run_relation.py -c ./config/run_relation_inductive.yaml --dataset FBNELL --version null --ckpt /T20030104/ynj/TRIX/ckpts/trix_rel.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2025-12-19 05:33:34
+05:33:36   Random seed: 1024
+05:33:36   Config file: ./config/run_relation_inductive.yaml
+05:33:36   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/trix_rel.pth',
+ 'dataset': {'class': 'FBNELL',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
+             'version': None},
+ 'model': {'class': 'TRIX',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+Processing...
+Done!
+05:33:38   FBNELL(None) dataset
+05:33:38   #train: 10275, #valid: 1055, #test: 597
+05:33:38   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:33:38   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+05:33:40   mr: 6.10385
+05:33:40   mrr: 0.754589
+05:33:40   hits@1: 0.639866
+05:33:40   hits@3: 0.850921
+05:33:40   hits@10: 0.922948

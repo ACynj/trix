@@ -1,8 +1,8 @@
-output_dir: /output
+output_dir: /T20030104/ynj/TRIX/output
 
 dataset:
   class: {{ dataset }}
-  root: /kg-datasets/
+  root: /T20030104/ynj/TRIX/kg-datasets/
   version: {{ version }}
 
 model:

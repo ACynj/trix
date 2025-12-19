@@ -1,9 +1,9 @@
-output_dir: /output
+output_dir: /T20030104/ynj/TRIX/output
 
 dataset:
   class: JointDataset
   graphs: [FB15k237, WN18RR, CoDExMedium]
-  root: /kg-datasets/
+  root: /T20030104/ynj/TRIX/kg-datasets/
 
 model:
   class: TRIX

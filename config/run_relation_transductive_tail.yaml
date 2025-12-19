@@ -1,20 +1,24 @@
-output_dir: /T20030104/ynj/TRIX/output
+output_dir: /T20030104/ynj/TRIX/output_rel/
 
 dataset:
   class: {{ dataset }}
-  root: /T20030104/ynj/TRIX/kg-datasets/
+  root: /T20030104/ynj/TRIX/kg-datasets_rel/
 
 model:
   class: TRIX
+  trix:
+    feature_dim: 32
+    num_layer: 3
+    num_mlp_layer: 2
   relation_model:
     class: NBFNet
     input_dim: 32
-    hidden_dims: [32, 32, 32]
+    hidden_dims: [32, 32]
     message_func: distmult
     aggregate_func: sum
     short_cut: yes
     layer_norm: yes
-  entity_model_1:
+  entity_model:
     class: IndNBFNet
     input_dim: 32
     hidden_dims: [32, 32]
@@ -22,21 +26,13 @@ model:
     aggregate_func: sum
     short_cut: yes
     layer_norm: yes
-  entity_model_2:
-    class: IndNBFNet
-    input_dim: 32
-    hidden_dims: [32, 32, 32, 32]
-    message_func: distmult
-    aggregate_func: sum
-    short_cut: yes
-    layer_norm: yes
 
 task:
   name: InductiveInference
-  num_negative: 512
+  num_negative: 256
   strict_negative: yes
   adversarial_temperature: 1
-  metric: [mr, mrr, hits@1, hits@3, hits@10, hits@10_50]
+  metric: [mr-tail, mrr-tail, hits@1-tail, hits@3-tail, hits@10-tail, hits@10_50-tail]
 
 optimizer:
   class: AdamW
@@ -44,10 +40,9 @@ optimizer:
 
 train:
   gpus: {{ gpus }}
-  batch_size: 32
+  batch_size: 16
   num_epoch: {{ epochs }}
   log_interval: 100
-  # fast_test: 500
   batch_per_epoch: {{ bpe }}
 
 checkpoint: {{ ckpt }}
