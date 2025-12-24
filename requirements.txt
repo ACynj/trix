@@ -2,3 +2,6 @@ ninja
 easydict
 pyyaml
 google-generativeai
+tqdm
+matplotlib
+numpy<2.0

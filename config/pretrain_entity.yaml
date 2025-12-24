@@ -3,7 +3,7 @@ output_dir: /T20030104/ynj/TRIX/output
 dataset:
   class: JointDataset
   graphs: [FB15k237, WN18RR, CoDExMedium]
-  root: /T20030104/ynj/TRIX/kg-datasets/
+  root: /T20030104/ynj/TRIX/kg-datasets_rel/
 
 model:
   class: TRIX

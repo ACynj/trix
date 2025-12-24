@@ -1,4 +1,4 @@
-output_dir: /output
+output_dir: /T20030104/ynj/TRIX/output_rel/
 
 dataset:
   class: JointDataset
