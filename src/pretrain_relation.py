@@ -3,6 +3,7 @@ import sys
 import copy
 import math
 import pprint
+import importlib
 from itertools import islice
 from functools import partial
 
@@ -16,7 +17,32 @@ from torch_geometric.data import Data
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from trix import tasks, util
-from trix.models_relation import TRIX
+
+
+def _build_model(cfg):
+    model_cfg = cfg.model
+    model_cls_name = model_cfg.get("class", "TRIX")
+    if model_cls_name == "TRIXLatentMechanism":
+        module = importlib.import_module("trix.models_relation_mechanism")
+    else:
+        module = importlib.import_module("trix.models_relation")
+    model_cls = getattr(module, model_cls_name)
+
+    if model_cls_name == "TRIXLatentMechanism":
+        mechanism_cfg = getattr(model_cfg, "mechanism", {})
+        model = model_cls(
+            rel_model_cfg=model_cfg.relation_model,
+            entity_model_cfg=model_cfg.entity_model,
+            trix_cfg=model_cfg.trix,
+            mechanism_cfg=mechanism_cfg,
+        )
+    else:
+        model = model_cls(
+            rel_model_cfg=model_cfg.relation_model,
+            entity_model_cfg=model_cfg.entity_model,
+            trix_cfg=model_cfg.trix
+        )
+    return model
 
 separator = ">" * 30
 line = "-" * 30
@@ -32,7 +58,7 @@ def multigraph_collator(batch, train_graphs):
     bs = len(batch)
     edge_mask = torch.randperm(graph.target_edge_index.shape[1])[:bs]
 
-    batch = torch.cat([graph.target_edge_index[:, edge_mask], graph.target_edge_type[edge_mask].unsqueeze(0)]).t()
+    batch = torch.cat([graph.target_edge_index[:, edge_mask], graph.target_edge_type[edge_mask].unsqueeze(0)]).t().long()
     return graph, batch
 
 def train_and_validate(cfg, model, train_data, valid_data, filtered_data=None, batch_per_epoch=None):
@@ -63,7 +89,7 @@ def train_and_validate(cfg, model, train_data, valid_data, filtered_data=None, b
     else:
         parallel_model = model
 
-    step = math.ceil(cfg.train.num_epoch / 10)
+    step = 1  # 保存与验证每轮都执行
     best_result = float("-inf")
     best_epoch = -1
 
@@ -79,9 +105,12 @@ def train_and_validate(cfg, model, train_data, valid_data, filtered_data=None, b
             sampler.set_epoch(epoch)
             for batch in islice(train_loader, batch_per_epoch):
                 train_graph, batch = batch
+                batch = batch.long()
 
-                batch = tasks.negative_sampling_relation(train_graph, batch, cfg.task.num_negative,
-                                                strict=cfg.task.strict_negative)
+                batch = tasks.negative_sampling_relation(
+                    train_graph, batch, cfg.task.num_negative,
+                    strict=cfg.task.strict_negative
+                )
 
                 pred = parallel_model(train_graph, batch)
                 target = torch.zeros_like(pred)
@@ -95,6 +124,28 @@ def train_and_validate(cfg, model, train_data, valid_data, filtered_data=None, b
                     neg_weight[:, 1:] = 1 / cfg.task.num_negative
                 loss = (loss * neg_weight).sum(dim=-1) / neg_weight.sum(dim=-1)
                 loss = loss.mean()
+
+                # KL（仅当模型提供 last_kl 且配置 beta>0）
+                kl = None
+                if hasattr(parallel_model, "module"):
+                    kl = getattr(parallel_model.module, "last_kl", None)
+                else:
+                    kl = getattr(parallel_model, "last_kl", None)
+
+                mech_cfg = None
+                if hasattr(cfg, "model"):
+                    mech_cfg = getattr(cfg.model, "mechanism", None)
+                    if mech_cfg is None and isinstance(cfg.model, dict):
+                        mech_cfg = cfg.model.get("mechanism", None)
+                beta = 0
+                if mech_cfg is not None:
+                    if hasattr(mech_cfg, "beta"):
+                        beta = getattr(mech_cfg, "beta")
+                    elif isinstance(mech_cfg, dict):
+                        beta = mech_cfg.get("beta", 0)
+
+                if kl is not None and beta > 0:
+                    loss = loss + beta * kl
 
                 loss.backward()
                 optimizer.step()
@@ -147,6 +198,10 @@ def test(cfg, model, test_data, filtered_data=None):
     for test_graph, filters in zip(test_data, filtered_data):
 
         test_triplets = torch.cat([test_graph.target_edge_index, test_graph.target_edge_type.unsqueeze(0)]).t()
+        if test_triplets.size(0) == 0:
+            if rank == 0:
+                logger.warning("Skip eval graph with 0 target edges")
+            continue
         sampler = torch_data.DistributedSampler(test_triplets, world_size, rank)
         test_loader = torch_data.DataLoader(test_triplets, cfg.train.batch_size, sampler=sampler)
 
@@ -154,6 +209,7 @@ def test(cfg, model, test_data, filtered_data=None):
         rankings = []
         num_negatives = []
         for batch in test_loader:
+            batch = batch.long()
             pos_h_index, pos_t_index, pos_r_index = batch.t()
 
             r_batch = tasks.all_negative_relation(test_graph, batch)
@@ -164,6 +220,11 @@ def test(cfg, model, test_data, filtered_data=None):
             rankings += [r_ranking]
             num_r_negative = test_graph.num_relations // 2 - 1
             num_negatives += [num_r_negative.expand_as(r_ranking)]
+
+        if len(rankings) == 0:
+            if rank == 0:
+                logger.warning("No test batches produced for this graph, skip metrics")
+            continue
 
         ranking = torch.cat(rankings)
         num_negative = torch.cat(num_negatives)
@@ -249,11 +310,7 @@ if __name__ == "__main__":
     valid_data = [vd.to(device) for vd in valid_data]
     test_data = [tst.to(device) for tst in test_data]
 
-    model = TRIX(
-        rel_model_cfg=cfg.model.relation_model,
-        entity_model_cfg=cfg.model.entity_model,
-        trix_cfg=cfg.model.trix
-    )
+    model = _build_model(cfg)
 
     if "checkpoint" in cfg:
         state = torch.load(cfg.checkpoint, map_location="cpu")
@@ -263,6 +320,7 @@ if __name__ == "__main__":
     
     assert task_name == "MultiGraphPretraining", "Only the MultiGraphPretraining task is allowed for this script"
 
+    filtered_data = None
     if cfg["dataset"]["class"] == "JointDataset":
         filtered_data = [
             Data(

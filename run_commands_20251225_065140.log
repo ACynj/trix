@@ -1,0 +1,638 @@
+[0;32m[INFO][0m 正在激活虚拟环境: trix
+[0;32m[INFO][0m 虚拟环境 trix 已激活
+[0;32m[INFO][0m 当前工作目录: /T20030104/ynj/TRIX
+[0;32m[INFO][0m 开始读取命令文件: command_rel.md
+[0;32m[INFO][0m 日志将保存到: run_commands_20251225_065140.log
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 1: python src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset CoDExSmall --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-25 06:51:41
+06:51:43   Random seed: 1024
+06:51:43   Config file: ./config/run_relation_transductive_mech.yaml
+06:51:43   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+ 'dataset': {'class': 'CoDExSmall',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIXLatentMechanism',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'mechanism': {'beta': 0.001,
+                         'deterministic_eval': True,
+                         'enabled': True,
+                         'query_free': True,
+                         'score_type': 'concat_mlp',
+                         'z_dim': 32},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 32,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+06:51:43   CoDExSmall dataset
+06:51:43   #train: 32888, #valid: 1827, #test: 1828
+06:51:43   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+06:51:43   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+06:51:47   mr: 1.35667
+06:51:47   mrr: 0.936253
+06:51:47   hits@1: 0.900985
+06:51:47   hits@3: 0.96663
+06:51:47   hits@10: 0.992888
+[0;32m[INFO][0m ✓ 命令 1 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-25 06:51:48
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 2: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset CoDExLarge --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-25 06:51:48
+06:51:50   Random seed: 1024
+06:51:50   Config file: ./config/run_relation_transductive_mech_1.yaml
+06:51:50   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+ 'dataset': {'class': 'CoDExLarge',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIXLatentMechanism',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'mechanism': {'beta': 0.001,
+                         'deterministic_eval': True,
+                         'enabled': True,
+                         'query_free': True,
+                         'score_type': 'concat_mlp',
+                         'z_dim': 32},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 8,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+06:51:52   CoDExLarge dataset
+06:51:52   #train: 551193, #valid: 30622, #test: 30622
+06:51:53   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+06:51:53   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+08:05:34   mr: 1.67827
+08:05:34   mrr: 0.857705
+08:05:34   hits@1: 0.756907
+08:05:34   hits@3: 0.956796
+08:05:34   hits@10: 0.988766
+[0;32m[INFO][0m ✓ 命令 2 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-25 08:05:34
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 3: python src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset NELL995 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-25 08:05:34
+08:05:37   Random seed: 1024
+08:05:37   Config file: ./config/run_relation_transductive_mech.yaml
+08:05:37   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+ 'dataset': {'class': 'NELL995',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIXLatentMechanism',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'mechanism': {'beta': 0.001,
+                         'deterministic_eval': True,
+                         'enabled': True,
+                         'query_free': True,
+                         'score_type': 'concat_mlp',
+                         'z_dim': 32},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 32,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+08:05:37   NELL995 dataset
+08:05:37   #train: 149678, #valid: 543, #test: 2818
+08:05:37   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+08:05:37   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+08:06:07   mr: 20.9503
+08:06:07   mrr: 0.514677
+08:06:07   hits@1: 0.394961
+08:06:07   hits@3: 0.592619
+08:06:07   hits@10: 0.748403
+[0;32m[INFO][0m ✓ 命令 3 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-25 08:06:08
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 4: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset DBpedia100k --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-25 08:06:08
+08:06:10   Random seed: 1024
+08:06:10   Config file: ./config/run_relation_transductive_mech_1.yaml
+08:06:10   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+ 'dataset': {'class': 'DBpedia100k',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIXLatentMechanism',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'mechanism': {'beta': 0.001,
+                         'deterministic_eval': True,
+                         'enabled': True,
+                         'query_free': True,
+                         'score_type': 'concat_mlp',
+                         'z_dim': 32},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 8,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+08:06:11   DBpedia100k dataset
+08:06:11   #train: 597572, #valid: 50000, #test: 50000
+08:06:12   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+08:06:12   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+09:20:37   mr: 7.97016
+09:20:37   mrr: 0.739887
+09:20:37   hits@1: 0.615
+09:20:37   hits@3: 0.84164
+09:20:37   hits@10: 0.93632
+[0;32m[INFO][0m ✓ 命令 4 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-25 09:20:37
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 5: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset ConceptNet100k --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-25 09:20:37
+09:20:40   Random seed: 1024
+09:20:40   Config file: ./config/run_relation_transductive_mech_1.yaml
+09:20:40   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+ 'dataset': {'class': 'ConceptNet100k',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIXLatentMechanism',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'mechanism': {'beta': 0.001,
+                         'deterministic_eval': True,
+                         'enabled': True,
+                         'query_free': True,
+                         'score_type': 'concat_mlp',
+                         'z_dim': 32},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 8,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+09:20:40   ConceptNet100k dataset
+09:20:40   #train: 100000, #valid: 1200, #test: 1200
+09:20:41   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:20:41   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+09:21:08   mr: 2.41417
+09:21:08   mrr: 0.642451
+09:21:08   hits@1: 0.445833
+09:21:08   hits@3: 0.795833
+09:21:08   hits@10: 0.989167
+[0;32m[INFO][0m ✓ 命令 5 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-25 09:21:08
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 6: python src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset NELL23k --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-25 09:21:08
+09:21:11   Random seed: 1024
+09:21:11   Config file: ./config/run_relation_transductive_mech.yaml
+09:21:11   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+ 'dataset': {'class': 'NELL23k',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIXLatentMechanism',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'mechanism': {'beta': 0.001,
+                         'deterministic_eval': True,
+                         'enabled': True,
+                         'query_free': True,
+                         'score_type': 'concat_mlp',
+                         'z_dim': 32},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 32,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+09:21:11   NELL23k dataset
+09:21:11   #train: 25445, #valid: 4961, #test: 4952
+09:21:12   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:21:12   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+09:21:29   mr: 6.45517
+09:21:29   mrr: 0.771772
+09:21:29   hits@1: 0.679322
+09:21:29   hits@3: 0.845113
+09:21:29   hits@10: 0.926696
+[0;32m[INFO][0m ✓ 命令 6 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-25 09:21:30
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 7: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset YAGO310 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-25 09:21:30
+09:21:32   Random seed: 1024
+09:21:32   Config file: ./config/run_relation_transductive_mech_1.yaml
+09:21:32   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+ 'dataset': {'class': 'YAGO310',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIXLatentMechanism',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'mechanism': {'beta': 0.001,
+                         'deterministic_eval': True,
+                         'enabled': True,
+                         'query_free': True,
+                         'score_type': 'concat_mlp',
+                         'z_dim': 32},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 8,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+09:21:34   YAGO310 dataset
+09:21:34   #train: 1079040, #valid: 5000, #test: 5000
+09:21:35   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:21:35   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+09:33:35   mr: 1.5424
+09:33:35   mrr: 0.804929
+09:33:35   hits@1: 0.633
+09:33:35   hits@3: 0.9728
+09:33:35   hits@10: 0.995
+[0;32m[INFO][0m ✓ 命令 7 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-25 09:33:36
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 8: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset Hetionet --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-25 09:33:36
+09:33:38   Random seed: 1024
+09:33:38   Config file: ./config/run_relation_transductive_mech_1.yaml
+09:33:38   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+ 'dataset': {'class': 'Hetionet',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIXLatentMechanism',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'mechanism': {'beta': 0.001,
+                         'deterministic_eval': True,
+                         'enabled': True,
+                         'query_free': True,
+                         'score_type': 'concat_mlp',
+                         'z_dim': 32},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 8,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+09:33:40   Hetionet dataset
+09:33:40   #train: 2025177, #valid: 112510, #test: 112510
+09:33:41   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:33:41   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+12:13:54   mr: 1.27419
+12:13:54   mrr: 0.899298
+12:13:54   hits@1: 0.824896
+12:13:54   hits@3: 0.987797
+12:13:54   hits@10: 0.999662
+[0;32m[INFO][0m ✓ 命令 8 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-25 12:13:55
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 9: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset WDsinger --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-25 12:13:55
+12:13:58   Random seed: 1024
+12:13:58   Config file: ./config/run_relation_transductive_mech_1.yaml
+12:13:58   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+ 'dataset': {'class': 'WDsinger',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIXLatentMechanism',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'mechanism': {'beta': 0.001,
+                         'deterministic_eval': True,
+                         'enabled': True,
+                         'query_free': True,
+                         'score_type': 'concat_mlp',
+                         'z_dim': 32},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 8,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+12:13:58   WDsinger dataset
+12:13:58   #train: 16142, #valid: 2163, #test: 2203
+12:13:58   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+12:13:58   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+12:14:08   mr: 4.77304
+12:14:08   mrr: 0.711003
+12:14:08   hits@1: 0.586473
+12:14:08   hits@3: 0.81616
+12:14:08   hits@10: 0.905583
+[0;32m[INFO][0m ✓ 命令 9 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-25 12:14:08
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 10: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset AristoV4 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-25 12:14:09
+12:14:11   Random seed: 1024
+12:14:11   Config file: ./config/run_relation_transductive_mech_1.yaml
+12:14:11   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+ 'dataset': {'class': 'AristoV4',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIXLatentMechanism',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'mechanism': {'beta': 0.001,
+                         'deterministic_eval': True,
+                         'enabled': True,
+                         'query_free': True,
+                         'score_type': 'concat_mlp',
+                         'z_dim': 32},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr', 'mrr', 'hits@1', 'hits@3', 'hits@10'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 8,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+12:14:17   AristoV4 dataset
+12:14:17   #train: 242567, #valid: 20000, #test: 20000
+12:14:18   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+12:14:18   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+12:41:09   mr: 25.3888
+12:41:09   mrr: 0.426108
+12:41:09   hits@1: 0.3106
+12:41:09   hits@3: 0.4676
+12:41:09   hits@10: 0.66395
+[0;32m[INFO][0m ✓ 命令 10 执行成功
+[0;32m[INFO][0m 结束时间: 2025-12-25 12:41:09
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 11: python ./src/run_relation.py -c ./config/run_relation_transductive_mech_tail.yaml --dataset FB15k237_10 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2025-12-25 12:41:09
+12:41:12   Random seed: 1024
+12:41:12   Config file: ./config/run_relation_transductive_mech_tail.yaml
+12:41:12   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+ 'dataset': {'class': 'FB15k237_10',
+             'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
+ 'model': {'class': 'TRIXLatentMechanism',
+           'entity_model': {'aggregate_func': 'sum',
+                            'class': 'IndNBFNet',
+                            'hidden_dims': [32, 32],
+                            'input_dim': 32,
+                            'layer_norm': True,
+                            'message_func': 'distmult',
+                            'short_cut': True},
+           'mechanism': {'beta': 0.001,
+                         'deterministic_eval': True,
+                         'enabled': True,
+                         'query_free': True,
+                         'score_type': 'concat_mlp',
+                         'z_dim': 32},
+           'relation_model': {'aggregate_func': 'sum',
+                              'class': 'NBFNet',
+                              'hidden_dims': [32, 32],
+                              'input_dim': 32,
+                              'layer_norm': True,
+                              'message_func': 'distmult',
+                              'short_cut': True},
+           'trix': {'feature_dim': 32, 'num_layer': 3, 'num_mlp_layer': 2}},
+ 'optimizer': {'class': 'AdamW', 'lr': 0.0005},
+ 'output_dir': '/T20030104/ynj/TRIX/output_rel/',
+ 'task': {'adversarial_temperature': 1,
+          'metric': ['mr-tail',
+                     'mrr-tail',
+                     'hits@1-tail',
+                     'hits@3-tail',
+                     'hits@10-tail'],
+          'name': 'InductiveInference',
+          'num_negative': 256,
+          'strict_negative': True},
+ 'train': {'batch_per_epoch': None,
+           'batch_size': 16,
+           'gpus': [0],
+           'log_interval': 100,
+           'num_epoch': 0}}
+12:41:12   FB15k237_10 dataset
+12:41:12   #train: 27211, #valid: 15624, #test: 18150
+12:41:12   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+12:41:12   Evaluate on test
+/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Load rspmm extension. This may take a while...
+Traceback (most recent call last):
+  File "/T20030104/ynj/TRIX/./src/run_relation.py", line 331, in <module>
+    test(cfg, model, test_data, filtered_data=test_filtered_data, device=device, logger=logger)
+  File "/root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/T20030104/ynj/TRIX/./src/run_relation.py", line 247, in test
+    logger.warning("%s: %g" % (metric, score))
+UnboundLocalError: local variable 'score' referenced before assignment
+[0;31m[ERROR][0m ✗ 命令 11 执行失败 (退出码: 0)
+[0;31m[ERROR][0m 失败的命令: python ./src/run_relation.py -c ./config/run_relation_transductive_mech_tail.yaml --dataset FB15k237_10 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
+[0;32m[INFO][0m 结束时间: 2025-12-25 12:42:09
+[1;33m[WARNING][0m 用户选择停止执行
+[0;31m[ERROR][0m 脚本因用户选择而停止
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行完成！
+[0;32m[INFO][0m 总命令数: 11
+[0;32m[INFO][0m 成功: 10
+[0;32m[INFO][0m 失败: 1
+[0;32m[INFO][0m 日志文件: run_commands_20251225_065140.log
+[0;31m[ERROR][0m 失败的命令列表已保存到: failed_commands_20251225_065140.txt

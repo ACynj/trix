@@ -105,7 +105,12 @@ def all_negative(data, batch):
 def all_negative_relation(data, batch):
     pos_h_index, pos_t_index, pos_r_index = batch.t()
 
-    all_index = torch.arange(data.num_relations.item() // 2, device=batch.device)
+    # 保持 dtype 一致，避免 meshgrid dtype 冲突
+    all_index = torch.arange(
+        data.num_relations.item() // 2,
+        device=batch.device,
+        dtype=pos_h_index.dtype,
+    )
 
     h_index, r_index = torch.meshgrid(pos_h_index, all_index, indexing="ij")
     t_index, r_index = torch.meshgrid(pos_t_index, all_index, indexing="ij")

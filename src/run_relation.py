@@ -3,6 +3,7 @@ import sys
 import math
 import pprint
 import copy
+import importlib
 from itertools import islice
 
 import torch
@@ -16,7 +17,34 @@ from torch_geometric.data import Data
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from trix import tasks, util
-from trix.models_relation import TRIX
+
+def _build_model(cfg):
+    """
+    动态选择模型类，默认 TRIX，支持 TRIXLatentMechanism。
+    """
+    model_cfg = cfg.model
+    model_cls_name = model_cfg.get("class", "TRIX")
+    if model_cls_name == "TRIXLatentMechanism":
+        module = importlib.import_module("trix.models_relation_mechanism")
+    else:
+        module = importlib.import_module("trix.models_relation")
+    model_cls = getattr(module, model_cls_name)
+
+    if model_cls_name == "TRIXLatentMechanism":
+        mechanism_cfg = getattr(model_cfg, "mechanism", {})
+        model = model_cls(
+            rel_model_cfg=model_cfg.relation_model,
+            entity_model_cfg=model_cfg.entity_model,
+            trix_cfg=model_cfg.trix,
+            mechanism_cfg=mechanism_cfg,
+        )
+    else:
+        model = model_cls(
+            rel_model_cfg=model_cfg.relation_model,
+            entity_model_cfg=model_cfg.entity_model,
+            trix_cfg=model_cfg.trix
+        )
+    return model
 
 separator = ">" * 30
 line = "-" * 30
@@ -77,6 +105,28 @@ def train_and_validate(cfg, model, train_data, valid_data, device, logger, filte
                     neg_weight[:, 1:] = 1 / cfg.task.num_negative
                 loss = (loss * neg_weight).sum(dim=-1) / neg_weight.sum(dim=-1)
                 loss = loss.mean()
+
+                # KL for mechanism models（仅当模型提供 last_kl 且配置了 beta>0）
+                kl = None
+                if hasattr(parallel_model, "module"):
+                    kl = getattr(parallel_model.module, "last_kl", None)
+                else:
+                    kl = getattr(parallel_model, "last_kl", None)
+
+                mech_cfg = None
+                if hasattr(cfg, "model"):
+                    mech_cfg = getattr(cfg.model, "mechanism", None)
+                    if mech_cfg is None and isinstance(cfg.model, dict):
+                        mech_cfg = cfg.model.get("mechanism", None)
+                beta = 0
+                if mech_cfg is not None:
+                    if hasattr(mech_cfg, "beta"):
+                        beta = getattr(mech_cfg, "beta")
+                    elif isinstance(mech_cfg, dict):
+                        beta = mech_cfg.get("beta", 0)
+
+                if kl is not None and beta > 0:
+                    loss = loss + beta * kl
 
                 loss.backward()
                 optimizer.step()
@@ -233,11 +283,7 @@ if __name__ == "__main__":
         short_valid.target_edge_index = short_valid.target_edge_index[:, mask]
         short_valid.target_edge_type = short_valid.target_edge_type[mask]
 
-    model = TRIX(
-        rel_model_cfg=cfg.model.relation_model,
-        entity_model_cfg=cfg.model.entity_model,
-        trix_cfg=cfg.model.trix
-    )
+    model = _build_model(cfg)
 
     if "checkpoint" in cfg and cfg.checkpoint is not None:
         state = torch.load(cfg.checkpoint, map_location="cpu")

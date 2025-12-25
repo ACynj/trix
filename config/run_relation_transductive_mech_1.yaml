@@ -1,0 +1,56 @@
+output_dir: /T20030104/ynj/TRIX/output_rel/
+
+dataset:
+  class: {{ dataset }}
+  root: /T20030104/ynj/TRIX/kg-datasets_rel/
+
+model:
+  class: TRIXLatentMechanism
+  trix:
+    feature_dim: 32
+    num_layer: 3
+    num_mlp_layer: 2
+  relation_model:
+    class: NBFNet
+    input_dim: 32
+    hidden_dims: [32, 32]
+    message_func: distmult
+    aggregate_func: sum
+    short_cut: yes
+    layer_norm: yes
+  entity_model:
+    class: IndNBFNet
+    input_dim: 32
+    hidden_dims: [32, 32]
+    message_func: distmult
+    aggregate_func: sum
+    short_cut: yes
+    layer_norm: yes
+  mechanism:
+    enabled: true
+    z_dim: 32
+    beta: 1.0e-3
+    deterministic_eval: true
+    score_type: concat_mlp
+    query_free: true
+
+task:
+  name: InductiveInference
+  num_negative: 256
+  strict_negative: yes
+  adversarial_temperature: 1
+  metric: [mr, mrr, hits@1, hits@3, hits@10]
+
+optimizer:
+  class: AdamW
+  lr: 5.0e-4
+
+train:
+  gpus: {{ gpus }}
+  batch_size: 8
+  num_epoch: {{ epochs }}
+  log_interval: 100
+  batch_per_epoch: {{ bpe }}
+
+checkpoint: {{ ckpt }}
+
