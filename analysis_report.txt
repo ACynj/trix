@@ -1,0 +1,494 @@
+正在解析日志文件...
+  解析 run_commands_20251225_041027.log...
+    找到 41 个数据集的结果
+  解析 run_commands_20251225_065140.log...
+    找到 10 个数据集的结果
+  解析 run_commands_20251225_133504.log...
+    找到 3 个数据集的结果
+  解析 run_commands_20260101_151803.log...
+    找到 54 个数据集的结果
+
+================================================================================
+结果对比分析
+================================================================================
+
+【Transductive 数据集组】
+--------------------------------------------------------------------------------
+
+正在匹配 Transductive 组的数据集...
+  可用数据集数量: 54
+  前5个可用数据集: ['FB15k237Inductive(v1)', 'FB15k237Inductive(v2)', 'FB15k237Inductive(v3)', 'FB15k237Inductive(v4)', 'WN18RRInductive(v1)']
+  目标数据集数量: 13
+  前5个目标数据集: ['CoDExSmall', 'CoDExLarge', 'NELL995', 'DBpedia100k', 'ConceptNet100k']
+  匹配: CoDExSmall -> CoDExSmall
+  匹配: CoDExLarge -> CoDExLarge
+  匹配: NELL995 -> NELL995
+  匹配: DBpedia100k -> DBpedia100k
+  匹配: ConceptNet100k -> ConceptNet100k
+  匹配: NELL23k -> NELL23k
+  匹配: YAGO310 -> YAGO310
+  匹配: Hetionet -> Hetionet
+  匹配: WDsinger -> WDsinger
+  匹配: AristoV4 -> AristoV4
+  匹配: FB15k237_10 -> FB15k237_10
+  匹配: FB15k237_20 -> FB15k237_20
+  匹配: FB15k237_50 -> FB15k237_50
+  总匹配数: 13/13
+  可用数据集数量: 54
+  前5个可用数据集: ['CoDExSmall', 'CoDExLarge', 'NELL995', 'DBpedia100k', 'ConceptNet100k']
+  目标数据集数量: 13
+  前5个目标数据集: ['CoDExSmall', 'CoDExLarge', 'NELL995', 'DBpedia100k', 'ConceptNet100k']
+  匹配: CoDExSmall -> CoDExSmall
+  匹配: CoDExLarge -> CoDExLarge
+  匹配: NELL995 -> NELL995
+  匹配: DBpedia100k -> DBpedia100k
+  匹配: ConceptNet100k -> ConceptNet100k
+  匹配: NELL23k -> NELL23k
+  匹配: YAGO310 -> YAGO310
+  匹配: Hetionet -> Hetionet
+  匹配: WDsinger -> WDsinger
+  匹配: AristoV4 -> AristoV4
+  匹配: FB15k237_10 -> FB15k237_10
+  匹配: FB15k237_20 -> FB15k237_20
+  匹配: FB15k237_50 -> FB15k237_50
+  总匹配数: 13/13
+
+基线平均值 (rel_5.pth):
+  mr          : 6.790387
+  mrr         : 0.750394
+  hits@1      : 0.644598
+  hits@3      : 0.000000
+  hits@10     : 0.000000
+
+新结果平均值 (model_epoch_5.pth):
+  mr          : 6.630389
+  mrr         : 0.755027
+  hits@1      : 0.648530
+  hits@3      : 0.000000
+  hits@10     : 0.000000
+
+变化幅度 (%):
+  mr          : +2.3562%
+  mrr         : +0.6174%
+  hits@1      : +0.6100%
+  hits@3      : 0.0000%
+  hits@10     : 0.0000%
+
+【Inductive 数据集组】
+--------------------------------------------------------------------------------
+
+正在匹配 Inductive 组的数据集...
+  可用数据集数量: 54
+  前5个可用数据集: ['FB15k237Inductive(v1)', 'FB15k237Inductive(v2)', 'FB15k237Inductive(v3)', 'FB15k237Inductive(v4)', 'WN18RRInductive(v1)']
+  目标数据集数量: 41
+  前5个目标数据集: ['FB15k237Inductive(v1)', 'FB15k237Inductive(v2)', 'FB15k237Inductive(v3)', 'FB15k237Inductive(v4)', 'WN18RRInductive(v1)']
+  匹配: FB15k237Inductive(v1) -> FB15k237Inductive(v1)
+  匹配: FB15k237Inductive(v2) -> FB15k237Inductive(v2)
+  匹配: FB15k237Inductive(v3) -> FB15k237Inductive(v3)
+  匹配: FB15k237Inductive(v4) -> FB15k237Inductive(v4)
+  匹配: WN18RRInductive(v1) -> WN18RRInductive(v1)
+  匹配: WN18RRInductive(v2) -> WN18RRInductive(v2)
+  匹配: WN18RRInductive(v3) -> WN18RRInductive(v3)
+  匹配: WN18RRInductive(v4) -> WN18RRInductive(v4)
+  匹配: NELLInductive(v1) -> NELLInductive(v1)
+  匹配: NELLInductive(v2) -> NELLInductive(v2)
+  匹配: NELLInductive(v3) -> NELLInductive(v3)
+  匹配: NELLInductive(v4) -> NELLInductive(v4)
+  匹配: ILPC2022(small) -> ILPC2022(small)
+  匹配: ILPC2022(large) -> ILPC2022(large)
+  匹配: HM(1k) -> HM(1k)
+  匹配: HM(3k) -> HM(3k)
+  匹配: HM(5k) -> HM(5k)
+  匹配: HM(indigo) -> HM(indigo)
+  匹配: FBIngram(25) -> FBIngram(25)
+  匹配: FBIngram(50) -> FBIngram(50)
+  匹配: FBIngram(75) -> FBIngram(75)
+  匹配: FBIngram(100) -> FBIngram(100)
+  匹配: WKIngram(25) -> WKIngram(25)
+  匹配: WKIngram(50) -> WKIngram(50)
+  匹配: WKIngram(75) -> WKIngram(75)
+  匹配: WKIngram(100) -> WKIngram(100)
+  匹配: NLIngram(0) -> NLIngram(0)
+  匹配: NLIngram(25) -> NLIngram(25)
+  匹配: NLIngram(50) -> NLIngram(50)
+  匹配: NLIngram(75) -> NLIngram(75)
+  匹配: NLIngram(100) -> NLIngram(100)
+  匹配: WikiTopicsMT1(tax) -> WikiTopicsMT1(tax)
+  匹配: WikiTopicsMT1(health) -> WikiTopicsMT1(health)
+  匹配: WikiTopicsMT2(org) -> WikiTopicsMT2(org)
+  匹配: WikiTopicsMT2(sci) -> WikiTopicsMT2(sci)
+  匹配: WikiTopicsMT3(art) -> WikiTopicsMT3(art)
+  匹配: WikiTopicsMT3(infra) -> WikiTopicsMT3(infra)
+  匹配: WikiTopicsMT4(sci) -> WikiTopicsMT4(sci)
+  匹配: WikiTopicsMT4(health) -> WikiTopicsMT4(health)
+  匹配: Metafam(None) -> Metafam(None)
+  匹配: FBNELL(None) -> FBNELL(None)
+  总匹配数: 41/41
+  可用数据集数量: 54
+  前5个可用数据集: ['CoDExSmall', 'CoDExLarge', 'NELL995', 'DBpedia100k', 'ConceptNet100k']
+  目标数据集数量: 41
+  前5个目标数据集: ['FB15k237Inductive(v1)', 'FB15k237Inductive(v2)', 'FB15k237Inductive(v3)', 'FB15k237Inductive(v4)', 'WN18RRInductive(v1)']
+  匹配: FB15k237Inductive(v1) -> FB15k237Inductive(v1)
+  匹配: FB15k237Inductive(v2) -> FB15k237Inductive(v2)
+  匹配: FB15k237Inductive(v3) -> FB15k237Inductive(v3)
+  匹配: FB15k237Inductive(v4) -> FB15k237Inductive(v4)
+  匹配: WN18RRInductive(v1) -> WN18RRInductive(v1)
+  匹配: WN18RRInductive(v2) -> WN18RRInductive(v2)
+  匹配: WN18RRInductive(v3) -> WN18RRInductive(v3)
+  匹配: WN18RRInductive(v4) -> WN18RRInductive(v4)
+  匹配: NELLInductive(v1) -> NELLInductive(v1)
+  匹配: NELLInductive(v2) -> NELLInductive(v2)
+  匹配: NELLInductive(v3) -> NELLInductive(v3)
+  匹配: NELLInductive(v4) -> NELLInductive(v4)
+  匹配: ILPC2022(small) -> ILPC2022(small)
+  匹配: ILPC2022(large) -> ILPC2022(large)
+  匹配: HM(1k) -> HM(1k)
+  匹配: HM(3k) -> HM(3k)
+  匹配: HM(5k) -> HM(5k)
+  匹配: HM(indigo) -> HM(indigo)
+  匹配: FBIngram(25) -> FBIngram(25)
+  匹配: FBIngram(50) -> FBIngram(50)
+  匹配: FBIngram(75) -> FBIngram(75)
+  匹配: FBIngram(100) -> FBIngram(100)
+  匹配: WKIngram(25) -> WKIngram(25)
+  匹配: WKIngram(50) -> WKIngram(50)
+  匹配: WKIngram(75) -> WKIngram(75)
+  匹配: WKIngram(100) -> WKIngram(100)
+  匹配: NLIngram(0) -> NLIngram(0)
+  匹配: NLIngram(25) -> NLIngram(25)
+  匹配: NLIngram(50) -> NLIngram(50)
+  匹配: NLIngram(75) -> NLIngram(75)
+  匹配: NLIngram(100) -> NLIngram(100)
+  匹配: WikiTopicsMT1(tax) -> WikiTopicsMT1(tax)
+  匹配: WikiTopicsMT1(health) -> WikiTopicsMT1(health)
+  匹配: WikiTopicsMT2(org) -> WikiTopicsMT2(org)
+  匹配: WikiTopicsMT2(sci) -> WikiTopicsMT2(sci)
+  匹配: WikiTopicsMT3(art) -> WikiTopicsMT3(art)
+  匹配: WikiTopicsMT3(infra) -> WikiTopicsMT3(infra)
+  匹配: WikiTopicsMT4(sci) -> WikiTopicsMT4(sci)
+  匹配: WikiTopicsMT4(health) -> WikiTopicsMT4(health)
+  匹配: Metafam(None) -> Metafam(None)
+  匹配: FBNELL(None) -> FBNELL(None)
+  总匹配数: 41/41
+
+基线平均值 (rel_5.pth):
+  mr          : 3.181672
+  mrr         : 0.807656
+  hits@1      : 0.705345
+  hits@3      : 0.000000
+  hits@10     : 0.000000
+
+新结果平均值 (model_epoch_5.pth):
+  mr          : 3.831311
+  mrr         : 0.812516
+  hits@1      : 0.714490
+  hits@3      : 0.000000
+  hits@10     : 0.000000
+
+变化幅度 (%):
+  mr          : -20.4182%
+  mrr         : +0.6018%
+  hits@1      : +1.2965%
+  hits@3      : 0.0000%
+  hits@10     : 0.0000%
+
+
+【所有数据集总体平均】
+================================================================================
+
+基线平均值 (rel_5.pth):
+  mr          : 4.050437
+  mrr         : 0.793870
+  hits@1      : 0.690720
+  hits@3      : 0.000000
+  hits@10     : 0.000000
+
+新结果平均值 (model_epoch_5.pth):
+  mr          : 4.505163
+  mrr         : 0.798676
+  hits@1      : 0.698610
+  hits@3      : 0.000000
+  hits@10     : 0.000000
+
+总体变化幅度 (%):
+  mr          : -11.2266%
+  mrr         : +0.6054%
+  hits@1      : +1.1423%
+  hits@3      : 0.0000%
+  hits@10     : 0.0000%
+
+
+【详细数据集对比】
+================================================================================
+数据集                                      指标       基线           新结果          变化%       
+--------------------------------------------------------------------------------
+CoDExSmall                               mr       1.356670     1.253280     +7.6209   %
+CoDExSmall                               mrr      0.936253     0.955081     +2.0110   %
+CoDExSmall                               hits@1   0.900985     0.926149     +2.7929   %
+CoDExSmall                               hits@3   0.000000     0.000000     0.0000   %
+CoDExSmall                               hits@10  0.000000     0.000000     0.0000   %
+CoDExLarge                               mr       1.678270     1.555250     +7.3302   %
+CoDExLarge                               mrr      0.857705     0.865569     +0.9169   %
+CoDExLarge                               hits@1   0.756907     0.778852     +2.8993   %
+CoDExLarge                               hits@3   0.000000     0.000000     0.0000   %
+CoDExLarge                               hits@10  0.000000     0.000000     0.0000   %
+NELL995                                  mr       20.950300    22.278900    -6.3417  %
+NELL995                                  mrr      0.514677     0.535376     +4.0217   %
+NELL995                                  hits@1   0.394961     0.420156     +6.3791   %
+NELL995                                  hits@3   0.000000     0.000000     0.0000   %
+NELL995                                  hits@10  0.000000     0.000000     0.0000   %
+DBpedia100k                              mr       7.970160     5.319220     +33.2608  %
+DBpedia100k                              mrr      0.739887     0.720830     -2.5757  %
+DBpedia100k                              hits@1   0.615000     0.576280     -6.2959  %
+DBpedia100k                              hits@3   0.000000     0.000000     0.0000   %
+DBpedia100k                              hits@10  0.000000     0.000000     0.0000   %
+ConceptNet100k                           mr       2.414170     2.277500     +5.6612   %
+ConceptNet100k                           mrr      0.642451     0.655670     +2.0576   %
+ConceptNet100k                           hits@1   0.445833     0.457500     +2.6169   %
+ConceptNet100k                           hits@3   0.000000     0.000000     0.0000   %
+ConceptNet100k                           hits@10  0.000000     0.000000     0.0000   %
+NELL23k                                  mr       6.455170     7.721530     -19.6178 %
+NELL23k                                  mrr      0.771772     0.781626     +1.2768   %
+NELL23k                                  hits@1   0.679322     0.685380     +0.8918   %
+NELL23k                                  hits@3   0.000000     0.000000     0.0000   %
+NELL23k                                  hits@10  0.000000     0.000000     0.0000   %
+YAGO310                                  mr       1.542400     1.459000     +5.4072   %
+YAGO310                                  mrr      0.804929     0.807219     +0.2845   %
+YAGO310                                  hits@1   0.633000     0.630200     -0.4423  %
+YAGO310                                  hits@3   0.000000     0.000000     0.0000   %
+YAGO310                                  hits@10  0.000000     0.000000     0.0000   %
+Hetionet                                 mr       1.274190     1.284080     -0.7762  %
+Hetionet                                 mrr      0.899298     0.900293     +0.1106   %
+Hetionet                                 hits@1   0.824896     0.830317     +0.6572   %
+Hetionet                                 hits@3   0.000000     0.000000     0.0000   %
+Hetionet                                 hits@10  0.000000     0.000000     0.0000   %
+WDsinger                                 mr       4.773040     5.879260     -23.1764 %
+WDsinger                                 mrr      0.711003     0.733764     +3.2013   %
+WDsinger                                 hits@1   0.586473     0.619156     +5.5728   %
+WDsinger                                 hits@3   0.000000     0.000000     0.0000   %
+WDsinger                                 hits@10  0.000000     0.000000     0.0000   %
+AristoV4                                 mr       25.388800    23.585900    +7.1012   %
+AristoV4                                 mrr      0.426108     0.426191     +0.0195   %
+AristoV4                                 hits@1   0.310600     0.304900     -1.8352  %
+AristoV4                                 hits@3   0.000000     0.000000     0.0000   %
+AristoV4                                 hits@10  0.000000     0.000000     0.0000   %
+FB15k237_10                              mr       6.053060     6.083750     -0.5070  %
+FB15k237_10                              mrr      0.783146     0.763478     -2.5114  %
+FB15k237_10                              hits@1   0.695372     0.666556     -4.1440  %
+FB15k237_10                              hits@3   0.000000     0.000000     0.0000   %
+FB15k237_10                              hits@10  0.000000     0.000000     0.0000   %
+FB15k237_20                              mr       4.632590     4.512640     +2.5893   %
+FB15k237_20                              mrr      0.818391     0.804586     -1.6868  %
+FB15k237_20                              hits@1   0.743224     0.721430     -2.9324  %
+FB15k237_20                              hits@3   0.000000     0.000000     0.0000   %
+FB15k237_20                              hits@10  0.000000     0.000000     0.0000   %
+FB15k237_50                              mr       3.786210     2.984750     +21.1679  %
+FB15k237_50                              mrr      0.849504     0.865671     +1.9031   %
+FB15k237_50                              hits@1   0.793200     0.814013     +2.6239   %
+FB15k237_50                              hits@3   0.000000     0.000000     0.0000   %
+FB15k237_50                              hits@10  0.000000     0.000000     0.0000   %
+FB15k237Inductive(v1)                    mr       8.058390     14.961100    -85.6587 %
+FB15k237Inductive(v1)                    mrr      0.662690     0.696238     +5.0624   %
+FB15k237Inductive(v1)                    hits@1   0.518248     0.574209     +10.7981  %
+FB15k237Inductive(v1)                    hits@3   0.000000     0.000000     0.0000   %
+FB15k237Inductive(v1)                    hits@10  0.000000     0.000000     0.0000   %
+FB15k237Inductive(v2)                    mr       7.659980     10.192200    -33.0578 %
+FB15k237Inductive(v2)                    mrr      0.686485     0.700568     +2.0515   %
+FB15k237Inductive(v2)                    hits@1   0.539599     0.570222     +5.6751   %
+FB15k237Inductive(v2)                    hits@3   0.000000     0.000000     0.0000   %
+FB15k237Inductive(v2)                    hits@10  0.000000     0.000000     0.0000   %
+FB15k237Inductive(v3)                    mr       6.913920     9.777590     -41.4189 %
+FB15k237Inductive(v3)                    mrr      0.706387     0.722219     +2.2413   %
+FB15k237Inductive(v3)                    hits@1   0.584055     0.610052     +4.4511   %
+FB15k237Inductive(v3)                    hits@3   0.000000     0.000000     0.0000   %
+FB15k237Inductive(v3)                    hits@10  0.000000     0.000000     0.0000   %
+FB15k237Inductive(v4)                    mr       6.447180     6.947540     -7.7609  %
+FB15k237Inductive(v4)                    mrr      0.721929     0.728354     +0.8900   %
+FB15k237Inductive(v4)                    hits@1   0.604577     0.608803     +0.6990   %
+FB15k237Inductive(v4)                    hits@3   0.000000     0.000000     0.0000   %
+FB15k237Inductive(v4)                    hits@10  0.000000     0.000000     0.0000   %
+WN18RRInductive(v1)                      mr       1.420910     1.439680     -1.3210  %
+WN18RRInductive(v1)                      mrr      0.833259     0.837586     +0.5193   %
+WN18RRInductive(v1)                      hits@1   0.697051     0.713137     +2.3077   %
+WN18RRInductive(v1)                      hits@3   0.000000     0.000000     0.0000   %
+WN18RRInductive(v1)                      hits@10  0.000000     0.000000     0.0000   %
+WN18RRInductive(v2)                      mr       1.500000     1.476530     +1.5647   %
+WN18RRInductive(v2)                      mrr      0.809679     0.827295     +2.1757   %
+WN18RRInductive(v2)                      hits@1   0.660798     0.687793     +4.0852   %
+WN18RRInductive(v2)                      hits@3   0.000000     0.000000     0.0000   %
+WN18RRInductive(v2)                      hits@10  0.000000     0.000000     0.0000   %
+WN18RRInductive(v3)                      mr       1.462820     1.422570     +2.7515   %
+WN18RRInductive(v3)                      mrr      0.826679     0.864402     +4.5632   %
+WN18RRInductive(v3)                      hits@1   0.692913     0.766404     +10.6061  %
+WN18RRInductive(v3)                      hits@3   0.000000     0.000000     0.0000   %
+WN18RRInductive(v3)                      hits@10  0.000000     0.000000     0.0000   %
+WN18RRInductive(v4)                      mr       1.554730     1.472190     +5.3090   %
+WN18RRInductive(v4)                      mrr      0.781058     0.803587     +2.8844   %
+WN18RRInductive(v4)                      hits@1   0.604676     0.635140     +5.0381   %
+WN18RRInductive(v4)                      hits@3   0.000000     0.000000     0.0000   %
+WN18RRInductive(v4)                      hits@10  0.000000     0.000000     0.0000   %
+NELLInductive(v1)                        mr       2.179100     2.606970     -19.6352 %
+NELLInductive(v1)                        mrr      0.571310     0.522388     -8.5631  %
+NELLInductive(v1)                        hits@1   0.303483     0.268657     -11.4754 %
+NELLInductive(v1)                        hits@3   0.000000     0.000000     0.0000   %
+NELLInductive(v1)                        hits@10  0.000000     0.000000     0.0000   %
+NELLInductive(v2)                        mr       4.007490     5.077010     -26.6880 %
+NELLInductive(v2)                        mrr      0.800791     0.795959     -0.6034  %
+NELLInductive(v2)                        hits@1   0.727273     0.712299     -2.0589  %
+NELLInductive(v2)                        hits@3   0.000000     0.000000     0.0000   %
+NELLInductive(v2)                        hits@10  0.000000     0.000000     0.0000   %
+NELLInductive(v3)                        mr       4.215430     6.005560     -42.4661 %
+NELLInductive(v3)                        mrr      0.737777     0.761445     +3.2080   %
+NELLInductive(v3)                        hits@1   0.627161     0.658025     +4.9212   %
+NELLInductive(v3)                        hits@3   0.000000     0.000000     0.0000   %
+NELLInductive(v3)                        hits@10  0.000000     0.000000     0.0000   %
+NELLInductive(v4)                        mr       2.811330     3.156190     -12.2668 %
+NELLInductive(v4)                        mrr      0.797521     0.810273     +1.5990   %
+NELLInductive(v4)                        hits@1   0.714582     0.729786     +2.1277   %
+NELLInductive(v4)                        hits@3   0.000000     0.000000     0.0000   %
+NELLInductive(v4)                        hits@10  0.000000     0.000000     0.0000   %
+ILPC2022(small)                          mr       1.490010     1.378700     +7.4704   %
+ILPC2022(small)                          mrr      0.905482     0.925646     +2.2269   %
+ILPC2022(small)                          hits@1   0.848725     0.877671     +3.4105   %
+ILPC2022(small)                          hits@3   0.000000     0.000000     0.0000   %
+ILPC2022(small)                          hits@10  0.000000     0.000000     0.0000   %
+ILPC2022(large)                          mr       1.778970     1.529360     +14.0312  %
+ILPC2022(large)                          mrr      0.853511     0.894381     +4.7885   %
+ILPC2022(large)                          hits@1   0.774352     0.827965     +6.9236   %
+ILPC2022(large)                          hits@3   0.000000     0.000000     0.0000   %
+ILPC2022(large)                          hits@10  0.000000     0.000000     0.0000   %
+HM(1k)                                   mr       1.920170     1.752100     +8.7529   %
+HM(1k)                                   mrr      0.687826     0.736846     +7.1268   %
+HM(1k)                                   hits@1   0.462185     0.539916     +16.8182  %
+HM(1k)                                   hits@3   0.000000     0.000000     0.0000   %
+HM(1k)                                   hits@10  0.000000     0.000000     0.0000   %
+HM(3k)                                   mr       1.934770     1.945890     -0.5747  %
+HM(3k)                                   mrr      0.689938     0.684917     -0.7277  %
+HM(3k)                                   hits@1   0.464789     0.464047     -0.1596  %
+HM(3k)                                   hits@3   0.000000     0.000000     0.0000   %
+HM(3k)                                   hits@10  0.000000     0.000000     0.0000   %
+HM(5k)                                   mr       1.863470     1.924200     -3.2590  %
+HM(5k)                                   mrr      0.700223     0.690967     -1.3219  %
+HM(5k)                                   hits@1   0.474105     0.475989     +0.3974   %
+HM(5k)                                   hits@3   0.000000     0.000000     0.0000   %
+HM(5k)                                   hits@10  0.000000     0.000000     0.0000   %
+HM(indigo)                               mr       2.989600     2.205780     +26.2182  %
+HM(indigo)                               mrr      0.822162     0.843930     +2.6477   %
+HM(indigo)                               hits@1   0.739265     0.763084     +3.2220   %
+HM(indigo)                               hits@3   0.000000     0.000000     0.0000   %
+HM(indigo)                               hits@10  0.000000     0.000000     0.0000   %
+FBIngram(25)                             mr       5.718680     6.064380     -6.0451  %
+FBIngram(25)                             mrr      0.790341     0.800502     +1.2856   %
+FBIngram(25)                             hits@1   0.701190     0.710112     +1.2724   %
+FBIngram(25)                             hits@3   0.000000     0.000000     0.0000   %
+FBIngram(25)                             hits@10  0.000000     0.000000     0.0000   %
+FBIngram(50)                             mr       6.399330     7.544210     -17.8906 %
+FBIngram(50)                             mrr      0.756595     0.776590     +2.6428   %
+FBIngram(50)                             hits@1   0.657902     0.686259     +4.3102   %
+FBIngram(50)                             hits@3   0.000000     0.000000     0.0000   %
+FBIngram(50)                             hits@10  0.000000     0.000000     0.0000   %
+FBIngram(75)                             mr       5.707020     5.883450     -3.0915  %
+FBIngram(75)                             mrr      0.791360     0.809935     +2.3472   %
+FBIngram(75)                             hits@1   0.705409     0.730200     +3.5144   %
+FBIngram(75)                             hits@3   0.000000     0.000000     0.0000   %
+FBIngram(75)                             hits@10  0.000000     0.000000     0.0000   %
+FBIngram(100)                            mr       2.088880     2.101330     -0.5960  %
+FBIngram(100)                            mrr      0.912089     0.922249     +1.1139   %
+FBIngram(100)                            hits@1   0.863031     0.880206     +1.9901   %
+FBIngram(100)                            hits@3   0.000000     0.000000     0.0000   %
+FBIngram(100)                            hits@10  0.000000     0.000000     0.0000   %
+WKIngram(25)                             mr       1.845270     2.308580     -25.1080 %
+WKIngram(25)                             mrr      0.931177     0.913481     -1.9004  %
+WKIngram(25)                             hits@1   0.898320     0.870911     -3.0511  %
+WKIngram(25)                             hits@3   0.000000     0.000000     0.0000   %
+WKIngram(25)                             hits@10  0.000000     0.000000     0.0000   %
+WKIngram(50)                             mr       2.303880     2.693640     -16.9175 %
+WKIngram(50)                             mrr      0.910644     0.907960     -0.2947  %
+WKIngram(50)                             hits@1   0.867287     0.863876     -0.3933  %
+WKIngram(50)                             hits@3   0.000000     0.000000     0.0000   %
+WKIngram(50)                             hits@10  0.000000     0.000000     0.0000   %
+WKIngram(75)                             mr       2.079550     2.416960     -16.2251 %
+WKIngram(75)                             mrr      0.930460     0.926709     -0.4031  %
+WKIngram(75)                             hits@1   0.902972     0.896853     -0.6777  %
+WKIngram(75)                             hits@3   0.000000     0.000000     0.0000   %
+WKIngram(75)                             hits@10  0.000000     0.000000     0.0000   %
+WKIngram(100)                            mr       1.754230     1.671710     +4.7041   %
+WKIngram(100)                            mrr      0.920368     0.923931     +0.3871   %
+WKIngram(100)                            hits@1   0.888568     0.891904     +0.3754   %
+WKIngram(100)                            hits@3   0.000000     0.000000     0.0000   %
+WKIngram(100)                            hits@10  0.000000     0.000000     0.0000   %
+NLIngram(0)                              mr       6.946260     9.429880     -35.7548 %
+NLIngram(0)                              mrr      0.655546     0.652428     -0.4756  %
+NLIngram(0)                              hits@1   0.521625     0.526868     +1.0051   %
+NLIngram(0)                              hits@3   0.000000     0.000000     0.0000   %
+NLIngram(0)                              hits@10  0.000000     0.000000     0.0000   %
+NLIngram(25)                             mr       5.856180     7.095430     -21.1614 %
+NLIngram(25)                             mrr      0.751396     0.737997     -1.7832  %
+NLIngram(25)                             hits@1   0.633065     0.599462     -5.3080  %
+NLIngram(25)                             hits@3   0.000000     0.000000     0.0000   %
+NLIngram(25)                             hits@10  0.000000     0.000000     0.0000   %
+NLIngram(50)                             mr       4.443540     5.455180     -22.7665 %
+NLIngram(50)                             mrr      0.776680     0.764601     -1.5552  %
+NLIngram(50)                             hits@1   0.684517     0.648428     -5.2722  %
+NLIngram(50)                             hits@3   0.000000     0.000000     0.0000   %
+NLIngram(50)                             hits@10  0.000000     0.000000     0.0000   %
+NLIngram(75)                             mr       4.579900     6.405270     -39.8561 %
+NLIngram(75)                             mrr      0.797633     0.812648     +1.8824   %
+NLIngram(75)                             hits@1   0.706755     0.738056     +4.4288   %
+NLIngram(75)                             hits@3   0.000000     0.000000     0.0000   %
+NLIngram(75)                             hits@10  0.000000     0.000000     0.0000   %
+NLIngram(100)                            mr       1.504410     1.518290     -0.9226  %
+NLIngram(100)                            mrr      0.886797     0.874084     -1.4336  %
+NLIngram(100)                            hits@1   0.805801     0.780580     -3.1299  %
+NLIngram(100)                            hits@3   0.000000     0.000000     0.0000   %
+NLIngram(100)                            hits@10  0.000000     0.000000     0.0000   %
+WikiTopicsMT1(tax)                       mr       1.019080     1.031080     -1.1775  %
+WikiTopicsMT1(tax)                       mrr      0.993048     0.989347     -0.3727  %
+WikiTopicsMT1(tax)                       hits@1   0.987459     0.980916     -0.6626  %
+WikiTopicsMT1(tax)                       hits@3   0.000000     0.000000     0.0000   %
+WikiTopicsMT1(tax)                       hits@10  0.000000     0.000000     0.0000   %
+WikiTopicsMT1(health)                    mr       1.240740     1.150700     +7.2570   %
+WikiTopicsMT1(health)                    mrr      0.905981     0.931428     +2.8088   %
+WikiTopicsMT1(health)                    hits@1   0.835888     0.867816     +3.8197   %
+WikiTopicsMT1(health)                    hits@3   0.000000     0.000000     0.0000   %
+WikiTopicsMT1(health)                    hits@10  0.000000     0.000000     0.0000   %
+WikiTopicsMT2(org)                       mr       1.039330     1.032360     +0.6706   %
+WikiTopicsMT2(org)                       mrr      0.985317     0.987571     +0.2288   %
+WikiTopicsMT2(org)                       hits@1   0.973781     0.977059     +0.3366   %
+WikiTopicsMT2(org)                       hits@3   0.000000     0.000000     0.0000   %
+WikiTopicsMT2(org)                       hits@10  0.000000     0.000000     0.0000   %
+WikiTopicsMT2(sci)                       mr       1.066670     1.061820     +0.4547   %
+WikiTopicsMT2(sci)                       mrr      0.983582     0.985465     +0.1914   %
+WikiTopicsMT2(sci)                       hits@1   0.972121     0.976364     +0.4365   %
+WikiTopicsMT2(sci)                       hits@3   0.000000     0.000000     0.0000   %
+WikiTopicsMT2(sci)                       hits@10  0.000000     0.000000     0.0000   %
+WikiTopicsMT3(art)                       mr       1.837780     1.687760     +8.1631   %
+WikiTopicsMT3(art)                       mrr      0.877556     0.892747     +1.7311   %
+WikiTopicsMT3(art)                       hits@1   0.820109     0.830067     +1.2142   %
+WikiTopicsMT3(art)                       hits@3   0.000000     0.000000     0.0000   %
+WikiTopicsMT3(art)                       hits@10  0.000000     0.000000     0.0000   %
+WikiTopicsMT3(infra)                     mr       1.175050     1.227440     -4.4585  %
+WikiTopicsMT3(infra)                     mrr      0.951363     0.908318     -4.5246  %
+WikiTopicsMT3(infra)                     hits@1   0.919751     0.826195     -10.1719 %
+WikiTopicsMT3(infra)                     hits@3   0.000000     0.000000     0.0000   %
+WikiTopicsMT3(infra)                     hits@10  0.000000     0.000000     0.0000   %
+WikiTopicsMT4(sci)                       mr       1.131120     1.097260     +2.9935   %
+WikiTopicsMT4(sci)                       mrr      0.970040     0.969961     -0.0081  %
+WikiTopicsMT4(sci)                       hits@1   0.949568     0.945965     -0.3794  %
+WikiTopicsMT4(sci)                       hits@3   0.000000     0.000000     0.0000   %
+WikiTopicsMT4(sci)                       hits@10  0.000000     0.000000     0.0000   %
+WikiTopicsMT4(health)                    mr       1.140930     1.135060     +0.5145   %
+WikiTopicsMT4(health)                    mrr      0.957087     0.955238     -0.1932  %
+WikiTopicsMT4(health)                    hits@1   0.925426     0.920728     -0.5077  %
+WikiTopicsMT4(health)                    hits@3   0.000000     0.000000     0.0000   %
+WikiTopicsMT4(health)                    hits@10  0.000000     0.000000     0.0000   %
+Metafam(None)                            mr       3.608700     4.668480     -29.3674 %
+Metafam(None)                            mrr      0.330396     0.249731     -24.4146 %
+Metafam(None)                            hits@1   0.032609     0.005435     -83.3333 %
+Metafam(None)                            hits@3   0.000000     0.000000     0.0000   %
+Metafam(None)                            hits@10  0.000000     0.000000     0.0000   %
+FBNELL(None)                             mr       5.753770     7.132330     -23.9592 %
+FBNELL(None)                             mrr      0.753717     0.773242     +2.5905   %
+FBNELL(None)                             hits@1   0.628141     0.656616     +4.5332   %
+FBNELL(None)                             hits@3   0.000000     0.000000     0.0000   %
+FBNELL(None)                             hits@10  0.000000     0.000000     0.0000   %

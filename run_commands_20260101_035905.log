@@ -2,13 +2,13 @@
 [0;32m[INFO][0m 虚拟环境 trix 已激活
 [0;32m[INFO][0m 当前工作目录: /T20030104/ynj/TRIX
 [0;32m[INFO][0m 开始读取命令文件: command_rel.md
-[0;32m[INFO][0m 日志将保存到: run_commands_20251225_065140.log
+[0;32m[INFO][0m 日志将保存到: run_commands_20260101_035905.log
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 1: python src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset CoDExSmall --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
-[0;32m[INFO][0m 开始时间: 2025-12-25 06:51:41
-06:51:43   Random seed: 1024
-06:51:43   Config file: ./config/run_relation_transductive_mech.yaml
-06:51:43   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 1: python ./src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset CoDExSmall --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2026-01-01 03:59:06
+03:59:09   Random seed: 1024
+03:59:09   Config file: ./config/run_relation_transductive_mech.yaml
+03:59:09   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'CoDExSmall',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
  'model': {'class': 'TRIXLatentMechanism',
@@ -45,26 +45,26 @@
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-06:51:43   CoDExSmall dataset
-06:51:43   #train: 32888, #valid: 1827, #test: 1828
-06:51:43   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-06:51:43   Evaluate on test
+03:59:09   CoDExSmall dataset
+03:59:09   #train: 32888, #valid: 1827, #test: 1828
+03:59:10   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+03:59:10   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-06:51:47   mr: 1.35667
-06:51:47   mrr: 0.936253
-06:51:47   hits@1: 0.900985
-06:51:47   hits@3: 0.96663
-06:51:47   hits@10: 0.992888
+03:59:13   mr: 1.26149
+03:59:14   mrr: 0.955035
+03:59:14   hits@1: 0.928337
+03:59:14   hits@3: 0.980853
+03:59:14   hits@10: 0.993435
 [0;32m[INFO][0m ✓ 命令 1 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 06:51:48
+[0;32m[INFO][0m 结束时间: 2026-01-01 03:59:14
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 2: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset CoDExLarge --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
-[0;32m[INFO][0m 开始时间: 2025-12-25 06:51:48
-06:51:50   Random seed: 1024
-06:51:50   Config file: ./config/run_relation_transductive_mech_1.yaml
-06:51:50   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 2: python ./src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset CoDExLarge --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2026-01-01 03:59:14
+03:59:17   Random seed: 1024
+03:59:17   Config file: ./config/run_relation_transductive_mech_1.yaml
+03:59:17   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'CoDExLarge',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
  'model': {'class': 'TRIXLatentMechanism',
@@ -101,26 +101,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-06:51:52   CoDExLarge dataset
-06:51:52   #train: 551193, #valid: 30622, #test: 30622
-06:51:53   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-06:51:53   Evaluate on test
+03:59:19   CoDExLarge dataset
+03:59:19   #train: 551193, #valid: 30622, #test: 30622
+03:59:19   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+03:59:19   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-08:05:34   mr: 1.67827
-08:05:34   mrr: 0.857705
-08:05:34   hits@1: 0.756907
-08:05:34   hits@3: 0.956796
-08:05:34   hits@10: 0.988766
+05:12:55   mr: 1.56234
+05:12:55   mrr: 0.873615
+05:12:55   hits@1: 0.789955
+05:12:55   hits@3: 0.956208
+05:12:55   hits@10: 0.991999
 [0;32m[INFO][0m ✓ 命令 2 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 08:05:34
+[0;32m[INFO][0m 结束时间: 2026-01-01 05:12:55
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 3: python src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset NELL995 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
-[0;32m[INFO][0m 开始时间: 2025-12-25 08:05:34
-08:05:37   Random seed: 1024
-08:05:37   Config file: ./config/run_relation_transductive_mech.yaml
-08:05:37   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 3: python ./src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset NELL995 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2026-01-01 05:12:55
+05:12:58   Random seed: 1024
+05:12:58   Config file: ./config/run_relation_transductive_mech.yaml
+05:12:58   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'NELL995',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
  'model': {'class': 'TRIXLatentMechanism',
@@ -157,26 +157,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-08:05:37   NELL995 dataset
-08:05:37   #train: 149678, #valid: 543, #test: 2818
-08:05:37   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-08:05:37   Evaluate on test
+05:12:58   NELL995 dataset
+05:12:58   #train: 149678, #valid: 543, #test: 2818
+05:12:59   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:12:59   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-08:06:07   mr: 20.9503
-08:06:07   mrr: 0.514677
-08:06:07   hits@1: 0.394961
-08:06:07   hits@3: 0.592619
-08:06:07   hits@10: 0.748403
+05:13:29   mr: 21.4418
+05:13:29   mrr: 0.544427
+05:13:29   hits@1: 0.433286
+05:13:29   hits@3: 0.605394
+05:13:29   hits@10: 0.758694
 [0;32m[INFO][0m ✓ 命令 3 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 08:06:08
+[0;32m[INFO][0m 结束时间: 2026-01-01 05:13:29
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 4: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset DBpedia100k --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
-[0;32m[INFO][0m 开始时间: 2025-12-25 08:06:08
-08:06:10   Random seed: 1024
-08:06:10   Config file: ./config/run_relation_transductive_mech_1.yaml
-08:06:10   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 4: python ./src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset DBpedia100k --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2026-01-01 05:13:29
+05:13:32   Random seed: 1024
+05:13:32   Config file: ./config/run_relation_transductive_mech_1.yaml
+05:13:32   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'DBpedia100k',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
  'model': {'class': 'TRIXLatentMechanism',
@@ -213,26 +213,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-08:06:11   DBpedia100k dataset
-08:06:11   #train: 597572, #valid: 50000, #test: 50000
-08:06:12   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-08:06:12   Evaluate on test
+05:13:34   DBpedia100k dataset
+05:13:34   #train: 597572, #valid: 50000, #test: 50000
+05:13:34   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05:13:34   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-09:20:37   mr: 7.97016
-09:20:37   mrr: 0.739887
-09:20:37   hits@1: 0.615
-09:20:37   hits@3: 0.84164
-09:20:37   hits@10: 0.93632
+06:27:52   mr: 8.50786
+06:27:52   mrr: 0.754995
+06:27:52   hits@1: 0.62954
+06:27:52   hits@3: 0.8617
+06:27:52   hits@10: 0.94724
 [0;32m[INFO][0m ✓ 命令 4 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 09:20:37
+[0;32m[INFO][0m 结束时间: 2026-01-01 06:27:52
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 5: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset ConceptNet100k --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
-[0;32m[INFO][0m 开始时间: 2025-12-25 09:20:37
-09:20:40   Random seed: 1024
-09:20:40   Config file: ./config/run_relation_transductive_mech_1.yaml
-09:20:40   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 5: python ./src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset ConceptNet100k --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2026-01-01 06:27:52
+06:27:55   Random seed: 1024
+06:27:55   Config file: ./config/run_relation_transductive_mech_1.yaml
+06:27:55   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'ConceptNet100k',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
  'model': {'class': 'TRIXLatentMechanism',
@@ -269,26 +269,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-09:20:40   ConceptNet100k dataset
-09:20:40   #train: 100000, #valid: 1200, #test: 1200
-09:20:41   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-09:20:41   Evaluate on test
+06:27:55   ConceptNet100k dataset
+06:27:55   #train: 100000, #valid: 1200, #test: 1200
+06:27:56   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+06:27:56   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-09:21:08   mr: 2.41417
-09:21:08   mrr: 0.642451
-09:21:08   hits@1: 0.445833
-09:21:08   hits@3: 0.795833
-09:21:08   hits@10: 0.989167
+06:28:23   mr: 2.1325
+06:28:23   mrr: 0.703755
+06:28:23   hits@1: 0.533333
+06:28:23   hits@3: 0.8475
+06:28:23   hits@10: 0.9875
 [0;32m[INFO][0m ✓ 命令 5 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 09:21:08
+[0;32m[INFO][0m 结束时间: 2026-01-01 06:28:23
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 6: python src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset NELL23k --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
-[0;32m[INFO][0m 开始时间: 2025-12-25 09:21:08
-09:21:11   Random seed: 1024
-09:21:11   Config file: ./config/run_relation_transductive_mech.yaml
-09:21:11   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 6: python ./src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset NELL23k --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2026-01-01 06:28:23
+06:28:26   Random seed: 1024
+06:28:26   Config file: ./config/run_relation_transductive_mech.yaml
+06:28:26   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'NELL23k',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
  'model': {'class': 'TRIXLatentMechanism',
@@ -325,26 +325,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-09:21:11   NELL23k dataset
-09:21:11   #train: 25445, #valid: 4961, #test: 4952
-09:21:12   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-09:21:12   Evaluate on test
+06:28:26   NELL23k dataset
+06:28:26   #train: 25445, #valid: 4961, #test: 4952
+06:28:26   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+06:28:26   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-09:21:29   mr: 6.45517
-09:21:29   mrr: 0.771772
-09:21:29   hits@1: 0.679322
-09:21:29   hits@3: 0.845113
-09:21:29   hits@10: 0.926696
+06:28:44   mr: 6.63207
+06:28:44   mrr: 0.768192
+06:28:44   hits@1: 0.666801
+06:28:44   hits@3: 0.852787
+06:28:44   hits@10: 0.925081
 [0;32m[INFO][0m ✓ 命令 6 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 09:21:30
+[0;32m[INFO][0m 结束时间: 2026-01-01 06:28:44
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 7: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset YAGO310 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
-[0;32m[INFO][0m 开始时间: 2025-12-25 09:21:30
-09:21:32   Random seed: 1024
-09:21:32   Config file: ./config/run_relation_transductive_mech_1.yaml
-09:21:32   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 7: python ./src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset YAGO310 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2026-01-01 06:28:44
+06:28:47   Random seed: 1024
+06:28:47   Config file: ./config/run_relation_transductive_mech_1.yaml
+06:28:47   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'YAGO310',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
  'model': {'class': 'TRIXLatentMechanism',
@@ -381,26 +381,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-09:21:34   YAGO310 dataset
-09:21:34   #train: 1079040, #valid: 5000, #test: 5000
-09:21:35   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-09:21:35   Evaluate on test
+06:28:48   YAGO310 dataset
+06:28:48   #train: 1079040, #valid: 5000, #test: 5000
+06:28:49   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+06:28:49   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-09:33:35   mr: 1.5424
-09:33:35   mrr: 0.804929
-09:33:35   hits@1: 0.633
-09:33:35   hits@3: 0.9728
-09:33:35   hits@10: 0.995
+06:40:48   mr: 1.5336
+06:40:48   mrr: 0.799923
+06:40:48   hits@1: 0.6236
+06:40:48   hits@3: 0.9826
+06:40:48   hits@10: 0.9948
 [0;32m[INFO][0m ✓ 命令 7 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 09:33:36
+[0;32m[INFO][0m 结束时间: 2026-01-01 06:40:48
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 8: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset Hetionet --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
-[0;32m[INFO][0m 开始时间: 2025-12-25 09:33:36
-09:33:38   Random seed: 1024
-09:33:38   Config file: ./config/run_relation_transductive_mech_1.yaml
-09:33:38   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 8: python ./src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset Hetionet --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2026-01-01 06:40:48
+06:40:51   Random seed: 1024
+06:40:51   Config file: ./config/run_relation_transductive_mech_1.yaml
+06:40:51   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'Hetionet',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
  'model': {'class': 'TRIXLatentMechanism',
@@ -437,26 +437,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-09:33:40   Hetionet dataset
-09:33:40   #train: 2025177, #valid: 112510, #test: 112510
-09:33:41   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-09:33:41   Evaluate on test
+06:40:53   Hetionet dataset
+06:40:53   #train: 2025177, #valid: 112510, #test: 112510
+06:40:54   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+06:40:54   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-12:13:54   mr: 1.27419
-12:13:54   mrr: 0.899298
-12:13:54   hits@1: 0.824896
-12:13:54   hits@3: 0.987797
-12:13:54   hits@10: 0.999662
+09:20:59   mr: 1.3776
+09:20:59   mrr: 0.863173
+09:20:59   hits@1: 0.775024
+09:20:59   hits@3: 0.995805
+09:20:59   hits@10: 0.999876
 [0;32m[INFO][0m ✓ 命令 8 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 12:13:55
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:21:00
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 9: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset WDsinger --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
-[0;32m[INFO][0m 开始时间: 2025-12-25 12:13:55
-12:13:58   Random seed: 1024
-12:13:58   Config file: ./config/run_relation_transductive_mech_1.yaml
-12:13:58   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 9: python ./src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset WDsinger --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:21:00
+09:21:03   Random seed: 1024
+09:21:03   Config file: ./config/run_relation_transductive_mech_1.yaml
+09:21:03   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WDsinger',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
  'model': {'class': 'TRIXLatentMechanism',
@@ -493,26 +493,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-12:13:58   WDsinger dataset
-12:13:58   #train: 16142, #valid: 2163, #test: 2203
-12:13:58   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-12:13:58   Evaluate on test
+09:21:03   WDsinger dataset
+09:21:03   #train: 16142, #valid: 2163, #test: 2203
+09:21:03   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:21:03   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-12:14:08   mr: 4.77304
-12:14:08   mrr: 0.711003
-12:14:08   hits@1: 0.586473
-12:14:08   hits@3: 0.81616
-12:14:08   hits@10: 0.905583
+09:21:13   mr: 5.46346
+09:21:13   mrr: 0.718874
+09:21:13   hits@1: 0.605538
+09:21:13   hits@3: 0.817068
+09:21:13   hits@10: 0.891966
 [0;32m[INFO][0m ✓ 命令 9 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 12:14:08
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:21:14
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 10: python src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset AristoV4 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
-[0;32m[INFO][0m 开始时间: 2025-12-25 12:14:09
-12:14:11   Random seed: 1024
-12:14:11   Config file: ./config/run_relation_transductive_mech_1.yaml
-12:14:11   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 10: python ./src/run_relation.py -c ./config/run_relation_transductive_mech_1.yaml --dataset AristoV4 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:21:14
+09:21:16   Random seed: 1024
+09:21:16   Config file: ./config/run_relation_transductive_mech_1.yaml
+09:21:16   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'AristoV4',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
  'model': {'class': 'TRIXLatentMechanism',
@@ -549,24 +549,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-12:14:17   AristoV4 dataset
-12:14:17   #train: 242567, #valid: 20000, #test: 20000
-12:14:18   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-12:14:18   Evaluate on test
+09:21:22   AristoV4 dataset
+09:21:22   #train: 242567, #valid: 20000, #test: 20000
+09:21:23   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:21:23   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-12:41:09   mr: 25.3888
-12:41:09   mrr: 0.426108
-12:41:09   hits@1: 0.3106
-12:41:09   hits@3: 0.4676
-12:41:09   hits@10: 0.66395
-
-[0;32m[INFO][0m 执行命令 1: python ./src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset FB15k237_10 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
-[0;32m[INFO][0m 开始时间: 2025-12-25 13:35:05
-13:35:08   Random seed: 1024
-13:35:08   Config file: ./config/run_relation_transductive_mech.yaml
-13:35:08   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+09:48:11   mr: 26.0514
+09:48:11   mrr: 0.429254
+09:48:11   hits@1: 0.3046
+09:48:11   hits@3: 0.4837
+09:48:11   hits@10: 0.68305
+[0;32m[INFO][0m ✓ 命令 10 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:48:12
+[0;32m[INFO][0m ==========================================
+[0;32m[INFO][0m 执行命令 11: python ./src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset FB15k237_10 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:48:12
+09:48:15   Random seed: 1024
+09:48:15   Config file: ./config/run_relation_transductive_mech.yaml
+09:48:15   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'FB15k237_10',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
  'model': {'class': 'TRIXLatentMechanism',
@@ -603,26 +605,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-13:35:08   FB15k237_10 dataset
-13:35:08   #train: 27211, #valid: 15624, #test: 18150
-13:35:08   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-13:35:08   Evaluate on test
+09:48:15   FB15k237_10 dataset
+09:48:15   #train: 27211, #valid: 15624, #test: 18150
+09:48:15   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:48:15   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-13:35:49   mr: 6.05306
-13:35:49   mrr: 0.783146
-13:35:49   hits@1: 0.695372
-13:35:49   hits@3: 0.85449
-13:35:49   hits@10: 0.92876
-[0;32m[INFO][0m ✓ 命令 1 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 13:35:51
+09:48:55   mr: 6.19118
+09:48:55   mrr: 0.755717
+09:48:55   hits@1: 0.666832
+09:48:55   hits@3: 0.821047
+09:48:55   hits@10: 0.920661
+[0;32m[INFO][0m ✓ 命令 11 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:48:56
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 2: python ./src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset FB15k237_20 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
-[0;32m[INFO][0m 开始时间: 2025-12-25 13:35:51
-13:35:53   Random seed: 1024
-13:35:53   Config file: ./config/run_relation_transductive_mech.yaml
-13:35:53   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 12: python ./src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset FB15k237_20 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:48:56
+09:48:58   Random seed: 1024
+09:48:58   Config file: ./config/run_relation_transductive_mech.yaml
+09:48:58   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'FB15k237_20',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
  'model': {'class': 'TRIXLatentMechanism',
@@ -659,26 +661,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-13:35:54   FB15k237_20 dataset
-13:35:54   #train: 54423, #valid: 16963, #test: 19776
-13:35:54   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-13:35:54   Evaluate on test
+09:48:58   FB15k237_20 dataset
+09:48:58   #train: 54423, #valid: 16963, #test: 19776
+09:48:59   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:48:59   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-13:36:58   mr: 4.63259
-13:36:58   mrr: 0.818391
-13:36:58   hits@1: 0.743224
-13:36:58   hits@3: 0.875455
-13:36:58   hits@10: 0.948119
-[0;32m[INFO][0m ✓ 命令 2 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 13:36:58
+09:50:02   mr: 4.55163
+09:50:02   mrr: 0.796412
+09:50:02   hits@1: 0.717081
+09:50:02   hits@3: 0.853257
+09:50:02   hits@10: 0.949535
+[0;32m[INFO][0m ✓ 命令 12 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:50:03
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 3: python ./src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset FB15k237_50 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0]
-[0;32m[INFO][0m 开始时间: 2025-12-25 13:36:58
-13:37:01   Random seed: 1024
-13:37:01   Config file: ./config/run_relation_transductive_mech.yaml
-13:37:01   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 13: python ./src/run_relation.py -c ./config/run_relation_transductive_mech.yaml --dataset FB15k237_50 --epochs 0 --bpe null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0]
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:50:03
+09:50:06   Random seed: 1024
+09:50:06   Config file: ./config/run_relation_transductive_mech.yaml
+09:50:06   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'FB15k237_50',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/'},
  'model': {'class': 'TRIXLatentMechanism',
@@ -715,25 +717,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-13:37:02   FB15k237_50 dataset
-13:37:02   #train: 136057, #valid: 17449, #test: 20324
-13:37:02   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-13:37:02   Evaluate on test
+09:50:06   FB15k237_50 dataset
+09:50:06   #train: 136057, #valid: 17449, #test: 20324
+09:50:06   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:50:06   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-13:39:12   mr: 3.78621
-13:39:12   mrr: 0.849504
-13:39:12   hits@1: 0.7932
-13:39:12   hits@3: 0.886144
-13:39:12   hits@10: 0.958916
-
+09:52:16   mr: 3.01678
+09:52:16   mrr: 0.874973
+09:52:16   hits@1: 0.82346
+09:52:16   hits@3: 0.910303
+09:52:16   hits@10: 0.969248
+[0;32m[INFO][0m ✓ 命令 13 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:52:17
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 1: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FB15k237Inductive --version v1 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:10:28
-04:10:31   Random seed: 1024
-04:10:31   Config file: ./config/run_relation_inductive_mech.yaml
-04:10:31   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 14: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FB15k237Inductive --version v1 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:52:17
+09:52:20   Random seed: 1024
+09:52:20   Config file: ./config/run_relation_inductive_mech.yaml
+09:52:20   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'FB15k237Inductive',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'v1'},
@@ -771,26 +774,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:10:31   FB15k237Inductive(v1) dataset
-04:10:31   #train: 4245, #valid: 489, #test: 411
-04:10:31   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:10:31   Evaluate on test
+09:52:20   FB15k237Inductive(v1) dataset
+09:52:20   #train: 4245, #valid: 489, #test: 411
+09:52:20   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:52:20   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:10:32   mr: 8.05839
-04:10:32   mrr: 0.66269
-04:10:32   hits@1: 0.518248
-04:10:32   hits@3: 0.781022
-04:10:32   hits@10: 0.900243
-[0;32m[INFO][0m ✓ 命令 1 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:10:33
+09:52:21   mr: 11.6837
+09:52:21   mrr: 0.670076
+09:52:21   hits@1: 0.549878
+09:52:21   hits@3: 0.761557
+09:52:21   hits@10: 0.888078
+[0;32m[INFO][0m ✓ 命令 14 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:52:22
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 2: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FB15k237Inductive --version v2 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:10:33
-04:10:35   Random seed: 1024
-04:10:35   Config file: ./config/run_relation_inductive_mech.yaml
-04:10:35   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 15: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FB15k237Inductive --version v2 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:52:22
+09:52:24   Random seed: 1024
+09:52:24   Config file: ./config/run_relation_inductive_mech.yaml
+09:52:24   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'FB15k237Inductive',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'v2'},
@@ -828,26 +831,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:10:36   FB15k237Inductive(v2) dataset
-04:10:36   #train: 9739, #valid: 1166, #test: 947
-04:10:36   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:10:36   Evaluate on test
+09:52:24   FB15k237Inductive(v2) dataset
+09:52:25   #train: 9739, #valid: 1166, #test: 947
+09:52:25   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:52:25   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:10:37   mr: 7.65998
-04:10:37   mrr: 0.686485
-04:10:37   hits@1: 0.539599
-04:10:37   hits@3: 0.807814
-04:10:37   hits@10: 0.911299
-[0;32m[INFO][0m ✓ 命令 2 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:10:38
+09:52:26   mr: 8.78564
+09:52:26   mrr: 0.697876
+09:52:26   hits@1: 0.577614
+09:52:26   hits@3: 0.791975
+09:52:26   hits@10: 0.904963
+[0;32m[INFO][0m ✓ 命令 15 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:52:27
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 3: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FB15k237Inductive --version v3 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:10:38
-04:10:41   Random seed: 1024
-04:10:41   Config file: ./config/run_relation_inductive_mech.yaml
-04:10:41   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 16: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FB15k237Inductive --version v3 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:52:27
+09:52:30   Random seed: 1024
+09:52:30   Config file: ./config/run_relation_inductive_mech.yaml
+09:52:30   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'FB15k237Inductive',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'v3'},
@@ -885,26 +888,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:10:41   FB15k237Inductive(v3) dataset
-04:10:41   #train: 17986, #valid: 2194, #test: 1731
-04:10:41   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:10:41   Evaluate on test
+09:52:30   FB15k237Inductive(v3) dataset
+09:52:30   #train: 17986, #valid: 2194, #test: 1731
+09:52:30   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:52:30   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:10:43   mr: 6.91392
-04:10:43   mrr: 0.706387
-04:10:43   hits@1: 0.584055
-04:10:43   hits@3: 0.798382
-04:10:43   hits@10: 0.916233
-[0;32m[INFO][0m ✓ 命令 3 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:10:44
+09:52:33   mr: 8.47718
+09:52:33   mrr: 0.719855
+09:52:33   hits@1: 0.614096
+09:52:33   hits@3: 0.796072
+09:52:33   hits@10: 0.912189
+[0;32m[INFO][0m ✓ 命令 16 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:52:33
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 4: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FB15k237Inductive --version v4 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:10:44
-04:10:47   Random seed: 1024
-04:10:47   Config file: ./config/run_relation_inductive_mech.yaml
-04:10:47   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 17: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FB15k237Inductive --version v4 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:52:34
+09:52:36   Random seed: 1024
+09:52:36   Config file: ./config/run_relation_inductive_mech.yaml
+09:52:36   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'FB15k237Inductive',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'v4'},
@@ -942,26 +945,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:10:47   FB15k237Inductive(v4) dataset
-04:10:47   #train: 27203, #valid: 3352, #test: 2840
-04:10:47   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:10:47   Evaluate on test
+09:52:36   FB15k237Inductive(v4) dataset
+09:52:36   #train: 27203, #valid: 3352, #test: 2840
+09:52:37   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:52:37   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:10:51   mr: 6.44718
-04:10:51   mrr: 0.721929
-04:10:51   hits@1: 0.604577
-04:10:51   hits@3: 0.809859
-04:10:51   hits@10: 0.927817
-[0;32m[INFO][0m ✓ 命令 4 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:10:51
+09:52:40   mr: 6.84225
+09:52:40   mrr: 0.722201
+09:52:40   hits@1: 0.604225
+09:52:40   hits@3: 0.809155
+09:52:40   hits@10: 0.926056
+[0;32m[INFO][0m ✓ 命令 17 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:52:41
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 5: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WN18RRInductive --version v1 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:10:51
-04:10:54   Random seed: 1024
-04:10:54   Config file: ./config/run_relation_inductive_mech.yaml
-04:10:54   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 18: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WN18RRInductive --version v1 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:52:41
+09:52:44   Random seed: 1024
+09:52:44   Config file: ./config/run_relation_inductive_mech.yaml
+09:52:44   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WN18RRInductive',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'v1'},
@@ -999,26 +1002,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:10:54   WN18RRInductive(v1) dataset
-04:10:54   #train: 5410, #valid: 630, #test: 373
-04:10:54   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:10:54   Evaluate on test
+09:52:44   WN18RRInductive(v1) dataset
+09:52:44   #train: 5410, #valid: 630, #test: 373
+09:52:44   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:52:44   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:10:55   mr: 1.42091
-04:10:55   mrr: 0.833259
-04:10:55   hits@1: 0.697051
-04:10:55   hits@3: 0.991957
-04:10:55   hits@10: 1
-[0;32m[INFO][0m ✓ 命令 5 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:10:56
+09:52:45   mr: 1.52547
+09:52:45   mrr: 0.819042
+09:52:45   hits@1: 0.689008
+09:52:45   hits@3: 0.935657
+09:52:45   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 18 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:52:46
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 6: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WN18RRInductive --version v2 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:10:56
-04:10:59   Random seed: 1024
-04:10:59   Config file: ./config/run_relation_inductive_mech.yaml
-04:10:59   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 19: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WN18RRInductive --version v2 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:52:46
+09:52:48   Random seed: 1024
+09:52:48   Config file: ./config/run_relation_inductive_mech.yaml
+09:52:49   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WN18RRInductive',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'v2'},
@@ -1056,26 +1059,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:10:59   WN18RRInductive(v2) dataset
-04:10:59   #train: 15262, #valid: 1838, #test: 852
-04:10:59   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:10:59   Evaluate on test
+09:52:49   WN18RRInductive(v2) dataset
+09:52:49   #train: 15262, #valid: 1838, #test: 852
+09:52:50   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:52:50   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:11:01   mr: 1.5
-04:11:01   mrr: 0.809679
-04:11:01   hits@1: 0.660798
-04:11:01   hits@3: 0.976526
-04:11:01   hits@10: 1
-[0;32m[INFO][0m ✓ 命令 6 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:11:01
+09:52:51   mr: 1.50822
+09:52:51   mrr: 0.828631
+09:52:51   hits@1: 0.703052
+09:52:51   hits@3: 0.951878
+09:52:51   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 19 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:52:52
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 7: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WN18RRInductive --version v3 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:11:01
-04:11:04   Random seed: 1024
-04:11:04   Config file: ./config/run_relation_inductive_mech.yaml
-04:11:04   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 20: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WN18RRInductive --version v3 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:52:52
+09:52:55   Random seed: 1024
+09:52:55   Config file: ./config/run_relation_inductive_mech.yaml
+09:52:55   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WN18RRInductive',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'v3'},
@@ -1113,26 +1116,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:11:04   WN18RRInductive(v3) dataset
-04:11:04   #train: 25901, #valid: 3097, #test: 1143
-04:11:04   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:11:04   Evaluate on test
+09:52:55   WN18RRInductive(v3) dataset
+09:52:55   #train: 25901, #valid: 3097, #test: 1143
+09:52:55   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:52:55   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:11:06   mr: 1.46282
-04:11:06   mrr: 0.826679
-04:11:06   hits@1: 0.692913
-04:11:06   hits@3: 0.956255
-04:11:06   hits@10: 1
-[0;32m[INFO][0m ✓ 命令 7 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:11:07
+09:52:57   mr: 1.55556
+09:52:57   mrr: 0.822456
+09:52:57   hits@1: 0.709536
+09:52:57   hits@3: 0.934383
+09:52:57   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 20 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:52:58
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 8: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WN18RRInductive --version v4 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:11:07
-04:11:09   Random seed: 1024
-04:11:09   Config file: ./config/run_relation_inductive_mech.yaml
-04:11:09   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 21: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WN18RRInductive --version v4 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:52:58
+09:53:00   Random seed: 1024
+09:53:00   Config file: ./config/run_relation_inductive_mech.yaml
+09:53:00   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WN18RRInductive',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'v4'},
@@ -1170,26 +1173,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:11:09   WN18RRInductive(v4) dataset
-04:11:09   #train: 7940, #valid: 934, #test: 2823
-04:11:10   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:11:10   Evaluate on test
+09:53:00   WN18RRInductive(v4) dataset
+09:53:00   #train: 7940, #valid: 934, #test: 2823
+09:53:01   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:53:01   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:11:17   mr: 1.55473
-04:11:17   mrr: 0.781058
-04:11:17   hits@1: 0.604676
-04:11:17   hits@3: 0.969182
-04:11:17   hits@10: 1
-[0;32m[INFO][0m ✓ 命令 8 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:11:17
+09:53:08   mr: 1.51966
+09:53:08   mrr: 0.792173
+09:53:08   hits@1: 0.620971
+09:53:08   hits@3: 0.982288
+09:53:08   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 21 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:53:09
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 9: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NELLInductive --version v1 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:11:18
-04:11:20   Random seed: 1024
-04:11:20   Config file: ./config/run_relation_inductive_mech.yaml
-04:11:20   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 22: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NELLInductive --version v1 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:53:09
+09:53:11   Random seed: 1024
+09:53:11   Config file: ./config/run_relation_inductive_mech.yaml
+09:53:11   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'NELLInductive',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'v1'},
@@ -1227,26 +1230,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:11:20   NELLInductive(v1) dataset
-04:11:20   #train: 4687, #valid: 414, #test: 201
-04:11:21   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:11:21   Evaluate on test
+09:53:11   NELLInductive(v1) dataset
+09:53:11   #train: 4687, #valid: 414, #test: 201
+09:53:12   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:53:12   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:11:21   mr: 2.1791
-04:11:21   mrr: 0.57131
-04:11:21   hits@1: 0.303483
-04:11:21   hits@3: 1
-04:11:21   hits@10: 1
-[0;32m[INFO][0m ✓ 命令 9 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:11:22
+09:53:12   mr: 2.51741
+09:53:12   mrr: 0.550047
+09:53:13   hits@1: 0.308458
+09:53:13   hits@3: 0.621891
+09:53:13   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 22 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:53:13
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 10: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NELLInductive --version v2 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:11:22
-04:11:25   Random seed: 1024
-04:11:25   Config file: ./config/run_relation_inductive_mech.yaml
-04:11:25   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 23: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NELLInductive --version v2 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:53:13
+09:53:16   Random seed: 1024
+09:53:16   Config file: ./config/run_relation_inductive_mech.yaml
+09:53:16   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'NELLInductive',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'v2'},
@@ -1284,26 +1287,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:11:25   NELLInductive(v2) dataset
-04:11:25   #train: 8219, #valid: 922, #test: 935
-04:11:25   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:11:25   Evaluate on test
+09:53:19   NELLInductive(v2) dataset
+09:53:19   #train: 8219, #valid: 922, #test: 935
+09:53:19   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:53:20   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:11:27   mr: 4.00749
-04:11:27   mrr: 0.800791
-04:11:27   hits@1: 0.727273
-04:11:27   hits@3: 0.857754
-04:11:27   hits@10: 0.91123
-[0;32m[INFO][0m ✓ 命令 10 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:11:27
+09:53:22   mr: 4.4385
+09:53:22   mrr: 0.778184
+09:53:22   hits@1: 0.695187
+09:53:22   hits@3: 0.841711
+09:53:22   hits@10: 0.920856
+[0;32m[INFO][0m ✓ 命令 23 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:53:23
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 11: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NELLInductive --version v3 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:11:27
-04:11:30   Random seed: 1024
-04:11:30   Config file: ./config/run_relation_inductive_mech.yaml
-04:11:30   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 24: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NELLInductive --version v3 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:53:23
+09:53:26   Random seed: 1024
+09:53:26   Config file: ./config/run_relation_inductive_mech.yaml
+09:53:26   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'NELLInductive',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'v3'},
@@ -1341,26 +1344,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:11:30   NELLInductive(v3) dataset
-04:11:30   #train: 16393, #valid: 1851, #test: 1620
-04:11:30   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:11:30   Evaluate on test
+09:53:26   NELLInductive(v3) dataset
+09:53:26   #train: 16393, #valid: 1851, #test: 1620
+09:53:26   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:53:26   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:11:33   mr: 4.21543
-04:11:33   mrr: 0.737777
-04:11:34   hits@1: 0.627161
-04:11:35   hits@3: 0.823457
-04:11:35   hits@10: 0.937037
-[0;32m[INFO][0m ✓ 命令 11 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:11:35
+09:53:28   mr: 4.72654
+09:53:28   mrr: 0.734791
+09:53:28   hits@1: 0.615432
+09:53:28   hits@3: 0.837654
+09:53:28   hits@10: 0.941975
+[0;32m[INFO][0m ✓ 命令 24 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:53:29
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 12: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NELLInductive --version v4 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:11:35
-04:11:38   Random seed: 1024
-04:11:38   Config file: ./config/run_relation_inductive_mech.yaml
-04:11:38   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 25: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NELLInductive --version v4 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:53:29
+09:53:32   Random seed: 1024
+09:53:32   Config file: ./config/run_relation_inductive_mech.yaml
+09:53:32   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'NELLInductive',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'v4'},
@@ -1398,26 +1401,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:11:38   NELLInductive(v4) dataset
-04:11:38   #train: 7546, #valid: 876, #test: 1447
-04:11:38   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:11:38   Evaluate on test
+09:53:32   NELLInductive(v4) dataset
+09:53:32   #train: 7546, #valid: 876, #test: 1447
+09:53:32   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:53:32   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:11:40   mr: 2.81133
-04:11:40   mrr: 0.797521
-04:11:40   hits@1: 0.714582
-04:11:40   hits@3: 0.852799
-04:11:40   hits@10: 0.946786
-[0;32m[INFO][0m ✓ 命令 12 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:11:41
+09:53:34   mr: 3.20663
+09:53:34   mrr: 0.801317
+09:53:34   hits@1: 0.720802
+09:53:34   hits@3: 0.857637
+09:53:34   hits@10: 0.947478
+[0;32m[INFO][0m ✓ 命令 25 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:53:35
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 13: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset ILPC2022 --version small --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:11:41
-04:11:43   Random seed: 1024
-04:11:43   Config file: ./config/run_relation_inductive_mech.yaml
-04:11:43   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 26: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset ILPC2022 --version small --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:53:35
+09:53:37   Random seed: 1024
+09:53:37   Config file: ./config/run_relation_inductive_mech.yaml
+09:53:37   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'ILPC2022',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'small'},
@@ -1455,26 +1458,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:11:45   ILPC2022(small) dataset
-04:11:45   #train: 78616, #valid: 2908, #test: 2902
-04:11:45   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:11:45   Evaluate on test
+09:53:39   ILPC2022(small) dataset
+09:53:39   #train: 78616, #valid: 2908, #test: 2902
+09:53:40   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:53:40   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:11:52   mr: 1.49001
-04:11:52   mrr: 0.905482
-04:11:52   hits@1: 0.848725
-04:11:52   hits@3: 0.95796
-04:11:52   hits@10: 0.987939
-[0;32m[INFO][0m ✓ 命令 13 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:11:53
+09:53:47   mr: 1.37974
+09:53:47   mrr: 0.922276
+09:53:47   hits@1: 0.875603
+09:53:47   hits@3: 0.963818
+09:53:47   hits@10: 0.991385
+[0;32m[INFO][0m ✓ 命令 26 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:53:47
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 14: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset ILPC2022 --version large --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:11:53
-04:11:55   Random seed: 1024
-04:11:55   Config file: ./config/run_relation_inductive_mech.yaml
-04:11:55   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 27: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset ILPC2022 --version large --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:53:47
+09:53:51   Random seed: 1024
+09:53:51   Config file: ./config/run_relation_inductive_mech.yaml
+09:53:51   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'ILPC2022',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'large'},
@@ -1512,26 +1515,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:11:58   ILPC2022(large) dataset
-04:11:58   #train: 202446, #valid: 10179, #test: 10184
-04:11:59   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:11:59   Evaluate on test
+09:53:55   ILPC2022(large) dataset
+09:53:55   #train: 202446, #valid: 10179, #test: 10184
+09:53:55   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:53:55   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:13:15   mr: 1.77897
-04:13:15   mrr: 0.853511
-04:13:15   hits@1: 0.774352
-04:13:15   hits@3: 0.923016
-04:13:15   hits@10: 0.981441
-[0;32m[INFO][0m ✓ 命令 14 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:13:15
+09:55:11   mr: 1.739
+09:55:11   mrr: 0.882891
+09:55:11   hits@1: 0.82443
+09:55:11   hits@3: 0.926748
+09:55:11   hits@10: 0.980067
+[0;32m[INFO][0m ✓ 命令 27 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:55:12
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 15: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset HM --version 1k --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:13:15
-04:13:18   Random seed: 1024
-04:13:18   Config file: ./config/run_relation_inductive_mech.yaml
-04:13:18   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 28: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset HM --version 1k --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:55:12
+09:55:15   Random seed: 1024
+09:55:15   Config file: ./config/run_relation_inductive_mech.yaml
+09:55:15   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'HM',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': '1k'},
@@ -1569,26 +1572,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:13:18   HM(1k) dataset
-04:13:18   #train: 93364, #valid: 1771, #test: 476
-04:13:19   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:13:19   Evaluate on test
+09:55:15   HM(1k) dataset
+09:55:15   #train: 93364, #valid: 1771, #test: 476
+09:55:15   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:55:15   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:13:21   mr: 1.92017
-04:13:21   mrr: 0.687826
-04:13:21   hits@1: 0.462185
-04:13:21   hits@3: 0.92437
-04:13:21   hits@10: 1
-[0;32m[INFO][0m ✓ 命令 15 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:13:21
+09:55:17   mr: 1.94958
+09:55:17   mrr: 0.671611
+09:55:17   hits@1: 0.441177
+09:55:17   hits@3: 0.920168
+09:55:17   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 28 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:55:18
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 16: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset HM --version 3k --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:13:21
-04:13:24   Random seed: 1024
-04:13:24   Config file: ./config/run_relation_inductive_mech.yaml
-04:13:24   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 29: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset HM --version 3k --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:55:18
+09:55:21   Random seed: 1024
+09:55:21   Config file: ./config/run_relation_inductive_mech.yaml
+09:55:21   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'HM',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': '3k'},
@@ -1626,26 +1629,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:13:24   HM(3k) dataset
-04:13:24   #train: 71097, #valid: 1201, #test: 1349
-04:13:25   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:13:25   Evaluate on test
+09:55:21   HM(3k) dataset
+09:55:21   #train: 71097, #valid: 1201, #test: 1349
+09:55:22   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:55:22   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:13:33   mr: 1.93477
-04:13:34   mrr: 0.689938
-04:13:34   hits@1: 0.464789
-04:13:34   hits@3: 0.909563
-04:13:34   hits@10: 1
-[0;32m[INFO][0m ✓ 命令 16 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:13:34
+09:55:31   mr: 1.91475
+09:55:31   mrr: 0.682275
+09:55:34   hits@1: 0.447739
+09:55:34   hits@3: 0.90808
+09:55:34   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 29 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:55:35
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 17: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset HM --version 5k --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:13:34
-04:13:37   Random seed: 1024
-04:13:37   Config file: ./config/run_relation_inductive_mech.yaml
-04:13:37   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 30: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset HM --version 5k --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:55:35
+09:55:37   Random seed: 1024
+09:55:37   Config file: ./config/run_relation_inductive_mech.yaml
+09:55:37   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'HM',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': '5k'},
@@ -1683,26 +1686,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:13:37   HM(5k) dataset
-04:13:37   #train: 57601, #valid: 900, #test: 2124
-04:13:37   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:13:37   Evaluate on test
+09:55:38   HM(5k) dataset
+09:55:38   #train: 57601, #valid: 900, #test: 2124
+09:55:38   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:55:38   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:13:55   mr: 1.86347
-04:13:55   mrr: 0.700223
-04:13:55   hits@1: 0.474105
-04:13:55   hits@3: 0.9242
-04:13:55   hits@10: 1
-[0;32m[INFO][0m ✓ 命令 17 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:13:56
+09:55:56   mr: 1.8371
+09:55:56   mrr: 0.696298
+09:55:56   hits@1: 0.464218
+09:55:56   hits@3: 0.927024
+09:55:56   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 30 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:55:56
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 18: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset HM --version indigo --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:13:56
-04:13:58   Random seed: 1024
-04:13:58   Config file: ./config/run_relation_inductive_mech.yaml
-04:13:59   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 31: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset HM --version indigo --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:55:57
+09:55:59   Random seed: 1024
+09:55:59   Config file: ./config/run_relation_inductive_mech.yaml
+09:55:59   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'HM',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'indigo'},
@@ -1740,26 +1743,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:14:00   HM(indigo) dataset
-04:14:00   #train: 121601, #valid: 14121, #test: 14904
-04:14:00   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:14:00   Evaluate on test
+09:56:00   HM(indigo) dataset
+09:56:00   #train: 121601, #valid: 14121, #test: 14904
+09:56:00   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:56:00   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:16:28   mr: 2.9896
-04:16:28   mrr: 0.822162
-04:16:28   hits@1: 0.739265
-04:16:28   hits@3: 0.885937
-04:16:28   hits@10: 0.958803
-[0;32m[INFO][0m ✓ 命令 18 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:16:29
+09:58:28   mr: 2.16459
+09:58:28   mrr: 0.862783
+09:58:28   hits@1: 0.783615
+09:58:28   hits@3: 0.931226
+09:58:28   hits@10: 0.979536
+[0;32m[INFO][0m ✓ 命令 31 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:58:29
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 19: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FBIngram --version 25 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:16:29
-04:16:31   Random seed: 1024
-04:16:31   Config file: ./config/run_relation_inductive_mech.yaml
-04:16:31   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 32: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FBIngram --version 25 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:58:29
+09:58:32   Random seed: 1024
+09:58:32   Config file: ./config/run_relation_inductive_mech.yaml
+09:58:32   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'FBIngram',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 25},
@@ -1797,26 +1800,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:16:31   FBIngram(25) dataset
-04:16:31   #train: 91571, #valid: 5716, #test: 5716
-04:16:32   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:16:32   Evaluate on test
+09:58:32   FBIngram(25) dataset
+09:58:32   #train: 91571, #valid: 5716, #test: 5716
+09:58:32   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:58:32   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:16:41   mr: 5.71868
-04:16:41   mrr: 0.790341
-04:16:41   hits@1: 0.70119
-04:16:41   hits@3: 0.86739
-04:16:41   hits@10: 0.929496
-[0;32m[INFO][0m ✓ 命令 19 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:16:42
+09:58:42   mr: 5.36249
+09:58:42   mrr: 0.80366
+09:58:42   hits@1: 0.717285
+09:58:42   hits@3: 0.875262
+09:58:42   hits@10: 0.930021
+[0;32m[INFO][0m ✓ 命令 32 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:58:43
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 20: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FBIngram --version 50 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:16:42
-04:16:45   Random seed: 1024
-04:16:45   Config file: ./config/run_relation_inductive_mech.yaml
-04:16:45   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 33: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FBIngram --version 50 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:58:43
+09:58:45   Random seed: 1024
+09:58:45   Config file: ./config/run_relation_inductive_mech.yaml
+09:58:45   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'FBIngram',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 50},
@@ -1854,26 +1857,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:16:45   FBIngram(50) dataset
-04:16:45   #train: 85375, #valid: 3879, #test: 3879
-04:16:45   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:16:45   Evaluate on test
+09:58:45   FBIngram(50) dataset
+09:58:45   #train: 85375, #valid: 3879, #test: 3879
+09:58:46   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:58:46   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:16:52   mr: 6.39933
-04:16:52   mrr: 0.756595
-04:16:52   hits@1: 0.657902
-04:16:52   hits@3: 0.842743
-04:16:52   hits@10: 0.917505
-[0;32m[INFO][0m ✓ 命令 20 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:16:52
+09:58:52   mr: 6.65352
+09:58:52   mrr: 0.759311
+09:58:52   hits@1: 0.661768
+09:58:52   hits@3: 0.841712
+09:58:52   hits@10: 0.910028
+[0;32m[INFO][0m ✓ 命令 33 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:58:54
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 21: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FBIngram --version 75 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:16:52
-04:16:55   Random seed: 1024
-04:16:55   Config file: ./config/run_relation_inductive_mech.yaml
-04:16:55   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 34: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FBIngram --version 75 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:58:56
+09:58:58   Random seed: 1024
+09:58:58   Config file: ./config/run_relation_inductive_mech.yaml
+09:58:58   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'FBIngram',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 75},
@@ -1911,26 +1914,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:16:55   FBIngram(75) dataset
-04:16:55   #train: 62809, #valid: 3106, #test: 3106
-04:16:55   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:16:55   Evaluate on test
+09:58:58   FBIngram(75) dataset
+09:58:58   #train: 62809, #valid: 3106, #test: 3106
+09:58:59   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:58:59   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:16:59   mr: 5.70702
-04:16:59   mrr: 0.79136
-04:16:59   hits@1: 0.705409
-04:16:59   hits@3: 0.86349
-04:16:59   hits@10: 0.929491
-[0;32m[INFO][0m ✓ 命令 21 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:17:00
+09:59:03   mr: 5.415
+09:59:03   mrr: 0.797007
+09:59:03   hits@1: 0.711526
+09:59:03   hits@3: 0.868963
+09:59:03   hits@10: 0.926272
+[0;32m[INFO][0m ✓ 命令 34 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:59:03
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 22: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FBIngram --version 100 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:17:00
-04:17:02   Random seed: 1024
-04:17:02   Config file: ./config/run_relation_inductive_mech.yaml
-04:17:02   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 35: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FBIngram --version 100 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:59:03
+09:59:06   Random seed: 1024
+09:59:06   Config file: ./config/run_relation_inductive_mech.yaml
+09:59:06   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'FBIngram',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 100},
@@ -1968,26 +1971,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:17:02   FBIngram(100) dataset
-04:17:02   #train: 62809, #valid: 2329, #test: 2329
-04:17:03   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:17:03   Evaluate on test
+09:59:06   FBIngram(100) dataset
+09:59:06   #train: 62809, #valid: 2329, #test: 2329
+09:59:06   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:06   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:17:06   mr: 2.08888
-04:17:06   mrr: 0.912089
-04:17:06   hits@1: 0.863031
-04:17:06   hits@3: 0.957922
-04:17:06   hits@10: 0.973809
-[0;32m[INFO][0m ✓ 命令 22 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:17:06
+09:59:09   mr: 2.0073
+09:59:09   mrr: 0.915152
+09:59:09   hits@1: 0.868184
+09:59:09   hits@3: 0.957493
+09:59:09   hits@10: 0.975955
+[0;32m[INFO][0m ✓ 命令 35 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:59:10
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 23: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WKIngram --version 25 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:17:06
-04:17:09   Random seed: 1024
-04:17:09   Config file: ./config/run_relation_inductive_mech.yaml
-04:17:09   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 36: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WKIngram --version 25 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:59:10
+09:59:12   Random seed: 1024
+09:59:12   Config file: ./config/run_relation_inductive_mech.yaml
+09:59:12   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WKIngram',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 25},
@@ -2025,26 +2028,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:17:09   WKIngram(25) dataset
-04:17:09   #train: 41873, #valid: 1130, #test: 1131
-04:17:09   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:17:09   Evaluate on test
+09:59:12   WKIngram(25) dataset
+09:59:12   #train: 41873, #valid: 1130, #test: 1131
+09:59:13   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:13   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:17:11   mr: 1.84527
-04:17:11   mrr: 0.931177
-04:17:11   hits@1: 0.89832
-04:17:11   hits@3: 0.959328
-04:17:11   hits@10: 0.980548
-[0;32m[INFO][0m ✓ 命令 23 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:17:12
+09:59:14   mr: 2.00442
+09:59:14   mrr: 0.929689
+09:59:14   hits@1: 0.896552
+09:59:14   hits@3: 0.95756
+09:59:14   hits@10: 0.974359
+[0;32m[INFO][0m ✓ 命令 36 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:59:15
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 24: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WKIngram --version 50 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:17:12
-04:17:14   Random seed: 1024
-04:17:14   Config file: ./config/run_relation_inductive_mech.yaml
-04:17:14   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 37: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WKIngram --version 50 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:59:15
+09:59:18   Random seed: 1024
+09:59:18   Config file: ./config/run_relation_inductive_mech.yaml
+09:59:18   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WKIngram',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 50},
@@ -2082,26 +2085,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:17:14   WKIngram(50) dataset
-04:17:14   #train: 82481, #valid: 3224, #test: 3225
-04:17:15   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:17:15   Evaluate on test
+09:59:18   WKIngram(50) dataset
+09:59:18   #train: 82481, #valid: 3224, #test: 3225
+09:59:18   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:18   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:17:20   mr: 2.30388
-04:17:20   mrr: 0.910644
-04:17:20   hits@1: 0.867287
-04:17:20   hits@3: 0.948527
-04:17:20   hits@10: 0.968372
-[0;32m[INFO][0m ✓ 命令 24 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:17:21
+09:59:24   mr: 2.42512
+09:59:24   mrr: 0.914139
+09:59:24   hits@1: 0.873488
+09:59:24   hits@3: 0.950698
+09:59:24   hits@10: 0.969302
+[0;32m[INFO][0m ✓ 命令 37 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:59:24
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 25: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WKIngram --version 75 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:17:21
-04:17:23   Random seed: 1024
-04:17:23   Config file: ./config/run_relation_inductive_mech.yaml
-04:17:23   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 38: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WKIngram --version 75 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:59:24
+09:59:27   Random seed: 1024
+09:59:27   Config file: ./config/run_relation_inductive_mech.yaml
+09:59:27   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WKIngram',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 75},
@@ -2139,26 +2142,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:17:23   WKIngram(75) dataset
-04:17:23   #train: 28741, #valid: 1143, #test: 1144
-04:17:24   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:17:24   Evaluate on test
+09:59:27   WKIngram(75) dataset
+09:59:27   #train: 28741, #valid: 1143, #test: 1144
+09:59:27   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:27   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:17:25   mr: 2.07955
-04:17:25   mrr: 0.93046
-04:17:25   hits@1: 0.902972
-04:17:25   hits@3: 0.95979
-04:17:25   hits@10: 0.972902
-[0;32m[INFO][0m ✓ 命令 25 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:17:26
+09:59:29   mr: 2.16783
+09:59:29   mrr: 0.937048
+09:59:29   hits@1: 0.909091
+09:59:29   hits@3: 0.964161
+09:59:29   hits@10: 0.971154
+[0;32m[INFO][0m ✓ 命令 38 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:59:30
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 26: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WKIngram --version 100 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:17:26
-04:17:28   Random seed: 1024
-04:17:28   Config file: ./config/run_relation_inductive_mech.yaml
-04:17:28   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 39: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WKIngram --version 100 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:59:30
+09:59:32   Random seed: 1024
+09:59:32   Config file: ./config/run_relation_inductive_mech.yaml
+09:59:32   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WKIngram',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 100},
@@ -2196,26 +2199,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:17:29   WKIngram(100) dataset
-04:17:29   #train: 49875, #valid: 4496, #test: 4496
-04:17:29   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:17:29   Evaluate on test
+09:59:32   WKIngram(100) dataset
+09:59:32   #train: 49875, #valid: 4496, #test: 4496
+09:59:33   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:33   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:17:38   mr: 1.75423
-04:17:38   mrr: 0.920368
-04:17:38   hits@1: 0.888568
-04:17:38   hits@3: 0.941504
-04:17:38   hits@10: 0.968639
-[0;32m[INFO][0m ✓ 命令 26 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:17:38
+09:59:42   mr: 1.62633
+09:59:42   mrr: 0.926349
+09:59:42   hits@1: 0.893906
+09:59:42   hits@3: 0.949511
+09:59:42   hits@10: 0.973532
+[0;32m[INFO][0m ✓ 命令 39 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:59:43
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 27: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NLIngram --version 0 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:17:39
-04:17:41   Random seed: 1024
-04:17:41   Config file: ./config/run_relation_inductive_mech.yaml
-04:17:41   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 40: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NLIngram --version 0 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:59:43
+09:59:45   Random seed: 1024
+09:59:45   Config file: ./config/run_relation_inductive_mech.yaml
+09:59:45   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'NLIngram',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 0},
@@ -2253,26 +2256,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:17:41   NLIngram(0) dataset
-04:17:41   #train: 7796, #valid: 763, #test: 763
-04:17:42   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:17:42   Evaluate on test
+09:59:45   NLIngram(0) dataset
+09:59:45   #train: 7796, #valid: 763, #test: 763
+09:59:46   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:46   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:17:43   mr: 6.94626
-04:17:43   mrr: 0.655546
-04:17:43   hits@1: 0.521625
-04:17:43   hits@3: 0.757536
-04:17:43   hits@10: 0.89384
-[0;32m[INFO][0m ✓ 命令 27 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:17:43
+09:59:47   mr: 8.00131
+09:59:47   mrr: 0.644923
+09:59:47   hits@1: 0.516383
+09:59:47   hits@3: 0.740498
+09:59:47   hits@10: 0.874181
+[0;32m[INFO][0m ✓ 命令 40 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:59:48
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 28: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NLIngram --version 25 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:17:43
-04:17:46   Random seed: 1024
-04:17:46   Config file: ./config/run_relation_inductive_mech.yaml
-04:17:46   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 41: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NLIngram --version 25 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:59:48
+09:59:50   Random seed: 1024
+09:59:50   Config file: ./config/run_relation_inductive_mech.yaml
+09:59:50   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'NLIngram',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 25},
@@ -2310,26 +2313,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:17:46   NLIngram(25) dataset
-04:17:46   #train: 17578, #valid: 743, #test: 744
-04:17:46   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:17:46   Evaluate on test
+09:59:50   NLIngram(25) dataset
+09:59:50   #train: 17578, #valid: 743, #test: 744
+09:59:51   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:51   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:17:48   mr: 5.85618
-04:17:48   mrr: 0.751396
-04:17:48   hits@1: 0.633065
-04:17:48   hits@3: 0.865591
-04:17:48   hits@10: 0.932796
-[0;32m[INFO][0m ✓ 命令 28 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:17:48
+09:59:52   mr: 6.38575
+09:59:52   mrr: 0.759858
+09:59:52   hits@1: 0.657258
+09:59:52   hits@3: 0.83871
+09:59:52   hits@10: 0.931452
+[0;32m[INFO][0m ✓ 命令 41 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:59:53
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 29: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NLIngram --version 50 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:17:48
-04:17:51   Random seed: 1024
-04:17:51   Config file: ./config/run_relation_inductive_mech.yaml
-04:17:51   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 42: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NLIngram --version 50 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:59:53
+09:59:55   Random seed: 1024
+09:59:55   Config file: ./config/run_relation_inductive_mech.yaml
+09:59:55   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'NLIngram',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 50},
@@ -2367,26 +2370,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:17:51   NLIngram(50) dataset
-04:17:51   #train: 17578, #valid: 859, #test: 859
-04:17:51   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:17:51   Evaluate on test
+09:59:55   NLIngram(50) dataset
+09:59:55   #train: 17578, #valid: 859, #test: 859
+09:59:55   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+09:59:55   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:17:53   mr: 4.44354
-04:17:53   mrr: 0.77668
-04:17:53   hits@1: 0.684517
-04:17:53   hits@3: 0.85099
-04:17:53   hits@10: 0.933644
-[0;32m[INFO][0m ✓ 命令 29 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:17:53
+09:59:57   mr: 4.51106
+09:59:57   mrr: 0.771536
+09:59:57   hits@1: 0.664726
+09:59:57   hits@3: 0.881257
+09:59:57   hits@10: 0.937136
+[0;32m[INFO][0m ✓ 命令 42 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 09:59:57
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 30: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NLIngram --version 75 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:17:53
-04:17:56   Random seed: 1024
-04:17:56   Config file: ./config/run_relation_inductive_mech.yaml
-04:17:56   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 43: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NLIngram --version 75 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 09:59:57
+10:00:00   Random seed: 1024
+10:00:00   Config file: ./config/run_relation_inductive_mech.yaml
+10:00:00   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'NLIngram',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 75},
@@ -2424,26 +2427,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:17:56   NLIngram(75) dataset
-04:17:56   #train: 11058, #valid: 606, #test: 607
-04:17:56   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:17:56   Evaluate on test
+10:00:00   NLIngram(75) dataset
+10:00:00   #train: 11058, #valid: 606, #test: 607
+10:00:00   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:00   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:17:58   mr: 4.5799
-04:17:58   mrr: 0.797633
-04:17:58   hits@1: 0.706755
-04:17:58   hits@3: 0.871499
-04:17:58   hits@10: 0.947282
-[0;32m[INFO][0m ✓ 命令 30 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:17:58
+10:00:02   mr: 5.64415
+10:00:02   mrr: 0.796899
+10:00:02   hits@1: 0.721582
+10:00:02   hits@3: 0.856672
+10:00:02   hits@10: 0.93575
+[0;32m[INFO][0m ✓ 命令 43 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 10:00:02
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 31: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NLIngram --version 100 --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:17:58
-04:18:01   Random seed: 1024
-04:18:01   Config file: ./config/run_relation_inductive_mech.yaml
-04:18:01   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 44: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset NLIngram --version 100 --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 10:00:02
+10:00:05   Random seed: 1024
+10:00:05   Config file: ./config/run_relation_inductive_mech.yaml
+10:00:05   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'NLIngram',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 100},
@@ -2481,26 +2484,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:18:01   NLIngram(100) dataset
-04:18:01   #train: 7832, #valid: 793, #test: 793
-04:18:01   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:18:01   Evaluate on test
+10:00:05   NLIngram(100) dataset
+10:00:05   #train: 7832, #valid: 793, #test: 793
+10:00:05   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:05   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:18:03   mr: 1.50441
-04:18:03   mrr: 0.886797
-04:18:03   hits@1: 0.805801
-04:18:03   hits@3: 0.960908
-04:18:03   hits@10: 0.993695
-[0;32m[INFO][0m ✓ 命令 31 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:18:03
+10:00:07   mr: 1.47037
+10:00:07   mrr: 0.887836
+10:00:07   hits@1: 0.807062
+10:00:07   hits@3: 0.968474
+10:00:07   hits@10: 0.994956
+[0;32m[INFO][0m ✓ 命令 44 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 10:00:07
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 32: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT1 --version tax --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:18:03
-04:18:06   Random seed: 1024
-04:18:06   Config file: ./config/run_relation_inductive_mech.yaml
-04:18:06   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 45: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT1 --version tax --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 10:00:07
+10:00:10   Random seed: 1024
+10:00:10   Config file: ./config/run_relation_inductive_mech.yaml
+10:00:10   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WikiTopicsMT1',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'tax'},
@@ -2538,26 +2541,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:18:06   WikiTopicsMT1(tax) dataset
-04:18:06   #train: 17178, #valid: 1908, #test: 1834
-04:18:06   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:18:06   Evaluate on test
+10:00:10   WikiTopicsMT1(tax) dataset
+10:00:10   #train: 17178, #valid: 1908, #test: 1834
+10:00:10   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:10   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:18:12   mr: 1.01908
-04:18:12   mrr: 0.993048
-04:18:12   hits@1: 0.987459
-04:18:12   hits@3: 0.998364
-04:18:12   hits@10: 1
-[0;32m[INFO][0m ✓ 命令 32 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:18:13
+10:00:16   mr: 1.0398
+10:00:16   mrr: 0.985911
+10:00:16   hits@1: 0.974918
+10:00:16   hits@3: 0.997819
+10:00:16   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 45 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 10:00:17
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 33: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT1 --version health --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:18:13
-04:18:15   Random seed: 1024
-04:18:15   Config file: ./config/run_relation_inductive_mech.yaml
-04:18:15   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 46: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT1 --version health --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 10:00:17
+10:00:19   Random seed: 1024
+10:00:19   Config file: ./config/run_relation_inductive_mech.yaml
+10:00:19   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WikiTopicsMT1',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'health'},
@@ -2595,26 +2598,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:18:15   WikiTopicsMT1(health) dataset
-04:18:15   #train: 14371, #valid: 1596, #test: 1566
-04:18:16   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:18:16   Evaluate on test
+10:00:19   WikiTopicsMT1(health) dataset
+10:00:19   #train: 14371, #valid: 1596, #test: 1566
+10:00:20   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:20   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:18:20   mr: 1.24074
-04:18:20   mrr: 0.905981
-04:18:21   hits@1: 0.835888
-04:18:21   hits@3: 0.992976
-04:18:21   hits@10: 1
-[0;32m[INFO][0m ✓ 命令 33 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:18:23
+10:00:24   mr: 1.2152
+10:00:24   mrr: 0.904534
+10:00:24   hits@1: 0.819923
+10:00:24   hits@3: 0.994891
+10:00:24   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 46 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 10:00:24
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 34: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT2 --version org --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:18:23
-04:18:26   Random seed: 1024
-04:18:26   Config file: ./config/run_relation_inductive_mech.yaml
-04:18:26   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 47: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT2 --version org --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 10:00:24
+10:00:27   Random seed: 1024
+10:00:27   Config file: ./config/run_relation_inductive_mech.yaml
+10:00:27   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WikiTopicsMT2',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'org'},
@@ -2652,26 +2655,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:18:26   WikiTopicsMT2(org) dataset
-04:18:26   #train: 23233, #valid: 2581, #test: 2441
-04:18:26   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:18:26   Evaluate on test
+10:00:27   WikiTopicsMT2(org) dataset
+10:00:27   #train: 23233, #valid: 2581, #test: 2441
+10:00:27   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:27   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:18:32   mr: 1.03933
-04:18:32   mrr: 0.985317
-04:18:32   hits@1: 0.973781
-04:18:32   hits@3: 0.997542
-04:18:32   hits@10: 1
-[0;32m[INFO][0m ✓ 命令 34 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:18:32
+10:00:33   mr: 1.03728
+10:00:33   mrr: 0.986492
+10:00:33   hits@1: 0.976239
+10:00:33   hits@3: 0.996723
+10:00:33   hits@10: 1
+[0;32m[INFO][0m ✓ 命令 47 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 10:00:33
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 35: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT2 --version sci --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:18:32
-04:18:35   Random seed: 1024
-04:18:35   Config file: ./config/run_relation_inductive_mech.yaml
-04:18:35   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 48: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT2 --version sci --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 10:00:33
+10:00:36   Random seed: 1024
+10:00:36   Config file: ./config/run_relation_inductive_mech.yaml
+10:00:36   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WikiTopicsMT2',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'sci'},
@@ -2709,26 +2712,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:18:35   WikiTopicsMT2(sci) dataset
-04:18:35   #train: 16471, #valid: 1830, #test: 1650
-04:18:35   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:18:35   Evaluate on test
+10:00:36   WikiTopicsMT2(sci) dataset
+10:00:36   #train: 16471, #valid: 1830, #test: 1650
+10:00:36   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:36   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:18:39   mr: 1.06667
-04:18:39   mrr: 0.983582
-04:18:39   hits@1: 0.972121
-04:18:39   hits@3: 0.992727
-04:18:39   hits@10: 0.998182
-[0;32m[INFO][0m ✓ 命令 35 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:18:42
+10:00:41   mr: 1.08667
+10:00:41   mrr: 0.980919
+10:00:41   hits@1: 0.970909
+10:00:41   hits@3: 0.986061
+10:00:41   hits@10: 0.998788
+[0;32m[INFO][0m ✓ 命令 48 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 10:00:41
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 36: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT3 --version art --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:18:43
-04:18:46   Random seed: 1024
-04:18:46   Config file: ./config/run_relation_inductive_mech.yaml
-04:18:46   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 49: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT3 --version art --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 10:00:41
+10:00:44   Random seed: 1024
+10:00:44   Config file: ./config/run_relation_inductive_mech.yaml
+10:00:44   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WikiTopicsMT3',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'art'},
@@ -2766,26 +2769,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:18:46   WikiTopicsMT3(art) dataset
-04:18:46   #train: 27262, #valid: 3026, #test: 3113
-04:18:47   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:18:47   Evaluate on test
+10:00:44   WikiTopicsMT3(art) dataset
+10:00:44   #train: 27262, #valid: 3026, #test: 3113
+10:00:44   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:00:44   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:18:58   mr: 1.83778
-04:18:58   mrr: 0.877556
-04:18:58   hits@1: 0.820109
-04:18:58   hits@3: 0.923225
-04:18:58   hits@10: 0.970446
-[0;32m[INFO][0m ✓ 命令 36 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:18:59
+10:00:56   mr: 1.92612
+10:00:56   mrr: 0.883678
+10:00:56   hits@1: 0.831995
+10:00:56   hits@3: 0.921298
+10:00:56   hits@10: 0.962737
+[0;32m[INFO][0m ✓ 命令 49 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 10:00:56
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 37: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT3 --version infra --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:18:59
-04:19:04   Random seed: 1024
-04:19:04   Config file: ./config/run_relation_inductive_mech.yaml
-04:19:04   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 50: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT3 --version infra --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 10:00:56
+10:01:00   Random seed: 1024
+10:01:00   Config file: ./config/run_relation_inductive_mech.yaml
+10:01:01   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WikiTopicsMT3',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'infra'},
@@ -2823,26 +2826,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:19:04   WikiTopicsMT3(infra) dataset
-04:19:04   #train: 21990, #valid: 2443, #test: 2405
-04:19:05   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:19:05   Evaluate on test
+10:01:01   WikiTopicsMT3(infra) dataset
+10:01:01   #train: 21990, #valid: 2443, #test: 2405
+10:01:01   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:01:01   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:19:11   mr: 1.17505
-04:19:11   mrr: 0.951363
-04:19:11   hits@1: 0.919751
-04:19:11   hits@3: 0.982121
-04:19:11   hits@10: 0.998753
-[0;32m[INFO][0m ✓ 命令 37 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:19:12
+10:01:08   mr: 1.1368
+10:01:08   mrr: 0.962208
+10:01:08   hits@1: 0.934719
+10:01:08   hits@3: 0.988773
+10:01:08   hits@10: 0.997505
+[0;32m[INFO][0m ✓ 命令 50 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 10:01:09
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 38: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT4 --version sci --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:19:12
-04:19:14   Random seed: 1024
-04:19:14   Config file: ./config/run_relation_inductive_mech.yaml
-04:19:14   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 51: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT4 --version sci --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 10:01:09
+10:01:11   Random seed: 1024
+10:01:11   Config file: ./config/run_relation_inductive_mech.yaml
+10:01:11   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WikiTopicsMT4',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'sci'},
@@ -2880,26 +2883,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:19:15   WikiTopicsMT4(sci) dataset
-04:19:15   #train: 12576, #valid: 1397, #test: 1388
-04:19:15   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:19:15   Evaluate on test
+10:01:11   WikiTopicsMT4(sci) dataset
+10:01:11   #train: 12576, #valid: 1397, #test: 1388
+10:01:12   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:01:12   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:19:18   mr: 1.13112
-04:19:18   mrr: 0.97004
-04:19:18   hits@1: 0.949568
-04:19:18   hits@3: 0.990634
-04:19:18   hits@10: 0.997839
-[0;32m[INFO][0m ✓ 命令 38 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:19:19
+10:01:15   mr: 1.08357
+10:01:15   mrr: 0.972966
+10:01:15   hits@1: 0.950288
+10:01:15   hits@3: 0.997118
+10:01:15   hits@10: 0.998559
+[0;32m[INFO][0m ✓ 命令 51 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 10:01:15
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 39: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT4 --version health --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:19:19
-04:19:25   Random seed: 1024
-04:19:25   Config file: ./config/run_relation_inductive_mech.yaml
-04:19:25   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 52: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset WikiTopicsMT4 --version health --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 10:01:15
+10:01:18   Random seed: 1024
+10:01:18   Config file: ./config/run_relation_inductive_mech.yaml
+10:01:18   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'WikiTopicsMT4',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': 'health'},
@@ -2937,26 +2940,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:19:25   WikiTopicsMT4(health) dataset
-04:19:25   #train: 15539, #valid: 1725, #test: 1703
-04:19:25   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:19:25   Evaluate on test
+10:01:18   WikiTopicsMT4(health) dataset
+10:01:18   #train: 15539, #valid: 1725, #test: 1703
+10:01:18   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:01:18   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:19:29   mr: 1.14093
-04:19:29   mrr: 0.957087
-04:19:29   hits@1: 0.925426
-04:19:29   hits@3: 0.98943
-04:19:29   hits@10: 0.998826
-[0;32m[INFO][0m ✓ 命令 39 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:19:30
+10:01:22   mr: 1.16148
+10:01:22   mrr: 0.947883
+10:01:22   hits@1: 0.909571
+10:01:22   hits@3: 0.987669
+10:01:22   hits@10: 0.999413
+[0;32m[INFO][0m ✓ 命令 52 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 10:01:23
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 40: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset Metafam --version null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:19:30
-04:19:32   Random seed: 1024
-04:19:32   Config file: ./config/run_relation_inductive_mech.yaml
-04:19:32   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 53: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset Metafam --version null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 10:01:23
+10:01:26   Random seed: 1024
+10:01:26   Config file: ./config/run_relation_inductive_mech.yaml
+10:01:26   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'Metafam',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': None},
@@ -2994,26 +2997,26 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:19:33   Metafam(None) dataset
-04:19:33   #train: 13821, #valid: 590, #test: 184
-04:19:33   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:19:33   Evaluate on test
+10:01:26   Metafam(None) dataset
+10:01:26   #train: 13821, #valid: 590, #test: 184
+10:01:26   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:01:26   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:19:34   mr: 3.6087
-04:19:34   mrr: 0.330396
-04:19:34   hits@1: 0.0326087
-04:19:34   hits@3: 0.548913
-04:19:34   hits@10: 1
-[0;32m[INFO][0m ✓ 命令 40 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:19:34
+10:01:27   mr: 4.95109
+10:01:27   mrr: 0.246168
+10:01:27   hits@1: 0.0108696
+10:01:27   hits@3: 0.326087
+10:01:27   hits@10: 0.978261
+[0;32m[INFO][0m ✓ 命令 53 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 10:01:28
 [0;32m[INFO][0m ==========================================
-[0;32m[INFO][0m 执行命令 41: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FBNELL --version null --ckpt /T20030104/ynj/TRIX/ckpts/rel_5.pth --gpus [0] --epochs 0 --bpe null
-[0;32m[INFO][0m 开始时间: 2025-12-25 04:19:34
-04:19:37   Random seed: 1024
-04:19:37   Config file: ./config/run_relation_inductive_mech.yaml
-04:19:37   {'checkpoint': '/T20030104/ynj/TRIX/ckpts/rel_5.pth',
+[0;32m[INFO][0m 执行命令 54: python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset FBNELL --version null --ckpt /T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth --gpus [0] --epochs 0 --bpe null
+[0;32m[INFO][0m 开始时间: 2026-01-01 10:01:28
+10:01:30   Random seed: 1024
+10:01:30   Config file: ./config/run_relation_inductive_mech.yaml
+10:01:30   {'checkpoint': '/T20030104/ynj/TRIX/output_rel/TRIXLatentMechanism/JointDataset/2025-12-31-17-00-51/model_epoch_14.pth',
  'dataset': {'class': 'FBNELL',
              'root': '/T20030104/ynj/TRIX/kg-datasets_rel/',
              'version': None},
@@ -3051,24 +3054,24 @@ Load rspmm extension. This may take a while...
            'gpus': [0],
            'log_interval': 100,
            'num_epoch': 0}}
-04:19:37   FBNELL(None) dataset
-04:19:37   #train: 10275, #valid: 1055, #test: 597
-04:19:37   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-04:19:37   Evaluate on test
+10:01:30   FBNELL(None) dataset
+10:01:30   #train: 10275, #valid: 1055, #test: 597
+10:01:31   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+10:01:31   Evaluate on test
 /root/anaconda3/envs/trix/lib/python3.10/site-packages/torch/utils/cpp_extension.py:28: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   from pkg_resources import packaging  # type: ignore[attr-defined]
 Load rspmm extension. This may take a while...
-04:19:39   mr: 5.75377
-04:19:39   mrr: 0.753717
-04:19:39   hits@1: 0.628141
-04:19:39   hits@3: 0.865997
-04:19:39   hits@10: 0.939698
-[0;32m[INFO][0m ✓ 命令 41 执行成功
-[0;32m[INFO][0m 结束时间: 2025-12-25 04:19:39
+10:01:32   mr: 5.92462
+10:01:32   mrr: 0.739272
+10:01:32   hits@1: 0.603015
+10:01:32   hits@3: 0.877722
+10:01:32   hits@10: 0.943049
+[0;32m[INFO][0m ✓ 命令 54 执行成功
+[0;32m[INFO][0m 结束时间: 2026-01-01 10:01:33
 [0;32m[INFO][0m ==========================================
 [0;32m[INFO][0m 执行完成！
-[0;32m[INFO][0m 总命令数: 41
-[0;32m[INFO][0m 成功: 41
+[0;32m[INFO][0m 总命令数: 54
+[0;32m[INFO][0m 成功: 54
 [0;32m[INFO][0m 失败: 0
-[0;32m[INFO][0m 日志文件: run_commands_20251225_041027.log
+[0;32m[INFO][0m 日志文件: run_commands_20260101_035905.log
 [0;32m[INFO][0m 所有命令执行成功！

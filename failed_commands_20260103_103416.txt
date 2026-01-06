@@ -1,0 +1,1 @@
+python ./src/run_relation.py -c ./config/run_relation_inductive_mech.yaml --dataset ILPC2022 --version large --ckpt /T20030104/ynj/TRIX/ckpts/1.pth --gpus [0] --epochs 0 --bpe null

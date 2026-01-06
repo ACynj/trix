@@ -2,8 +2,8 @@ output_dir: /T20030104/ynj/TRIX/output_rel/
 
 dataset:
   class: JointDataset
-  graphs: [FB15k237, WN18RR, CoDExMedium, CoDExLarge, NELL995, DBpedia100k]
-  root: /T20030104/ynj/TRIX/kg-datasets_rel/
+  graphs: [FB15k237, WN18RR, CoDExMedium]
+  root: /kg-datasets/
 
 model:
   class: TRIXLatentMechanism
@@ -30,7 +30,7 @@ model:
   mechanism:
     enabled: true
     z_dim: 32
-    beta: 1.0e-3
+    beta: 1.0e-4          # 进一步降低beta，提升机制灵活性，改善Inductive数据集表现
     deterministic_eval: true
     score_type: concat_mlp
     query_free: true
@@ -44,14 +44,16 @@ task:
 
 optimizer:
   class: AdamW
-  lr: 5.0e-4
+  lr: 3.5e-4             # 降低学习率，更稳定的训练
+  weight_decay: 2.0e-5   # 增强权重衰减，防止过拟合，特别是对Inductive数据集
 
 train:
   gpus: {{ gpus }}
-  batch_size: 16
-  num_epoch: 20
-  log_interval: 400
-  batch_per_epoch: 1000
+  batch_size: 32
+  num_epoch: 30          # 增加训练轮次，确保充分收敛
+  log_interval: 800
+  batch_per_epoch: 2000  # 增加每轮batch数，提升训练稳定性
+  fast_test: 500
   logger: wandb
 
 

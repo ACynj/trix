@@ -1,9 +1,9 @@
 output_dir: /T20030104/ynj/TRIX/output_rel/
 
 dataset:
-  class: JointDataset
-  graphs: [FB15k237, WN18RR, CoDExMedium, CoDExLarge, NELL995, DBpedia100k]
+  class: {{ dataset }}
   root: /T20030104/ynj/TRIX/kg-datasets_rel/
+  version: {{ version }}
 
 model:
   class: TRIXLatentMechanism
@@ -36,23 +36,24 @@ model:
     query_free: true
 
 task:
-  name: MultiGraphPretraining
-  num_negative: 512
+  name: InductiveInference
+  num_negative: 256
   strict_negative: yes
   adversarial_temperature: 1
   metric: [mr, mrr, hits@1, hits@3, hits@10]
 
 optimizer:
   class: AdamW
-  lr: 5.0e-4
+  lr: {{ lr | default(1.0e-4) }}  # 默认使用较小的学习率进行微调
 
 train:
   gpus: {{ gpus }}
-  batch_size: 16
-  num_epoch: 20
-  log_interval: 400
-  batch_per_epoch: 1000
-  logger: wandb
+  batch_size: 32
+  num_epoch: {{ epochs }}
+  log_interval: 100
+  batch_per_epoch: {{ bpe }}
+
+checkpoint: {{ ckpt }}
 
 
 

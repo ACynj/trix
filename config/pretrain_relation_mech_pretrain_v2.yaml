@@ -2,11 +2,11 @@ output_dir: /T20030104/ynj/TRIX/output_rel/
 
 dataset:
   class: JointDataset
-  graphs: [FB15k237, WN18RR, CoDExMedium, CoDExLarge, NELL995, DBpedia100k]
-  root: /T20030104/ynj/TRIX/kg-datasets_rel/
+  graphs: [FB15k237, WN18RR, CoDExMedium]
+  root: /kg-datasets/
 
 model:
-  class: TRIXLatentMechanism
+  class: TRIXLatentMechanismPretrain
   trix:
     feature_dim: 32
     num_layer: 3
@@ -30,10 +30,9 @@ model:
   mechanism:
     enabled: true
     z_dim: 32
-    beta: 1.0e-3
+    beta: 1.0e-4          # 进一步降低 KL 权重，让模型更灵活
     deterministic_eval: true
     score_type: concat_mlp
-    query_free: true
 
 task:
   name: MultiGraphPretraining
@@ -44,14 +43,16 @@ task:
 
 optimizer:
   class: AdamW
-  lr: 5.0e-4
+  lr: 3.0e-4             # 稍微降低初始学习率，更稳定
+  weight_decay: 1.0e-5
 
 train:
   gpus: {{ gpus }}
-  batch_size: 16
-  num_epoch: 20
-  log_interval: 400
+  batch_size: 32
+  num_epoch: 20          # 增加训练轮次
+  log_interval: 800
   batch_per_epoch: 1000
+  fast_test: 500
   logger: wandb
 
 

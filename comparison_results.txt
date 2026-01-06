@@ -1,0 +1,385 @@
+正在解析日志文件...
+文件1找到 54 个数据集的结果
+文件2找到 54 个数据集的结果
+
+文件1中的数据集:
+  - AristoV4
+  - CoDExLarge
+  - CoDExSmall
+  - ConceptNet100k
+  - DBpedia100k
+  - FB15k237Inductive(v1)
+  - FB15k237Inductive(v2)
+  - FB15k237Inductive(v3)
+  - FB15k237Inductive(v4)
+  - FB15k237_10
+  - FB15k237_20
+  - FB15k237_50
+  - FBIngram(100)
+  - FBIngram(25)
+  - FBIngram(50)
+  - FBIngram(75)
+  - FBNELL(None)
+  - HM(1k)
+  - HM(3k)
+  - HM(5k)
+  - HM(indigo)
+  - Hetionet
+  - ILPC2022(large)
+  - ILPC2022(small)
+  - Metafam(None)
+  - NELL23k
+  - NELL995
+  - NELLInductive(v1)
+  - NELLInductive(v2)
+  - NELLInductive(v3)
+  - NELLInductive(v4)
+  - NLIngram(0)
+  - NLIngram(100)
+  - NLIngram(25)
+  - NLIngram(50)
+  - NLIngram(75)
+  - WDsinger
+  - WKIngram(100)
+  - WKIngram(25)
+  - WKIngram(50)
+  - WKIngram(75)
+  - WN18RRInductive(v1)
+  - WN18RRInductive(v2)
+  - WN18RRInductive(v3)
+  - WN18RRInductive(v4)
+  - WikiTopicsMT1(health)
+  - WikiTopicsMT1(tax)
+  - WikiTopicsMT2(org)
+  - WikiTopicsMT2(sci)
+  - WikiTopicsMT3(art)
+  - WikiTopicsMT3(infra)
+  - WikiTopicsMT4(health)
+  - WikiTopicsMT4(sci)
+  - YAGO310
+
+文件2中的数据集:
+  - AristoV4
+  - CoDExLarge
+  - CoDExSmall
+  - ConceptNet100k
+  - DBpedia100k
+  - FB15k237Inductive(v1)
+  - FB15k237Inductive(v2)
+  - FB15k237Inductive(v3)
+  - FB15k237Inductive(v4)
+  - FB15k237_10
+  - FB15k237_20
+  - FB15k237_50
+  - FBIngram(100)
+  - FBIngram(25)
+  - FBIngram(50)
+  - FBIngram(75)
+  - FBNELL(None)
+  - HM(1k)
+  - HM(3k)
+  - HM(5k)
+  - HM(indigo)
+  - Hetionet
+  - ILPC2022(large)
+  - ILPC2022(small)
+  - Metafam(None)
+  - NELL23k
+  - NELL995
+  - NELLInductive(v1)
+  - NELLInductive(v2)
+  - NELLInductive(v3)
+  - NELLInductive(v4)
+  - NLIngram(0)
+  - NLIngram(100)
+  - NLIngram(25)
+  - NLIngram(50)
+  - NLIngram(75)
+  - WDsinger
+  - WKIngram(100)
+  - WKIngram(25)
+  - WKIngram(50)
+  - WKIngram(75)
+  - WN18RRInductive(v1)
+  - WN18RRInductive(v2)
+  - WN18RRInductive(v3)
+  - WN18RRInductive(v4)
+  - WikiTopicsMT1(health)
+  - WikiTopicsMT1(tax)
+  - WikiTopicsMT2(org)
+  - WikiTopicsMT2(sci)
+  - WikiTopicsMT3(art)
+  - WikiTopicsMT3(infra)
+  - WikiTopicsMT4(health)
+  - WikiTopicsMT4(sci)
+  - YAGO310
+====================================================================================================
+日志文件对比分析
+====================================================================================================
+
+文件1: inference_rel.log
+文件2: run_commands_20260101_035905.log
+
+
+====================================================================================================
+1. 每个数据集的详细对比
+====================================================================================================
+数据集                                      指标         inference_rel.log run_commands_20260101_035905.log 差异             
+----------------------------------------------------------------------------------------------------
+CoDExSmall                               mrr        0.960240        0.955035        -0.0052        
+CoDExSmall                               hits@1     0.933807        0.928337        -0.0055        
+CoDExSmall                               hits@3     0.986871        0.980853        -0.0060        
+CoDExSmall                               hits@10    0.992888        0.993435        +0.0005        
+CoDExLarge                               mrr        0.900061        0.873615        -0.0264        
+CoDExLarge                               hits@1     0.833126        0.789955        -0.0432        
+CoDExLarge                               hits@3     0.964111        0.956208        -0.0079        
+CoDExLarge                               hits@10    0.983117        0.991999        +0.0089        
+NELL995                                  mrr        0.544189        0.544427        +0.0002        
+NELL995                                  hits@1     0.407381        0.433286        +0.0259        
+NELL995                                  hits@3     0.644429        0.605394        -0.0390        
+NELL995                                  hits@10    0.775373        0.758694        -0.0167        
+DBpedia100k                              mrr        0.690589        0.754995        +0.0644        
+DBpedia100k                              hits@1     0.543820        0.629540        +0.0857        
+DBpedia100k                              hits@3     0.823040        0.861700        +0.0387        
+DBpedia100k                              hits@10    0.916680        0.947240        +0.0306        
+ConceptNet100k                           mrr        0.634936        0.703755        +0.0688        
+ConceptNet100k                           hits@1     0.441667        0.533333        +0.0917        
+ConceptNet100k                           hits@3     0.787500        0.847500        +0.0600        
+ConceptNet100k                           hits@10    0.986667        0.987500        +0.0008        
+NELL23k                                  mrr        0.736920        0.768192        +0.0313        
+NELL23k                                  hits@1     0.640549        0.666801        +0.0263        
+NELL23k                                  hits@3     0.806745        0.852787        +0.0460        
+NELL23k                                  hits@10    0.903877        0.925081        +0.0212        
+YAGO310                                  mrr        0.745378        0.799923        +0.0545        
+YAGO310                                  hits@1     0.592000        0.623600        +0.0316        
+YAGO310                                  hits@3     0.923600        0.982600        +0.0590        
+YAGO310                                  hits@10    0.972800        0.994800        +0.0220        
+Hetionet                                 mrr        0.825236        0.863173        +0.0379        
+Hetionet                                 hits@1     0.739357        0.775024        +0.0357        
+Hetionet                                 hits@3     0.892410        0.995805        +0.1034        
+Hetionet                                 hits@10    0.997360        0.999876        +0.0025        
+WDsinger                                 mrr        0.682156        0.718874        +0.0367        
+WDsinger                                 hits@1     0.581934        0.605538        +0.0236        
+WDsinger                                 hits@3     0.753064        0.817068        +0.0640        
+WDsinger                                 hits@10    0.833863        0.891966        +0.0581        
+AristoV4                                 mrr        0.385327        0.429254        +0.0439        
+AristoV4                                 hits@1     0.257200        0.304600        +0.0474        
+AristoV4                                 hits@3     0.434700        0.483700        +0.0490        
+AristoV4                                 hits@10    0.653100        0.683050        +0.0300        
+FB15k237_10                              mrr        0.777841        0.755717        -0.0221        
+FB15k237_10                              hits@1     0.692837        0.666832        -0.0260        
+FB15k237_10                              hits@3     0.849422        0.821047        -0.0284        
+FB15k237_10                              hits@10    0.909366        0.920661        +0.0113        
+FB15k237_20                              mrr        0.815878        0.796412        -0.0195        
+FB15k237_20                              hits@1     0.735386        0.717081        -0.0183        
+FB15k237_20                              hits@3     0.884759        0.853257        -0.0315        
+FB15k237_20                              hits@10    0.945894        0.949535        +0.0036        
+FB15k237_50                              mrr        0.866877        0.874973        +0.0081        
+FB15k237_50                              hits@1     0.805944        0.823460        +0.0175        
+FB15k237_50                              hits@3     0.914535        0.910303        -0.0042        
+FB15k237_50                              hits@10    0.973627        0.969248        -0.0044        
+FB15k237Inductive(v1)                    mrr        0.689465        0.670076        -0.0194        
+FB15k237Inductive(v1)                    hits@1     0.581509        0.549878        -0.0316        
+FB15k237Inductive(v1)                    hits@3     0.761557        0.761557        0.0000         
+FB15k237Inductive(v1)                    hits@10    0.890511        0.888078        -0.0024        
+FB15k237Inductive(v2)                    mrr        0.694087        0.697876        +0.0038        
+FB15k237Inductive(v2)                    hits@1     0.562830        0.577614        +0.0148        
+FB15k237Inductive(v2)                    hits@3     0.797255        0.791975        -0.0053        
+FB15k237Inductive(v2)                    hits@10    0.915523        0.904963        -0.0106        
+FB15k237Inductive(v3)                    mrr        0.726639        0.719855        -0.0068        
+FB15k237Inductive(v3)                    hits@1     0.621606        0.614096        -0.0075        
+FB15k237Inductive(v3)                    hits@3     0.809359        0.796072        -0.0133        
+FB15k237Inductive(v3)                    hits@10    0.893125        0.912189        +0.0191        
+FB15k237Inductive(v4)                    mrr        0.745078        0.722201        -0.0229        
+FB15k237Inductive(v4)                    hits@1     0.635211        0.604225        -0.0310        
+FB15k237Inductive(v4)                    hits@3     0.836972        0.809155        -0.0278        
+FB15k237Inductive(v4)                    hits@10    0.910563        0.926056        +0.0155        
+WN18RRInductive(v1)                      mrr        0.808460        0.819042        +0.0106        
+WN18RRInductive(v1)                      hits@1     0.643432        0.689008        +0.0456        
+WN18RRInductive(v1)                      hits@3     0.983914        0.935657        -0.0483        
+WN18RRInductive(v1)                      hits@10    1.000000        1.000000        0.0000         
+WN18RRInductive(v2)                      mrr        0.763266        0.828631        +0.0654        
+WN18RRInductive(v2)                      hits@1     0.575117        0.703052        +0.1279        
+WN18RRInductive(v2)                      hits@3     0.958920        0.951878        -0.0070        
+WN18RRInductive(v2)                      hits@10    1.000000        1.000000        0.0000         
+WN18RRInductive(v3)                      mrr        0.717883        0.822456        +0.1046        
+WN18RRInductive(v3)                      hits@1     0.545057        0.709536        +0.1645        
+WN18RRInductive(v3)                      hits@3     0.920385        0.934383        +0.0140        
+WN18RRInductive(v3)                      hits@10    1.000000        1.000000        0.0000         
+WN18RRInductive(v4)                      mrr        0.764230        0.792173        +0.0279        
+WN18RRInductive(v4)                      hits@1     0.569607        0.620971        +0.0514        
+WN18RRInductive(v4)                      hits@3     0.961034        0.982288        +0.0213        
+WN18RRInductive(v4)                      hits@10    1.000000        1.000000        0.0000         
+NELLInductive(v1)                        mrr        0.555348        0.550047        -0.0053        
+NELLInductive(v1)                        hits@1     0.248756        0.308458        +0.0597        
+NELLInductive(v1)                        hits@3     0.995025        0.621891        -0.3731        
+NELLInductive(v1)                        hits@10    1.000000        1.000000        0.0000         
+NELLInductive(v2)                        mrr        0.796653        0.778184        -0.0185        
+NELLInductive(v2)                        hits@1     0.727273        0.695187        -0.0321        
+NELLInductive(v2)                        hits@3     0.841711        0.841711        0.0000         
+NELLInductive(v2)                        hits@10    0.919786        0.920856        +0.0011        
+NELLInductive(v3)                        mrr        0.747420        0.734791        -0.0126        
+NELLInductive(v3)                        hits@1     0.637037        0.615432        -0.0216        
+NELLInductive(v3)                        hits@3     0.832716        0.837654        +0.0049        
+NELLInductive(v3)                        hits@10    0.933951        0.941975        +0.0080        
+NELLInductive(v4)                        mrr        0.806643        0.801317        -0.0053        
+NELLInductive(v4)                        hits@1     0.720111        0.720802        +0.0007        
+NELLInductive(v4)                        hits@3     0.863856        0.857637        -0.0062        
+NELLInductive(v4)                        hits@10    0.963372        0.947478        -0.0159        
+ILPC2022(small)                          mrr        0.914630        0.922276        +0.0076        
+ILPC2022(small)                          hits@1     0.867677        0.875603        +0.0079        
+ILPC2022(small)                          hits@3     0.955203        0.963818        +0.0086        
+ILPC2022(small)                          hits@10    0.976568        0.991385        +0.0148        
+ILPC2022(large)                          mrr        0.893691        0.882891        -0.0108        
+ILPC2022(large)                          hits@1     0.832875        0.824430        -0.0084        
+ILPC2022(large)                          hits@3     0.952082        0.926748        -0.0253        
+ILPC2022(large)                          hits@10    0.973488        0.980067        +0.0066        
+HM(1k)                                   mrr        0.613307        0.671611        +0.0583        
+HM(1k)                                   hits@1     0.325630        0.441177        +0.1155        
+HM(1k)                                   hits@3     0.924370        0.920168        -0.0042        
+HM(1k)                                   hits@10    1.000000        1.000000        0.0000         
+HM(3k)                                   mrr        0.632347        0.682275        +0.0499        
+HM(3k)                                   hits@1     0.375093        0.447739        +0.0726        
+HM(3k)                                   hits@3     0.885100        0.908080        +0.0230        
+HM(3k)                                   hits@10    1.000000        1.000000        0.0000         
+HM(5k)                                   mrr        0.653094        0.696298        +0.0432        
+HM(5k)                                   hits@1     0.406780        0.464218        +0.0574        
+HM(5k)                                   hits@3     0.889830        0.927024        +0.0372        
+HM(5k)                                   hits@10    1.000000        1.000000        0.0000         
+HM(indigo)                               mrr        0.841611        0.862783        +0.0212        
+HM(indigo)                               hits@1     0.751879        0.783615        +0.0317        
+HM(indigo)                               hits@3     0.918277        0.931226        +0.0129        
+HM(indigo)                               hits@10    0.981414        0.979536        -0.0019        
+FBIngram(25)                             mrr        0.792424        0.803660        +0.0112        
+FBIngram(25)                             hits@1     0.709412        0.717285        +0.0079        
+FBIngram(25)                             hits@3     0.859867        0.875262        +0.0154        
+FBIngram(25)                             hits@10    0.917425        0.930021        +0.0126        
+FBIngram(50)                             mrr        0.764817        0.759311        -0.0055        
+FBIngram(50)                             hits@1     0.682392        0.661768        -0.0206        
+FBIngram(50)                             hits@3     0.838618        0.841712        +0.0031        
+FBIngram(50)                             hits@10    0.888373        0.910028        +0.0217        
+FBIngram(75)                             mrr        0.819248        0.797007        -0.0222        
+FBIngram(75)                             hits@1     0.746619        0.711526        -0.0351        
+FBIngram(75)                             hits@3     0.874437        0.868963        -0.0055        
+FBIngram(75)                             hits@10    0.924340        0.926272        +0.0019        
+FBIngram(100)                            mrr        0.924078        0.915152        -0.0089        
+FBIngram(100)                            hits@1     0.888794        0.868184        -0.0206        
+FBIngram(100)                            hits@3     0.954916        0.957493        +0.0026        
+FBIngram(100)                            hits@10    0.969515        0.975955        +0.0064        
+WKIngram(25)                             mrr        0.905748        0.929689        +0.0239        
+WKIngram(25)                             hits@1     0.868258        0.896552        +0.0283        
+WKIngram(25)                             hits@3     0.934571        0.957560        +0.0230        
+WKIngram(25)                             hits@10    0.961096        0.974359        +0.0133        
+WKIngram(50)                             mrr        0.867746        0.914139        +0.0464        
+WKIngram(50)                             hits@1     0.827287        0.873488        +0.0462        
+WKIngram(50)                             hits@3     0.884651        0.950698        +0.0660        
+WKIngram(50)                             hits@10    0.950698        0.969302        +0.0186        
+WKIngram(75)                             mrr        0.930859        0.937048        +0.0062        
+WKIngram(75)                             hits@1     0.908217        0.909091        +0.0009        
+WKIngram(75)                             hits@3     0.946678        0.964161        +0.0175        
+WKIngram(75)                             hits@10    0.963287        0.971154        +0.0079        
+WKIngram(100)                            mrr        0.892151        0.926349        +0.0342        
+WKIngram(100)                            hits@1     0.856539        0.893906        +0.0374        
+WKIngram(100)                            hits@3     0.912589        0.949511        +0.0369        
+WKIngram(100)                            hits@10    0.963968        0.973532        +0.0096        
+NLIngram(0)                              mrr        0.660444        0.644923        -0.0155        
+NLIngram(0)                              hits@1     0.519004        0.516383        -0.0026        
+NLIngram(0)                              hits@3     0.770642        0.740498        -0.0301        
+NLIngram(0)                              hits@10    0.885976        0.874181        -0.0118        
+NLIngram(25)                             mrr        0.757062        0.759858        +0.0028        
+NLIngram(25)                             hits@1     0.639785        0.657258        +0.0175        
+NLIngram(25)                             hits@3     0.877688        0.838710        -0.0390        
+NLIngram(25)                             hits@10    0.930108        0.931452        +0.0013        
+NLIngram(50)                             mrr        0.790180        0.771536        -0.0186        
+NLIngram(50)                             hits@1     0.699651        0.664726        -0.0349        
+NLIngram(50)                             hits@3     0.861467        0.881257        +0.0198        
+NLIngram(50)                             hits@10    0.935972        0.937136        +0.0012        
+NLIngram(75)                             mrr        0.783584        0.796899        +0.0133        
+NLIngram(75)                             hits@1     0.693575        0.721582        +0.0280        
+NLIngram(75)                             hits@3     0.853377        0.856672        +0.0033        
+NLIngram(75)                             hits@10    0.927512        0.935750        +0.0082        
+NLIngram(100)                            mrr        0.898756        0.887836        -0.0109        
+NLIngram(100)                            hits@1     0.828499        0.807062        -0.0214        
+NLIngram(100)                            hits@3     0.965952        0.968474        +0.0025        
+NLIngram(100)                            hits@10    0.993695        0.994956        +0.0013        
+WikiTopicsMT1(tax)                       mrr        0.972746        0.985911        +0.0132        
+WikiTopicsMT1(tax)                       hits@1     0.953653        0.974918        +0.0213        
+WikiTopicsMT1(tax)                       hits@3     0.992366        0.997819        +0.0055        
+WikiTopicsMT1(tax)                       hits@10    1.000000        1.000000        0.0000         
+WikiTopicsMT1(health)                    mrr        0.930735        0.904534        -0.0262        
+WikiTopicsMT1(health)                    hits@1     0.867816        0.819923        -0.0479        
+WikiTopicsMT1(health)                    hits@3     0.993614        0.994891        +0.0013        
+WikiTopicsMT1(health)                    hits@10    1.000000        1.000000        0.0000         
+WikiTopicsMT2(org)                       mrr        0.983688        0.986492        +0.0028        
+WikiTopicsMT2(org)                       hits@1     0.969275        0.976239        +0.0070        
+WikiTopicsMT2(org)                       hits@3     0.997952        0.996723        -0.0012        
+WikiTopicsMT2(org)                       hits@10    1.000000        1.000000        0.0000         
+WikiTopicsMT2(sci)                       mrr        0.949479        0.980919        +0.0314        
+WikiTopicsMT2(sci)                       hits@1     0.920000        0.970909        +0.0509        
+WikiTopicsMT2(sci)                       hits@3     0.984848        0.986061        +0.0012        
+WikiTopicsMT2(sci)                       hits@10    0.998182        0.998788        +0.0006        
+WikiTopicsMT3(art)                       mrr        0.895718        0.883678        -0.0120        
+WikiTopicsMT3(art)                       hits@1     0.846772        0.831995        -0.0148        
+WikiTopicsMT3(art)                       hits@3     0.931577        0.921298        -0.0103        
+WikiTopicsMT3(art)                       hits@10    0.968840        0.962737        -0.0061        
+WikiTopicsMT3(infra)                     mrr        0.922102        0.962208        +0.0401        
+WikiTopicsMT3(infra)                     hits@1     0.886071        0.934719        +0.0486        
+WikiTopicsMT3(infra)                     hits@3     0.941372        0.988773        +0.0474        
+WikiTopicsMT3(infra)                     hits@10    0.996674        0.997505        +0.0008        
+WikiTopicsMT4(sci)                       mrr        0.942291        0.972966        +0.0307        
+WikiTopicsMT4(sci)                       hits@1     0.909942        0.950288        +0.0403        
+WikiTopicsMT4(sci)                       hits@3     0.964697        0.997118        +0.0324        
+WikiTopicsMT4(sci)                       hits@10    0.994957        0.998559        +0.0036        
+WikiTopicsMT4(health)                    mrr        0.918818        0.947883        +0.0291        
+WikiTopicsMT4(health)                    hits@1     0.880799        0.909571        +0.0288        
+WikiTopicsMT4(health)                    hits@3     0.952437        0.987669        +0.0352        
+WikiTopicsMT4(health)                    hits@10    0.997651        0.999413        +0.0018        
+Metafam(None)                            mrr        0.302728        0.246168        -0.0566        
+Metafam(None)                            hits@1     0.016304        0.010870        -0.0054        
+Metafam(None)                            hits@3     0.527174        0.326087        -0.2011        
+Metafam(None)                            hits@10    1.000000        0.978261        -0.0217        
+FBNELL(None)                             mrr        0.754589        0.739272        -0.0153        
+FBNELL(None)                             hits@1     0.639866        0.603015        -0.0369        
+FBNELL(None)                             hits@3     0.850921        0.877722        +0.0268        
+FBNELL(None)                             hits@10    0.922948        0.943049        +0.0201        
+
+====================================================================================================
+2. 按类别进行平均对比
+====================================================================================================
+
+TRANSDUCTIVE (13个数据集):
+----------------------------------------------------------------------------------------------------
+指标         inference_rel.log run_commands_20260101_035905.log 差异              相对提升           
+----------------------------------------------------------------------------------------------------
+mrr        0.735818        0.756796        +0.020978 +2.85%
+hits@1     0.631154        0.653645        +0.022491 +3.56%
+hits@3     0.820399        0.843709        +0.023310 +2.84%
+hits@10    0.911124        0.924083        +0.012959 +1.42%
+
+INDUCTIVE_E (18个数据集):
+----------------------------------------------------------------------------------------------------
+指标         inference_rel.log run_commands_20260101_035905.log 差异              相对提升           
+----------------------------------------------------------------------------------------------------
+mrr        0.742436        0.758599        +0.016163 +2.18%
+hits@1     0.590416        0.624725        +0.034309 +5.81%
+hits@3     0.893754        0.872162        -0.021591 -2.42%
+hits@10    0.964350        0.966255        +0.001905 +0.20%
+
+INDUCTIVE_ER (23个数据集):
+----------------------------------------------------------------------------------------------------
+指标         inference_rel.log run_commands_20260101_035905.log 差异              相对提升           
+----------------------------------------------------------------------------------------------------
+mrr        0.841739        0.845802        +0.004063 +0.48%
+hits@1     0.772110        0.777446        +0.005336 +0.69%
+hits@3     0.898800        0.901093        +0.002292 +0.26%
+hits@10    0.960488        0.964453        +0.003965 +0.41%
+
+====================================================================================================
+3. 全部数据集平均对比 (54个数据集)
+====================================================================================================
+指标         inference_rel.log run_commands_20260101_035905.log 差异              相对提升           
+----------------------------------------------------------------------------------------------------
+mrr        0.783138        0.795307        +0.012168 +1.55%
+hits@1     0.677611        0.696735        +0.019123 +2.82%
+hits@3     0.878244        0.877635        -0.000609 -0.07%
+hits@10    0.949891        0.955335        +0.005443 +0.57%
